@@ -1,0 +1,15 @@
+:root{--p:#4A235A;--g:#D4AF37}
+body{font-family:Arial,sans-serif;background:#faf8fc}
+.topbar{background:var(--p);color:#fff;padding:8px 0;font-size:14px}
+.brand{color:var(--p)!important}
+.hero{padding:80px 0;background:linear-gradient(135deg,#fff,#f3eef8)}
+.hero h1{font-size:56px;color:var(--p);font-weight:700}
+.gold{color:var(--g);font-weight:bold}
+.btn-main{background:var(--p);color:#fff}
+.hero-box{height:420px;border-radius:16px;background:#ddd;display:flex;align-items:center;justify-content:center}
+.card{border:none;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.imgph{height:180px;background:#ececec;border-radius:8px}
+.process{background:#fff}
+.step{padding:18px;border:2px solid var(--g);border-radius:50px}
+.stats{background:var(--p);color:#fff;padding:50px 0}
+.footer{background:#24112c;color:#fff;padding:40px 0;text-align:center}

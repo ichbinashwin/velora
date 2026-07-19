@@ -1,2 +1,1 @@
-# velora
-Velora
+Upload images to assets/images/products and enable GitHub Pages.
