@@ -230,6 +230,10 @@
     </div>
   </footer>
 
+  <button class="scroll-top" type="button" data-scroll-top aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5.3 14.7 6.7-6.7 6.7 6.7-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4Z"/></svg>
+  </button>
+
   <div class="cookie-consent" data-cookie-consent hidden>
     <div class="cookie-panel" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
       <div class="cookie-copy">
@@ -444,6 +448,14 @@
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
+    const scrollTopButton = document.querySelector("[data-scroll-top]");
+    if (scrollTopButton) {
+      const updateScrollTopButton = () => scrollTopButton.classList.toggle("is-visible", window.scrollY > 420);
+      scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+      updateScrollTopButton();
+      window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+    }
+
     const navToggle = document.querySelector("[data-nav-toggle]");
     const navPanel = document.querySelector("[data-nav-panel]");
 
@@ -514,12 +526,14 @@
       navToggle.addEventListener("click", () => {
         const isOpen = navPanel.classList.toggle("is-open");
         navToggle.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
       });
 
       navLinks.forEach((link) => {
         link.addEventListener("click", () => {
           navPanel.classList.remove("is-open");
           navToggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
         });
       });
     }
