@@ -173,15 +173,33 @@ a:focus {
   background-color: var(--surface);
 }
 
+/* 05 Header */
 .topbar {
   background: var(--footer-bg);
   color: #fff;
-  padding: 12px 0;
-  font-size: 15px;
+  padding: 10px 0;
+  font-size: 14px;
+  transition: max-height .28s ease, padding .28s ease, opacity .28s ease, visibility .28s ease;
 }
 
 [data-theme="dark"] .topbar {
   background: #0c0510;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: var(--nav-bg);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.site-header.is-scrolled .topbar {
+  max-height: 0;
+  padding-block: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
 }
 
 .topbar-inner {
@@ -189,6 +207,17 @@ a:focus {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar-title {
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.topbar-contact {
+  color: var(--footer-muted);
+  font-size: 13px;
 }
 
 .theme-toggle {
@@ -226,73 +255,98 @@ a:focus {
 }
 
 .brand {
-  color: var(--plum) !important;
-  letter-spacing: 0;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--nav-bg);
-  padding: 20px 0;
-  box-shadow: 0 4px 16px var(--shadow);
-}
-
-.navbar .container,
-.navbar-nav {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-}
-
-.navbar-brand {
+  gap: 12px;
+  color: var(--plum) !important;
+  font-weight: 800;
+  letter-spacing: .02em;
   text-decoration: none;
 }
 
-.fw-bold {
-  font-weight: 800;
-}
-
-.navbar-toggler {
-  display: none;
-  margin-left: auto;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 8px;
-  background: var(--surface);
-}
-
-.navbar-toggler-icon {
-  width: 24px;
-  height: 18px;
+.brand-logo {
+  height: 56px;
+  width: auto;
   display: block;
-  background:
-    linear-gradient(var(--plum), var(--plum)) 0 0 / 100% 2px no-repeat,
-    linear-gradient(var(--plum), var(--plum)) 0 50% / 100% 2px no-repeat,
-    linear-gradient(var(--plum), var(--plum)) 0 100% / 100% 2px no-repeat;
 }
 
-.collapse {
+.brand-text {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.hero-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.navbar {
+  background: var(--nav-bg);
+}
+
+.navbar-inner {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 74px;
+  position: relative;
 }
 
-.navbar-nav {
-  gap: 30px;
-  margin-bottom: 0;
-  padding-left: 0;
+.nav-panel {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .nav-link {
   color: var(--muted-strong);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 15px;
   text-decoration: none;
+  transition: color .2s ease;
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.is-active {
   color: var(--accent);
+}
+
+.navbar-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--surface);
+  color: var(--plum);
+  cursor: pointer;
+}
+
+.navbar-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .hero {
@@ -901,33 +955,41 @@ a:focus {
 }
 
 @media (max-width: 991.98px) {
-  .navbar .container {
+  .navbar-inner {
     flex-wrap: wrap;
+    min-height: 68px;
   }
 
-  .navbar-toggler {
+  .navbar-toggle {
     display: inline-flex;
+    margin-left: auto;
   }
 
-  .collapse {
-    width: 100%;
+  .nav-panel {
     display: none;
+    width: 100%;
+    margin-left: 0;
+    padding-top: 12px;
   }
 
-  .collapse.show {
+  .nav-panel.is-open {
     display: block;
   }
 
-  .navbar-nav {
+  .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding-top: 16px;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+
+  .nav-link {
+    font-size: 16px;
   }
 
   .hero {
     min-height: auto;
-    padding: 62px 0;
+    padding: 72px 0 64px;
   }
 
   .hero-media {
@@ -957,8 +1019,24 @@ a:focus {
     font-size: 12px;
   }
 
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    height: 46px;
+  }
+
+  .brand-text {
+    font-size: 0.88rem;
+  }
+
+  .navbar-inner {
+    min-height: 60px;
+  }
+
   .hero {
-    padding: 46px 0;
+    padding: 56px 0 48px;
   }
 
   .hero h1 {

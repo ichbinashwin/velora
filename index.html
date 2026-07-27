@@ -9,36 +9,45 @@
     document.documentElement.dataset.theme = localStorage.getItem("velora_theme") || "light";
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/logo.ico">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Premium ladies wear manufacturer</span>
-      <span>+91 79909 65209 | rajani.parmar.tailor@gmail.com</span>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
-        <span class="theme-toggle-icon" aria-hidden="true"></span>
-        <span data-theme-label>Dark mode</span>
-      </button>
-    </div>
-  </div>
-
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold brand" href="#home">VELORA APPAREL</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#manufacturing">Manufacturing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <header class="site-header" data-site-header>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-title">Premium ladies wear manufacturer</span>
+        <span class="topbar-contact">+91 79909 65209 | rajani.parmar.tailor@gmail.com</span>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span data-theme-label>Dark mode</span>
+        </button>
       </div>
     </div>
-  </nav>
+
+    <nav class="navbar" aria-label="Primary">
+      <div class="container navbar-inner">
+        <a class="brand" href="#home">
+          <img src="assets/images/logo.png" alt="Velora Apparel logo" class="brand-logo">
+          <span class="brand-text">Velora Apparel</span>
+        </a>
+        <button class="navbar-toggle" type="button" data-nav-toggle aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+        </button>
+        <div class="nav-panel" id="mainNav" data-nav-panel>
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#products">Products</a></li>
+            <li><a class="nav-link" href="#manufacturing">Manufacturing</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <section id="home" class="hero" data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
@@ -386,11 +395,32 @@
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
-    document.querySelector(".navbar-toggler").addEventListener("click", () => {
-      const nav = document.querySelector("#mainNav");
-      const isOpen = nav.classList.toggle("show");
-      document.querySelector(".navbar-toggler").setAttribute("aria-expanded", String(isOpen));
-    });
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const navPanel = document.querySelector("[data-nav-panel]");
+
+    if (navToggle && navPanel) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = navPanel.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navPanel.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    const header = document.querySelector("[data-site-header]");
+    if (header) {
+      const toggleScrolledState = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+
+      toggleScrolledState();
+      window.addEventListener("scroll", toggleScrolledState, { passive: true });
+    }
 
     const existingConsent = getConsent();
     syncThemeToggle();
