@@ -1,0 +1,3 @@
+Contact: mailto:rajani.parmar.tailor@gmail.com
+Canonical: https://www.velora-apparel.store/.well-known/security.txt
+Preferred-Languages: en, gu, hi, de
