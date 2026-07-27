@@ -62,6 +62,10 @@ html {
   scroll-behavior: smooth;
 }
 
+main section[id] {
+  scroll-margin-top: 96px;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -312,17 +316,42 @@ a:focus {
 }
 
 .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--muted-strong);
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
-  transition: color .2s ease;
+  transition: color .2s ease, font-weight .2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .2s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.is-active {
   color: var(--accent);
+  font-weight: 800;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
 }
 
 .navbar-toggle {
@@ -985,6 +1014,12 @@ a:focus {
 
   .nav-link {
     font-size: 16px;
+  }
+
+  .nav-link::after {
+    right: auto;
+    width: 42px;
+    transform-origin: left;
   }
 
   .hero {

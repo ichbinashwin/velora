@@ -50,7 +50,7 @@
   </header>
 
   <main>
-    <section id="home" class="hero" data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
+    <section id="home" class="hero" data-nav-section data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-animate="fade-up">
@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <section id="about" class="section-pad bg-white">
+    <section id="about" class="section-pad bg-white" data-nav-section>
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-5" data-animate="fade-right">
@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <section id="products" class="section-pad">
+    <section id="products" class="section-pad" data-nav-section>
       <div class="container">
         <div class="section-head" data-animate="fade-up">
           <p class="eyebrow">Products</p>
@@ -135,7 +135,7 @@
       </div>
     </section>
 
-    <section id="manufacturing" class="section-pad process bg-white">
+    <section id="manufacturing" class="section-pad process bg-white" data-nav-section>
       <div class="container">
         <div class="section-head" data-animate="fade-up">
           <p class="eyebrow">Manufacturing</p>
@@ -165,7 +165,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section-pad contact-section" data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
+    <section id="contact" class="section-pad contact-section" data-nav-section data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
       <div class="container">
         <div class="row g-5 align-items-start">
           <div class="col-lg-6" data-animate="fade-right">
@@ -398,13 +398,76 @@
     const navToggle = document.querySelector("[data-nav-toggle]");
     const navPanel = document.querySelector("[data-nav-panel]");
 
+    const navLinks = [...document.querySelectorAll(".nav-link")];
+    const navSections = [...document.querySelectorAll("[data-nav-section]")];
+    const header = document.querySelector("[data-site-header]");
+    let pendingNavSection = null;
+    let pendingNavTimer;
+
+    function setActiveNav(sectionId) {
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${sectionId}`;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function getScrollSpySection() {
+      const headerHeight = header ? header.offsetHeight : 0;
+      const activationLine = window.scrollY + headerHeight + 48;
+      let currentSection = navSections[0];
+
+      navSections.forEach((section) => {
+        if (section.offsetTop <= activationLine) {
+          currentSection = section;
+        }
+      });
+
+      return currentSection;
+    }
+
+    function updateActiveNav() {
+      const currentSection = getScrollSpySection();
+      if (pendingNavSection && currentSection.id !== pendingNavSection) {
+        return;
+      }
+
+      if (pendingNavSection === currentSection.id) {
+        pendingNavSection = null;
+      }
+      setActiveNav(currentSection.id);
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const targetId = link.getAttribute("href").slice(1);
+        pendingNavSection = targetId;
+        window.clearTimeout(pendingNavTimer);
+        pendingNavTimer = window.setTimeout(() => {
+          pendingNavSection = null;
+          updateActiveNav();
+        }, 1600);
+        setActiveNav(targetId);
+      });
+    });
+
+    if (navSections.length) {
+      updateActiveNav();
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+      window.addEventListener("resize", updateActiveNav);
+    }
+
     if (navToggle && navPanel) {
       navToggle.addEventListener("click", () => {
         const isOpen = navPanel.classList.toggle("is-open");
         navToggle.setAttribute("aria-expanded", String(isOpen));
       });
 
-      document.querySelectorAll(".nav-link").forEach((link) => {
+      navLinks.forEach((link) => {
         link.addEventListener("click", () => {
           navPanel.classList.remove("is-open");
           navToggle.setAttribute("aria-expanded", "false");
@@ -412,7 +475,6 @@
       });
     }
 
-    const header = document.querySelector("[data-site-header]");
     if (header) {
       const toggleScrolledState = () => {
         header.classList.toggle("is-scrolled", window.scrollY > 12);
