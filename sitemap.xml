@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.velora-apparel.store/</loc></url>
-  <url><loc>https://www.velora-apparel.store/gu/</loc></url>
-  <url><loc>https://www.velora-apparel.store/hi/</loc></url>
-  <url><loc>https://www.velora-apparel.store/de/</loc></url>
-  <url><loc>https://www.velora-apparel.store/privacy.html</loc></url>
-  <url><loc>https://www.velora-apparel.store/terms.html</loc></url>
+  <url>
+    <loc>https://www.velora-apparel.store/</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.velora-apparel.store/gu/</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.velora-apparel.store/hi/</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.velora-apparel.store/de/</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.velora-apparel.store/privacy.html</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.velora-apparel.store/terms.html</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
 </urlset>
