@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Küchentücher &amp; Mikrofaser-Reinigungstücher | Velora Apparel</title>
   <meta name="description" content="Küchentücher, Mikrofaser-Autoputztücher, Bürotücher und Reinigungstücher von Velora Apparel aus Gujarat, Indien. Viele Größen und Farben. Bestellung per WhatsApp.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -38,7 +40,7 @@
       "@type": "WebPage",
       "@id": "https://www.velora-apparel.store/de/products/#webpage",
       "url": "https://www.velora-apparel.store/de/products/",
-      "name": "Küchentücher & Mikrofaser-Reinigungstücher | Velora Apparel",
+      "name": "Küchentücher \u0026 Mikrofaser-Reinigungstücher | Velora Apparel",
       "description": "Küchentücher, Mikrofaser-Autoputztücher, Bürotücher und Reinigungstücher von Velora Apparel aus Gujarat, Indien. Viele Größen und Farben. Bestellung per WhatsApp.",
       "inLanguage": "de",
       "dateModified": "2026-10-18",
@@ -76,7 +78,7 @@
           "item": {
             "@type": "ProductGroup",
             "@id": "https://www.velora-apparel.store/de/products/#p-kitchen",
-            "name": "Küchentücher & Geschirrtücher",
+            "name": "Küchentücher \u0026 Geschirrtücher",
             "description": "Zum Abtrocknen von Geschirr, für die Hände, zum Abdecken von Brot und für die Arbeitsfläche.",
             "url": "https://www.velora-apparel.store/de/products/#p-kitchen",
             "productGroupID": "kitchen",
@@ -168,7 +170,7 @@
           "item": {
             "@type": "ProductGroup",
             "@id": "https://www.velora-apparel.store/de/products/#p-office",
-            "name": "Bürotücher & Bildschirmtücher",
+            "name": "Bürotücher \u0026 Bildschirmtücher",
             "description": "Tücher für die Teeküche und Mikrofasertücher für Schreibtisch, Bildschirm und Brille.",
             "url": "https://www.velora-apparel.store/de/products/#p-office",
             "productGroupID": "office",
@@ -407,7 +409,7 @@
           <fieldset><legend>Farbe</legend><div class="pp-swatches" data-field="colour"><label class="pp-swatch"><input type="radio" name="colour" value="white" checked><span class="pp-dot sw-white"></span><span>Weiß</span></label><label class="pp-swatch"><input type="radio" name="colour" value="grey"><span class="pp-dot sw-grey"></span><span>Grau</span></label><label class="pp-swatch"><input type="radio" name="colour" value="beige"><span class="pp-dot sw-beige"></span><span>Beige</span></label><label class="pp-swatch"><input type="radio" name="colour" value="red-check"><span class="pp-dot sw-red-check"></span><span>Rot kariert</span></label><label class="pp-swatch"><input type="radio" name="colour" value="blue-check"><span class="pp-dot sw-blue-check"></span><span>Blau kariert</span></label><label class="pp-swatch"><input type="radio" name="colour" value="green"><span class="pp-dot sw-green"></span><span>Grün</span></label></div></fieldset>
           <div class="pp-row">
             <label>Packung<select name="pack" data-field="pack"><option value="3">3er-Pack</option><option value="6">6er-Pack</option><option value="12">12er-Pack</option></select></label>
-            <label>Menge (Packungen)<input type="number" name="qty" min="1" max="9999" value="1" inputmode="numeric"></label>
+            <label>Menge (Packungen)<input type="number" name="qty" min="1" max="9999" step="1" value="1" inputmode="numeric" required></label>
           </div>
           <button type="submit" class="btn btn-main w-100">In den Warenkorb</button>
           <p class="pp-status" data-form-status role="status"></p>
@@ -423,14 +425,15 @@
           <p class="pp-totals" data-cart-totals hidden></p>
           <div class="pp-checkout" data-checkout hidden>
             <div class="pp-row">
-              <label>Ihr Name<input type="text" data-cust-name autocomplete="name"></label>
-              <label>Stadt / PLZ<input type="text" data-cust-city autocomplete="postal-code"></label>
+              <label>Ihr Name<input type="text" data-cust-name name="customer-name" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="err-name"><span class="pp-error" id="err-name" data-error-for="name" hidden></span></label>
+              <label>Stadt / PLZ<input type="text" data-cust-city name="customer-city" autocomplete="address-level2" required minlength="2" maxlength="80" spellcheck="false" aria-describedby="err-city"><span class="pp-error" id="err-city" data-error-for="city" hidden></span></label>
             </div>
             <fieldset class="pp-type"><legend>Bestellart</legend>
               <label><input type="radio" name="order-type" value="retail" checked> Einzelkauf</label>
               <label><input type="radio" name="order-type" value="wholesale"> Großhandel</label>
             </fieldset>
             <details class="pp-preview"><summary>Nachricht ansehen</summary><pre data-cart-preview></pre></details>
+            <p class="pp-error pp-error-summary" data-error-summary role="alert" hidden></p>
             <button type="button" class="btn btn-main w-100 pp-send" data-cart-send><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Bestellung per WhatsApp senden</button>
             <p class="pp-note">WhatsApp öffnet sich mit Ihrer Bestellung. Sie wird erst gesendet, wenn Sie in WhatsApp auf Senden tippen.</p>
           </div>
@@ -492,7 +495,7 @@
 
   <a class="pp-cart-fab" href="#cart">Warenkorb <span class="pp-badge" data-cart-count>0</span></a>
 
-  <script type="application/json" id="catalog">{"lang": "de", "whatsapp": "917990965209", "ui": {"pack_of": "{n}er-Pack", "add": "In den Warenkorb", "added": "Zum Warenkorb hinzugefügt: {item}", "cart_empty": "Ihr Warenkorb ist leer. Fügen Sie Produkte über das Bestellformular hinzu.", "remove": "Entfernen", "decrease": "Menge verringern", "increase": "Menge erhöhen", "empty_confirm": "Alle Artikel aus dem Warenkorb entfernen?", "totals": "{items} Produkte · {packs} Packungen · {pieces} Stück", "retail": "Einzelkauf", "wholesale": "Großhandel", "pcs": "Stück"}, "msg": {"greet": "Guten Tag Velora Apparel,", "intro": "ich möchte folgende Bestellung aufgeben:", "qty": "Menge: {qty} × {pack}er-Pack ({pieces} Stück)", "total": "Gesamt: {items} Produkte · {packs} Packungen · {pieces} Stück", "type": "Bestellart", "name": "Name", "city": "Stadt / PLZ", "close": "Bitte bestätigen Sie Preis, Verfügbarkeit und Lieferzeit.", "thanks": "Vielen Dank."}, "products": [{"id": "kitchen", "name": "Küchentücher & Geschirrtücher", "materials": ["cotton", "terry", "waffle"], "sizes": ["40 × 40 cm", "40 × 60 cm", "50 × 70 cm"], "colours": ["white", "grey", "beige", "red-check", "blue-check", "green"], "packs": [3, 6, 12]}, {"id": "car", "name": "Mikrofaser-Autoputztücher", "materials": ["microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm", "40 × 60 cm"], "colours": ["blue", "grey", "yellow", "green", "red", "orange"], "packs": [3, 6, 12]}, {"id": "office", "name": "Bürotücher & Bildschirmtücher", "materials": ["cotton", "microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["white", "grey", "navy", "black", "sky"], "packs": [3, 6, 12]}, {"id": "multi", "name": "Mehrzweck-Reinigungstücher", "materials": ["microfiber", "cotton"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["assorted", "blue", "yellow", "pink", "green"], "packs": [3, 6, 12]}], "materials": {"cotton": "Baumwolle", "terry": "Frottee-Baumwolle", "waffle": "Waffelpiqué", "microfiber": "Mikrofaser"}, "colours": {"white": "Weiß", "grey": "Grau", "beige": "Beige", "red-check": "Rot kariert", "blue-check": "Blau kariert", "green": "Grün", "blue": "Blau", "yellow": "Gelb", "red": "Rot", "orange": "Orange", "navy": "Marineblau", "black": "Schwarz", "sky": "Hellblau", "pink": "Rosa", "assorted": "Farbmix"}}</script>
+  <script type="application/json" id="catalog">{"lang": "de", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "qty_max": 9999, "cart_max": 30}, "ui": {"pack_of": "{n}er-Pack", "add": "In den Warenkorb", "added": "Zum Warenkorb hinzugefügt: {item}", "cart_empty": "Ihr Warenkorb ist leer. Fügen Sie Produkte über das Bestellformular hinzu.", "remove": "Entfernen", "decrease": "Menge verringern", "increase": "Menge erhöhen", "empty_confirm": "Alle Artikel aus dem Warenkorb entfernen?", "totals": "{items} Produkte · {packs} Packungen · {pieces} Stück", "retail": "Einzelkauf", "wholesale": "Großhandel", "pcs": "Stück", "err_name_required": "Bitte geben Sie Ihren Namen ein.", "err_name_invalid": "Nur Buchstaben, Leerzeichen, Punkt, Apostroph oder Bindestrich (2–60 Zeichen). Ziffern, Links und Sonderzeichen sind nicht erlaubt.", "err_city_required": "Bitte geben Sie Ihre Stadt oder Postleitzahl ein.", "err_city_invalid": "Nur Buchstaben, Ziffern, Leerzeichen, Komma, Punkt, Bindestrich oder Schrägstrich (2–80 Zeichen). Links und Telefonnummern sind nicht erlaubt.", "err_cart_full": "Ihr Warenkorb kann bis zu {max} verschiedene Produkte enthalten. Senden Sie zuerst diese Bestellung und beginnen Sie dann eine neue.", "err_fix": "Bitte korrigieren Sie die markierten Felder.", "err_item": "Diese Auswahl ist nicht verfügbar. Bitte wählen Sie erneut."}, "msg": {"greet": "Guten Tag Velora Apparel,", "intro": "ich möchte folgende Bestellung aufgeben:", "qty": "Menge: {qty} × {pack}er-Pack ({pieces} Stück)", "total": "Gesamt: {items} Produkte · {packs} Packungen · {pieces} Stück", "type": "Bestellart", "name": "Name", "city": "Stadt / PLZ", "close": "Bitte bestätigen Sie Preis, Verfügbarkeit und Lieferzeit.", "thanks": "Vielen Dank."}, "products": [{"id": "kitchen", "name": "Küchentücher \u0026 Geschirrtücher", "materials": ["cotton", "terry", "waffle"], "sizes": ["40 × 40 cm", "40 × 60 cm", "50 × 70 cm"], "colours": ["white", "grey", "beige", "red-check", "blue-check", "green"], "packs": [3, 6, 12]}, {"id": "car", "name": "Mikrofaser-Autoputztücher", "materials": ["microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm", "40 × 60 cm"], "colours": ["blue", "grey", "yellow", "green", "red", "orange"], "packs": [3, 6, 12]}, {"id": "office", "name": "Bürotücher \u0026 Bildschirmtücher", "materials": ["cotton", "microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["white", "grey", "navy", "black", "sky"], "packs": [3, 6, 12]}, {"id": "multi", "name": "Mehrzweck-Reinigungstücher", "materials": ["microfiber", "cotton"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["assorted", "blue", "yellow", "pink", "green"], "packs": [3, 6, 12]}], "materials": {"cotton": "Baumwolle", "terry": "Frottee-Baumwolle", "waffle": "Waffelpiqué", "microfiber": "Mikrofaser"}, "colours": {"white": "Weiß", "grey": "Grau", "beige": "Beige", "red-check": "Rot kariert", "blue-check": "Blau kariert", "green": "Grün", "blue": "Blau", "yellow": "Gelb", "red": "Rot", "orange": "Orange", "navy": "Marineblau", "black": "Schwarz", "sky": "Hellblau", "pink": "Rosa", "assorted": "Farbmix"}}</script>
   <script src="/assets/js/cart.js" defer></script>
 </body>
 </html>

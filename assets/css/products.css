@@ -778,3 +778,26 @@
     padding: 44px 0;
   }
 }
+
+.pp-error {
+  color: var(--red);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.pp-error-summary {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--red-soft);
+}
+
+.pp-cart input[aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+
+.pp-send:disabled {
+  opacity: .6;
+  cursor: wait;
+}
