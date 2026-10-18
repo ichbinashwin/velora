@@ -1,0 +1,1172 @@
+{
+  "_readme": "Single source for the Products page in all languages. Edit, then run: python3 tools/products/build.py. Sizes, colours and packs are a DRAFT range: confirm against real production before deploying.",
+  "whatsapp": "917990965209",
+  "phone": "+91 79909 65209",
+  "email": "rajani.parmar.tailor@gmail.com",
+  "languages": [
+    "en",
+    "gu",
+    "hi",
+    "de"
+  ],
+  "channels": [
+    {
+      "id": "meesho",
+      "name": "Meesho",
+      "hex": "F43397",
+      "letter": "M"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "hex": "FF9900",
+      "icon": "amazon"
+    },
+    {
+      "id": "flipkart",
+      "name": "Flipkart",
+      "hex": "2874F0",
+      "icon": "flipkart"
+    },
+    {
+      "id": "jiomart",
+      "name": "JioMart",
+      "hex": "0078AD",
+      "letter": "J"
+    },
+    {
+      "id": "indiamart",
+      "name": "IndiaMART",
+      "hex": "2E3192",
+      "letter": "IM"
+    }
+  ],
+  "materials": {
+    "cotton": {
+      "name": {
+        "en": "Cotton",
+        "gu": "કોટન",
+        "hi": "कॉटन",
+        "de": "Baumwolle"
+      },
+      "guide": {
+        "en": "Soft, natural and absorbent. Best for kitchens, covering food and pantries.",
+        "gu": "નરમ, કુદરતી અને શોષક. રસોડું, ખોરાક ઢાંકવા અને પેન્ટ્રી માટે શ્રેષ્ઠ.",
+        "hi": "मुलायम, प्राकृतिक और सोखने वाला। रसोई, खाना ढकने और पैंट्री के लिए सबसे अच्छा।",
+        "de": "Weich, natürlich und saugfähig. Ideal für Küche, zum Abdecken von Speisen und für Teeküchen."
+      }
+    },
+    "terry": {
+      "name": {
+        "en": "Terry cotton",
+        "gu": "ટેરી કોટન",
+        "hi": "टेरी कॉटन",
+        "de": "Frottee-Baumwolle"
+      },
+      "guide": {
+        "en": "Looped pile that is very absorbent. Best for drying dishes and hands.",
+        "gu": "લૂપવાળું, ખૂબ શોષક કાપડ. વાસણ અને હાથ સૂકવવા માટે શ્રેષ્ઠ.",
+        "hi": "लूप वाला, बहुत सोखने वाला कपड़ा। बर्तन और हाथ सुखाने के लिए सबसे अच्छा।",
+        "de": "Schlingenware, sehr saugfähig. Ideal zum Abtrocknen von Geschirr und Händen."
+      }
+    },
+    "waffle": {
+      "name": {
+        "en": "Waffle cotton",
+        "gu": "વૅફલ કોટન",
+        "hi": "वफ़ल कॉटन",
+        "de": "Waffelpiqué"
+      },
+      "guide": {
+        "en": "Light textured weave that dries quickly. Best for everyday kitchen use.",
+        "gu": "હલકું ટેક્સચર વણાટ, ઝડપથી સુકાય છે. રોજિંદા રસોડાના ઉપયોગ માટે શ્રેષ્ઠ.",
+        "hi": "हल्की टेक्सचर्ड बुनाई, जल्दी सूखती है। रोज़ रसोई के उपयोग के लिए सबसे अच्छा।",
+        "de": "Leichte Strukturware, trocknet schnell. Ideal für den täglichen Küchengebrauch."
+      }
+    },
+    "microfiber": {
+      "name": {
+        "en": "Microfiber",
+        "gu": "માઇક્રોફાઇબર",
+        "hi": "माइक्रोफाइबर",
+        "de": "Mikrofaser"
+      },
+      "guide": {
+        "en": "Very fine fibres that trap dust and leave no lint. Best for cars, glass, screens and dusting.",
+        "gu": "ખૂબ ઝીણા રેસા જે ધૂળ પકડે છે અને રેસા છોડતા નથી. કાર, કાચ, સ્ક્રીન અને ડસ્ટિંગ માટે શ્રેષ્ઠ.",
+        "hi": "बहुत बारीक रेशे जो धूल पकड़ते हैं और रेशे नहीं छोड़ते। कार, शीशा, स्क्रीन और डस्टिंग के लिए सबसे अच्छा।",
+        "de": "Sehr feine Fasern, die Staub binden und nicht fusseln. Ideal für Auto, Glas, Bildschirme und Staubwischen."
+      }
+    }
+  },
+  "colours": {
+    "white": {
+      "hex": "#ffffff",
+      "name": {
+        "en": "White",
+        "gu": "સફેદ",
+        "hi": "सफ़ेद",
+        "de": "Weiß"
+      }
+    },
+    "grey": {
+      "hex": "#9ca3af",
+      "name": {
+        "en": "Grey",
+        "gu": "ગ્રે",
+        "hi": "ग्रे",
+        "de": "Grau"
+      }
+    },
+    "beige": {
+      "hex": "#d9c7a7",
+      "name": {
+        "en": "Beige",
+        "gu": "બેજ",
+        "hi": "बेज",
+        "de": "Beige"
+      }
+    },
+    "red-check": {
+      "hex": "#c0392b",
+      "check": true,
+      "name": {
+        "en": "Red check",
+        "gu": "લાલ ચેક",
+        "hi": "लाल चेक",
+        "de": "Rot kariert"
+      }
+    },
+    "blue-check": {
+      "hex": "#2f5d9e",
+      "check": true,
+      "name": {
+        "en": "Blue check",
+        "gu": "બ્લુ ચેક",
+        "hi": "नीला चेक",
+        "de": "Blau kariert"
+      }
+    },
+    "green": {
+      "hex": "#2e8b57",
+      "name": {
+        "en": "Green",
+        "gu": "લીલો",
+        "hi": "हरा",
+        "de": "Grün"
+      }
+    },
+    "blue": {
+      "hex": "#2563eb",
+      "name": {
+        "en": "Blue",
+        "gu": "બ્લુ",
+        "hi": "नीला",
+        "de": "Blau"
+      }
+    },
+    "yellow": {
+      "hex": "#f4c430",
+      "name": {
+        "en": "Yellow",
+        "gu": "પીળો",
+        "hi": "पीला",
+        "de": "Gelb"
+      }
+    },
+    "red": {
+      "hex": "#d0342c",
+      "name": {
+        "en": "Red",
+        "gu": "લાલ",
+        "hi": "लाल",
+        "de": "Rot"
+      }
+    },
+    "orange": {
+      "hex": "#f28c28",
+      "name": {
+        "en": "Orange",
+        "gu": "નારંગી",
+        "hi": "नारंगी",
+        "de": "Orange"
+      }
+    },
+    "navy": {
+      "hex": "#1f3a68",
+      "name": {
+        "en": "Navy",
+        "gu": "નેવી બ્લુ",
+        "hi": "नेवी ब्लू",
+        "de": "Marineblau"
+      }
+    },
+    "black": {
+      "hex": "#222222",
+      "name": {
+        "en": "Black",
+        "gu": "કાળો",
+        "hi": "काला",
+        "de": "Schwarz"
+      }
+    },
+    "sky": {
+      "hex": "#7fb8e6",
+      "name": {
+        "en": "Sky blue",
+        "gu": "આકાશી",
+        "hi": "आसमानी",
+        "de": "Hellblau"
+      }
+    },
+    "pink": {
+      "hex": "#e57fa6",
+      "name": {
+        "en": "Pink",
+        "gu": "ગુલાબી",
+        "hi": "गुलाबी",
+        "de": "Rosa"
+      }
+    },
+    "assorted": {
+      "hex": "assorted",
+      "name": {
+        "en": "Assorted colours",
+        "gu": "મિશ્ર રંગો",
+        "hi": "मिश्रित रंग",
+        "de": "Farbmix"
+      }
+    }
+  },
+  "products": [
+    {
+      "id": "kitchen",
+      "icon": "kitchen",
+      "name": {
+        "en": "Kitchen Napkins & Towels",
+        "gu": "કિચન નેપકિન અને ટુવાલ",
+        "hi": "किचन नैपकिन और टॉवल",
+        "de": "Küchentücher & Geschirrtücher"
+      },
+      "desc": {
+        "en": "For drying dishes, wiping hands, covering rotis and cleaning counters.",
+        "gu": "વાસણ સૂકવવા, હાથ લૂછવા, રોટલી ઢાંકવા અને કાઉન્ટર સાફ કરવા માટે.",
+        "hi": "बर्तन सुखाने, हाथ पोंछने, रोटी ढकने और काउंटर साफ़ करने के लिए।",
+        "de": "Zum Abtrocknen von Geschirr, für die Hände, zum Abdecken von Brot und für die Arbeitsfläche."
+      },
+      "materials": [
+        "cotton",
+        "terry",
+        "waffle"
+      ],
+      "sizes": [
+        "40 × 40 cm",
+        "40 × 60 cm",
+        "50 × 70 cm"
+      ],
+      "colours": [
+        "white",
+        "grey",
+        "beige",
+        "red-check",
+        "blue-check",
+        "green"
+      ],
+      "packs": [
+        3,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "car",
+      "icon": "car",
+      "name": {
+        "en": "Microfiber Car Cleaning Cloths",
+        "gu": "માઇક્રોફાઇબર કાર ક્લીનિંગ કાપડ",
+        "hi": "माइक्रोफाइबर कार क्लीनिंग कपड़ा",
+        "de": "Mikrofaser-Autoputztücher"
+      },
+      "desc": {
+        "en": "Lint-free cloths for the car body, windows, dashboard and bikes.",
+        "gu": "કારની બોડી, કાચ, ડેશબોર્ડ અને બાઇક માટે રેસા ન છોડતું કાપડ.",
+        "hi": "कार बॉडी, शीशे, डैशबोर्ड और बाइक के लिए रेशे न छोड़ने वाला कपड़ा।",
+        "de": "Fusselfreie Tücher für Karosserie, Scheiben, Armaturenbrett und Zweiräder."
+      },
+      "materials": [
+        "microfiber"
+      ],
+      "sizes": [
+        "30 × 30 cm",
+        "40 × 40 cm",
+        "40 × 60 cm"
+      ],
+      "colours": [
+        "blue",
+        "grey",
+        "yellow",
+        "green",
+        "red",
+        "orange"
+      ],
+      "packs": [
+        3,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "office",
+      "icon": "office",
+      "name": {
+        "en": "Office Napkins & Desk Cloths",
+        "gu": "ઓફિસ નેપકિન અને ડેસ્ક કાપડ",
+        "hi": "ऑफिस नैपकिन और डेस्क कपड़ा",
+        "de": "Bürotücher & Bildschirmtücher"
+      },
+      "desc": {
+        "en": "Pantry napkins and microfiber cloths for desks, screens and glasses.",
+        "gu": "પેન્ટ્રી નેપકિન અને ડેસ્ક, સ્ક્રીન તથા ચશ્મા માટે માઇક્રોફાઇબર કાપડ.",
+        "hi": "पैंट्री नैपकिन और डेस्क, स्क्रीन व चश्मे के लिए माइक्रोफाइबर कपड़ा।",
+        "de": "Tücher für die Teeküche und Mikrofasertücher für Schreibtisch, Bildschirm und Brille."
+      },
+      "materials": [
+        "cotton",
+        "microfiber"
+      ],
+      "sizes": [
+        "30 × 30 cm",
+        "40 × 40 cm"
+      ],
+      "colours": [
+        "white",
+        "grey",
+        "navy",
+        "black",
+        "sky"
+      ],
+      "packs": [
+        3,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "multi",
+      "icon": "multi",
+      "name": {
+        "en": "Multipurpose Cleaning Cloths",
+        "gu": "મલ્ટીપર્પઝ સફાઈ કાપડ",
+        "hi": "मल्टीपर्पज़ सफ़ाई कपड़ा",
+        "de": "Mehrzweck-Reinigungstücher"
+      },
+      "desc": {
+        "en": "Everyday dusters for home, windows, bathrooms and shops.",
+        "gu": "ઘર, બારી, બાથરૂમ અને દુકાન માટે રોજિંદા ડસ્ટર.",
+        "hi": "घर, खिड़की, बाथरूम और दुकान के लिए रोज़मर्रा के डस्टर।",
+        "de": "Alltagstücher für Haushalt, Fenster, Bad und Geschäft."
+      },
+      "materials": [
+        "microfiber",
+        "cotton"
+      ],
+      "sizes": [
+        "30 × 30 cm",
+        "40 × 40 cm"
+      ],
+      "colours": [
+        "assorted",
+        "blue",
+        "yellow",
+        "pink",
+        "green"
+      ],
+      "packs": [
+        3,
+        6,
+        12
+      ]
+    }
+  ],
+  "ui": {
+    "en": {
+      "home": "/",
+      "lang_name": "English",
+      "title": "Napkins, Cleaning Cloths & Tailoring | Velora Apparel",
+      "description": "Kitchen napkins, microfiber and cleaning cloths, plus tailoring for ladies, gents and kids, by Velora Apparel, Gujarat. Order or enquire on WhatsApp.",
+      "eyebrow": "Velora Apparel · Made in Gujarat, India",
+      "h1": "Napkins, Cleaning Cloths & Tailoring",
+      "lead": "Kitchen napkins, microfiber car cloths, office napkins and multipurpose cleaning cloths in cotton, terry, waffle and microfiber. Choose your products below, add them to the cart and send your order on WhatsApp. We also stitch new clothes for ladies, gents and kids.",
+      "trust": [
+        "Direct from the manufacturer",
+        "Retail and wholesale",
+        "Custom sizes for bulk orders"
+      ],
+      "nav_home": "Home",
+      "nav_ladies": "Ladies Wear",
+      "nav_products": "Products",
+      "nav_contact": "Contact",
+      "nav_cart": "Cart",
+      "channels_h": "Where to buy",
+      "whatsapp": "WhatsApp",
+      "available": "Order now",
+      "soon": "Coming soon",
+      "products_h": "Our products",
+      "choose": "Select",
+      "l_materials": "Materials",
+      "l_sizes": "Sizes",
+      "l_colours": "Colours",
+      "l_packs": "Packs",
+      "pcs": "pcs",
+      "form_h": "Order form",
+      "f_product": "Product",
+      "f_material": "Material",
+      "f_size": "Size",
+      "f_colour": "Colour",
+      "f_pack": "Pack",
+      "f_qty": "Quantity (packs)",
+      "pack_of": "Pack of {n}",
+      "add": "Add to cart",
+      "added": "Added to cart: {item}",
+      "cart_h": "Your cart",
+      "cart_empty": "Your cart is empty. Use the order form to add products.",
+      "remove": "Remove",
+      "decrease": "Decrease quantity",
+      "increase": "Increase quantity",
+      "empty_cart": "Empty cart",
+      "empty_confirm": "Remove all items from your cart?",
+      "totals": "{items} products · {packs} packs · {pieces} pieces",
+      "name": "Your name",
+      "city": "City / PIN code",
+      "type": "Order type",
+      "retail": "Retail",
+      "wholesale": "Wholesale",
+      "preview": "Preview message",
+      "send": "Send order on WhatsApp",
+      "send_note": "WhatsApp opens with your order ready. It is sent only when you press send in WhatsApp.",
+      "guide_h": "Which material should I choose?",
+      "th_material": "Material",
+      "th_best": "Best for",
+      "faq_h": "Questions and answers",
+      "faq": [
+        [
+          "How do I place an order?",
+          "Choose the product, material, size, colour, pack and quantity in the order form and add it to your cart. Repeat for more items, then send the cart on WhatsApp. Velora Apparel replies with the price, availability and delivery time."
+        ],
+        [
+          "Do you sell wholesale?",
+          "Yes. Shops, distributors, hotels, restaurants, offices and car accessory stores can order in bulk. Select Wholesale as the order type in the cart."
+        ],
+        [
+          "Can I get custom sizes, colours or my own brand packaging?",
+          "Yes, for bulk orders on request. Mention your requirement in the WhatsApp message."
+        ],
+        [
+          "Do you deliver across India?",
+          "Enter your city or PIN code in the cart. Velora Apparel will confirm delivery options and charges."
+        ],
+        [
+          "Do you stitch clothes to my measurements?",
+          "Yes. Velora Apparel stitches new clothes for ladies, gents and kids. Send a tailoring enquiry with the garment, quantity and the date you need it by; we reply with the stitching charges and delivery time."
+        ],
+        [
+          "Are you on Meesho, Amazon or Flipkart?",
+          "Listings on Meesho, Amazon, Flipkart, JioMart and IndiaMART are coming soon. You can order directly on WhatsApp today."
+        ]
+      ],
+      "footer": "Kitchen napkins and cleaning cloths, made by Velora Apparel in Alindra, Gujarat, India.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "breadcrumb_home": "Home",
+      "msg": {
+        "greet": "Hello Velora Apparel,",
+        "intro": "Please note my order:",
+        "qty": "Qty: {qty} × pack of {pack} ({pieces} pcs)",
+        "total": "Total: {items} products · {packs} packs · {pieces} pieces",
+        "type": "Order type",
+        "name": "Name",
+        "city": "City / PIN",
+        "close": "Kindly confirm the price, availability and delivery time.",
+        "thanks": "Thank you."
+      },
+      "err_name_required": "Please enter your name.",
+      "err_name_invalid": "Use letters, spaces, dot, apostrophe or hyphen only (2–60 characters). Numbers, links and symbols are not allowed.",
+      "err_city_required": "Please enter your city or PIN code.",
+      "err_city_invalid": "Use letters, numbers, spaces, comma, dot, hyphen or slash only (2–80 characters). Links and phone numbers are not allowed.",
+      "err_cart_full": "Your cart can hold up to {max} different products. Send this order first, then start a new one.",
+      "err_fix": "Please correct the highlighted fields.",
+      "err_item": "This selection is not available. Please choose again.",
+      "nav_tailoring": "Tailoring",
+      "t_eyebrow": "Tailoring service",
+      "t_h2": "Tailoring for ladies, gents and kids",
+      "t_lead": "New clothes stitched to your measurements by Velora Apparel. Fill in the details and send your enquiry on WhatsApp; we reply with the stitching charges and delivery time.",
+      "t_points": [
+        "Stitched to your measurements",
+        "Ladies, gents and kids",
+        "Single pieces or bulk orders"
+      ],
+      "t_form_h": "Tailoring enquiry",
+      "t_for": "Clothes for",
+      "t_garment": "Garment",
+      "t_qty": "Quantity (pieces)",
+      "t_fabric": "Fabric",
+      "t_measure": "Measurements",
+      "t_date": "Required by (optional)",
+      "t_notes": "Design notes (optional)",
+      "t_notes_ph": "Style, neck design, sleeves, colour…",
+      "t_send": "Send enquiry on WhatsApp",
+      "err_notes_invalid": "Use letters, numbers and simple punctuation only (max 300 characters). Links and phone numbers are not allowed.",
+      "err_date": "Choose a date between today and one year from now.",
+      "err_tqty": "Enter a quantity from 1 to 999.",
+      "tmsg": {
+        "intro": "I would like a quote for tailoring:",
+        "category": "Clothes for",
+        "garment": "Garment",
+        "qty": "Quantity",
+        "fabric": "Fabric",
+        "measure": "Measurements",
+        "date": "Required by",
+        "notes": "Notes",
+        "close": "Kindly share the stitching charges and delivery time."
+      },
+      "t_send_note": "WhatsApp opens with your enquiry ready. It is sent only when you press send in WhatsApp."
+    },
+    "gu": {
+      "home": "/gu/",
+      "lang_name": "ગુજરાતી",
+      "title": "નેપકિન, સફાઈ કાપડ અને સિલાઈ કામ | Velora Apparel",
+      "description": "Velora Apparel, ગુજરાતના કિચન નેપકિન, માઇક્રોફાઇબર અને સફાઈ કાપડ, તેમજ લેડીઝ, જેન્ટ્સ અને કિડ્સ માટે સિલાઈ કામ. WhatsApp પર ઓર્ડર અથવા પૂછપરછ કરો.",
+      "eyebrow": "Velora Apparel · ગુજરાત, ભારતમાં બનાવેલ",
+      "h1": "નેપકિન, સફાઈ કાપડ અને સિલાઈ",
+      "lead": "કોટન, ટેરી, વૅફલ અને માઇક્રોફાઇબરમાં કિચન નેપકિન, કાર માટે માઇક્રોફાઇબર કાપડ, ઓફિસ નેપકિન અને મલ્ટીપર્પઝ સફાઈ કાપડ. નીચે ઉત્પાદનો પસંદ કરો, કાર્ટમાં ઉમેરો અને WhatsApp પર ઓર્ડર મોકલો. અમે લેડીઝ, જેન્ટ્સ અને કિડ્સ માટે નવા કપડાં પણ સીવીએ છીએ.",
+      "trust": [
+        "સીધા ઉત્પાદક પાસેથી",
+        "છૂટક અને જથ્થાબંધ",
+        "જથ્થાબંધ ઓર્ડર માટે કસ્ટમ સાઇઝ"
+      ],
+      "nav_home": "હોમ",
+      "nav_ladies": "લેડીઝ વેર",
+      "nav_products": "ઉત્પાદનો",
+      "nav_contact": "સંપર્ક",
+      "nav_cart": "કાર્ટ",
+      "channels_h": "ક્યાંથી ખરીદવું",
+      "whatsapp": "WhatsApp",
+      "available": "હમણાં ઓર્ડર કરો",
+      "soon": "ટૂંક સમયમાં",
+      "products_h": "અમારા ઉત્પાદનો",
+      "choose": "પસંદ કરો",
+      "l_materials": "મટીરિયલ",
+      "l_sizes": "સાઇઝ",
+      "l_colours": "રંગો",
+      "l_packs": "પેક",
+      "pcs": "નંગ",
+      "form_h": "ઓર્ડર ફોર્મ",
+      "f_product": "ઉત્પાદન",
+      "f_material": "મટીરિયલ",
+      "f_size": "સાઇઝ",
+      "f_colour": "રંગ",
+      "f_pack": "પેક",
+      "f_qty": "જથ્થો (પેક)",
+      "pack_of": "{n} નું પેક",
+      "add": "કાર્ટમાં ઉમેરો",
+      "added": "કાર્ટમાં ઉમેર્યું: {item}",
+      "cart_h": "તમારું કાર્ટ",
+      "cart_empty": "તમારું કાર્ટ ખાલી છે. ઉત્પાદનો ઉમેરવા ઓર્ડર ફોર્મનો ઉપયોગ કરો.",
+      "remove": "દૂર કરો",
+      "decrease": "જથ્થો ઘટાડો",
+      "increase": "જથ્થો વધારો",
+      "empty_cart": "કાર્ટ ખાલી કરો",
+      "empty_confirm": "કાર્ટમાંથી બધી વસ્તુઓ દૂર કરવી છે?",
+      "totals": "{items} ઉત્પાદનો · {packs} પેક · {pieces} નંગ",
+      "name": "તમારું નામ",
+      "city": "શહેર / પિન કોડ",
+      "type": "ઓર્ડર પ્રકાર",
+      "retail": "છૂટક",
+      "wholesale": "જથ્થાબંધ",
+      "preview": "મેસેજ જુઓ",
+      "send": "WhatsApp પર ઓર્ડર મોકલો",
+      "send_note": "WhatsApp તમારા ઓર્ડર સાથે ખુલશે. તમે WhatsApp માં મોકલો દબાવો ત્યારે જ તે મોકલાશે.",
+      "guide_h": "કયું મટીરિયલ પસંદ કરવું?",
+      "th_material": "મટીરિયલ",
+      "th_best": "શેના માટે શ્રેષ્ઠ",
+      "faq_h": "પ્રશ્નો અને જવાબો",
+      "faq": [
+        [
+          "ઓર્ડર કેવી રીતે આપવો?",
+          "ઓર્ડર ફોર્મમાં ઉત્પાદન, મટીરિયલ, સાઇઝ, રંગ, પેક અને જથ્થો પસંદ કરી કાર્ટમાં ઉમેરો. વધુ વસ્તુઓ માટે ફરી કરો, પછી કાર્ટ WhatsApp પર મોકલો. Velora Apparel કિંમત, ઉપલબ્ધતા અને ડિલિવરી સમય જણાવશે."
+        ],
+        [
+          "શું તમે જથ્થાબંધ વેચાણ કરો છો?",
+          "હા. દુકાનો, વિતરકો, હોટેલ, રેસ્ટોરન્ટ, ઓફિસ અને કાર એક્સેસરી સ્ટોર જથ્થાબંધ ઓર્ડર આપી શકે છે. કાર્ટમાં ઓર્ડર પ્રકાર તરીકે જથ્થાબંધ પસંદ કરો."
+        ],
+        [
+          "શું કસ્ટમ સાઇઝ, રંગ અથવા મારી બ્રાન્ડનું પેકેજિંગ મળી શકે?",
+          "હા, જથ્થાબંધ ઓર્ડર માટે વિનંતી પર. WhatsApp મેસેજમાં તમારી જરૂરિયાત લખો."
+        ],
+        [
+          "શું તમે આખા ભારતમાં ડિલિવરી કરો છો?",
+          "કાર્ટમાં તમારું શહેર અથવા પિન કોડ લખો. Velora Apparel ડિલિવરીના વિકલ્પો અને ચાર્જની પુષ્ટિ કરશે."
+        ],
+        [
+          "શું તમે મારા માપ મુજબ કપડાં સીવો છો?",
+          "હા. Velora Apparel લેડીઝ, જેન્ટ્સ અને કિડ્સ માટે નવા કપડાં સીવે છે. કપડાંનો પ્રકાર, જથ્થો અને જરૂરી તારીખ સાથે સિલાઈ પૂછપરછ મોકલો; અમે સિલાઈ ચાર્જ અને ડિલિવરી સમય જણાવીશું."
+        ],
+        [
+          "શું તમે Meesho, Amazon અથવા Flipkart પર છો?",
+          "Meesho, Amazon, Flipkart, JioMart અને IndiaMART પર લિસ્ટિંગ ટૂંક સમયમાં આવશે. આજે જ WhatsApp પર સીધો ઓર્ડર આપી શકો છો."
+        ]
+      ],
+      "footer": "કિચન નેપકિન અને સફાઈ કાપડ, Velora Apparel દ્વારા અલિન્દ્રા, ગુજરાત, ભારતમાં બનાવેલ.",
+      "privacy": "ગોપનીયતા નીતિ",
+      "terms": "ઉપયોગની શરતો",
+      "breadcrumb_home": "હોમ",
+      "msg": {
+        "greet": "નમસ્તે Velora Apparel,",
+        "intro": "કૃપા કરીને મારો ઓર્ડર નોંધો:",
+        "qty": "જથ્થો: {qty} × {pack} નું પેક ({pieces} નંગ)",
+        "total": "કુલ: {items} ઉત્પાદનો · {packs} પેક · {pieces} નંગ",
+        "type": "ઓર્ડર પ્રકાર",
+        "name": "નામ",
+        "city": "શહેર / પિન",
+        "close": "કૃપા કરીને કિંમત, ઉપલબ્ધતા અને ડિલિવરી સમયની પુષ્ટિ કરશો.",
+        "thanks": "આભાર."
+      },
+      "err_name_required": "કૃપા કરીને તમારું નામ લખો.",
+      "err_name_invalid": "ફક્ત અક્ષરો, જગ્યા, બિંદુ, એપોસ્ટ્રોફી અથવા હાઇફન વાપરો (2–60 અક્ષર). આંકડા, લિંક અને ચિહ્નોની મંજૂરી નથી.",
+      "err_city_required": "કૃપા કરીને તમારું શહેર અથવા પિન કોડ લખો.",
+      "err_city_invalid": "ફક્ત અક્ષરો, આંકડા, જગ્યા, અલ્પવિરામ, બિંદુ, હાઇફન અથવા સ્લેશ વાપરો (2–80 અક્ષર). લિંક અને ફોન નંબરની મંજૂરી નથી.",
+      "err_cart_full": "કાર્ટમાં વધુમાં વધુ {max} અલગ ઉત્પાદનો રાખી શકાય. પહેલાં આ ઓર્ડર મોકલો, પછી નવો શરૂ કરો.",
+      "err_fix": "કૃપા કરીને દર્શાવેલ ફીલ્ડ સુધારો.",
+      "err_item": "આ પસંદગી ઉપલબ્ધ નથી. કૃપા કરીને ફરી પસંદ કરો.",
+      "nav_tailoring": "સિલાઈ",
+      "t_eyebrow": "સિલાઈ સેવા",
+      "t_h2": "લેડીઝ, જેન્ટ્સ અને કિડ્સ માટે સિલાઈ કામ",
+      "t_lead": "Velora Apparel દ્વારા તમારા માપ મુજબ નવા કપડાંની સિલાઈ. વિગતો ભરો અને WhatsApp પર પૂછપરછ મોકલો; અમે સિલાઈ ચાર્જ અને ડિલિવરી સમય જણાવીશું.",
+      "t_points": [
+        "તમારા માપ મુજબ સિલાઈ",
+        "લેડીઝ, જેન્ટ્સ અને કિડ્સ",
+        "એક નંગ અથવા જથ્થાબંધ"
+      ],
+      "t_form_h": "સિલાઈ પૂછપરછ",
+      "t_for": "કોના માટે",
+      "t_garment": "કપડાંનો પ્રકાર",
+      "t_qty": "જથ્થો (નંગ)",
+      "t_fabric": "કાપડ",
+      "t_measure": "માપ",
+      "t_date": "ક્યારે જોઈએ (વૈકલ્પિક)",
+      "t_notes": "ડિઝાઇન નોંધ (વૈકલ્પિક)",
+      "t_notes_ph": "સ્ટાઇલ, ગળાની ડિઝાઇન, બાંય, રંગ…",
+      "t_send": "WhatsApp પર પૂછપરછ મોકલો",
+      "err_notes_invalid": "ફક્ત અક્ષરો, આંકડા અને સામાન્ય વિરામચિહ્નો વાપરો (વધુમાં વધુ 300 અક્ષર). લિંક અને ફોન નંબરની મંજૂરી નથી.",
+      "err_date": "આજથી એક વર્ષ સુધીની તારીખ પસંદ કરો.",
+      "err_tqty": "1 થી 999 વચ્ચેનો જથ્થો લખો.",
+      "tmsg": {
+        "intro": "કૃપા કરીને સિલાઈ માટે ભાવ જણાવો:",
+        "category": "કોના માટે",
+        "garment": "કપડાંનો પ્રકાર",
+        "qty": "જથ્થો",
+        "fabric": "કાપડ",
+        "measure": "માપ",
+        "date": "ક્યારે જોઈએ",
+        "notes": "નોંધ",
+        "close": "કૃપા કરીને સિલાઈ ચાર્જ અને ડિલિવરી સમય જણાવશો."
+      },
+      "t_send_note": "WhatsApp તમારી પૂછપરછ સાથે ખુલશે. તમે WhatsApp માં મોકલો દબાવો ત્યારે જ તે મોકલાશે."
+    },
+    "hi": {
+      "home": "/hi/",
+      "lang_name": "हिन्दी",
+      "title": "नैपकिन, सफ़ाई कपड़े और सिलाई | Velora Apparel",
+      "description": "Velora Apparel, गुजरात के किचन नैपकिन, माइक्रोफाइबर और सफ़ाई कपड़े, साथ ही लेडीज़, जेंट्स और किड्स के लिए सिलाई। WhatsApp पर ऑर्डर या पूछताछ करें।",
+      "eyebrow": "Velora Apparel · गुजरात, भारत में निर्मित",
+      "h1": "नैपकिन, सफ़ाई के कपड़े और सिलाई",
+      "lead": "कॉटन, टेरी, वफ़ल और माइक्रोफाइबर में किचन नैपकिन, कार के लिए माइक्रोफाइबर कपड़ा, ऑफिस नैपकिन और मल्टीपर्पज़ सफ़ाई कपड़े। नीचे उत्पाद चुनें, कार्ट में जोड़ें और WhatsApp पर ऑर्डर भेजें। हम लेडीज़, जेंट्स और किड्स के लिए नए कपड़े भी सिलते हैं।",
+      "trust": [
+        "सीधे निर्माता से",
+        "रिटेल और थोक",
+        "थोक ऑर्डर के लिए कस्टम साइज़"
+      ],
+      "nav_home": "होम",
+      "nav_ladies": "लेडीज़ वियर",
+      "nav_products": "उत्पाद",
+      "nav_contact": "संपर्क",
+      "nav_cart": "कार्ट",
+      "channels_h": "कहाँ से खरीदें",
+      "whatsapp": "WhatsApp",
+      "available": "अभी ऑर्डर करें",
+      "soon": "जल्द आ रहा है",
+      "products_h": "हमारे उत्पाद",
+      "choose": "चुनें",
+      "l_materials": "मटीरियल",
+      "l_sizes": "साइज़",
+      "l_colours": "रंग",
+      "l_packs": "पैक",
+      "pcs": "पीस",
+      "form_h": "ऑर्डर फ़ॉर्म",
+      "f_product": "उत्पाद",
+      "f_material": "मटीरियल",
+      "f_size": "साइज़",
+      "f_colour": "रंग",
+      "f_pack": "पैक",
+      "f_qty": "मात्रा (पैक)",
+      "pack_of": "{n} का पैक",
+      "add": "कार्ट में जोड़ें",
+      "added": "कार्ट में जोड़ा गया: {item}",
+      "cart_h": "आपका कार्ट",
+      "cart_empty": "आपका कार्ट खाली है। उत्पाद जोड़ने के लिए ऑर्डर फ़ॉर्म का उपयोग करें।",
+      "remove": "हटाएं",
+      "decrease": "मात्रा घटाएं",
+      "increase": "मात्रा बढ़ाएं",
+      "empty_cart": "कार्ट खाली करें",
+      "empty_confirm": "कार्ट से सभी आइटम हटाने हैं?",
+      "totals": "{items} उत्पाद · {packs} पैक · {pieces} पीस",
+      "name": "आपका नाम",
+      "city": "शहर / पिन कोड",
+      "type": "ऑर्डर का प्रकार",
+      "retail": "रिटेल",
+      "wholesale": "थोक",
+      "preview": "मैसेज देखें",
+      "send": "WhatsApp पर ऑर्डर भेजें",
+      "send_note": "WhatsApp आपके ऑर्डर के साथ खुलेगा। WhatsApp में भेजें दबाने पर ही यह भेजा जाएगा।",
+      "guide_h": "कौन-सा मटीरियल चुनें?",
+      "th_material": "मटीरियल",
+      "th_best": "किसके लिए सबसे अच्छा",
+      "faq_h": "सवाल और जवाब",
+      "faq": [
+        [
+          "ऑर्डर कैसे करें?",
+          "ऑर्डर फ़ॉर्म में उत्पाद, मटीरियल, साइज़, रंग, पैक और मात्रा चुनकर कार्ट में जोड़ें। और आइटम के लिए दोहराएं, फिर कार्ट WhatsApp पर भेजें। Velora Apparel कीमत, उपलब्धता और डिलीवरी का समय बताएगा।"
+        ],
+        [
+          "क्या आप थोक में बेचते हैं?",
+          "हाँ। दुकानें, वितरक, होटल, रेस्टोरेंट, ऑफिस और कार एक्सेसरी स्टोर थोक में ऑर्डर कर सकते हैं। कार्ट में ऑर्डर का प्रकार थोक चुनें।"
+        ],
+        [
+          "क्या कस्टम साइज़, रंग या मेरे ब्रांड की पैकेजिंग मिल सकती है?",
+          "हाँ, थोक ऑर्डर के लिए अनुरोध पर। WhatsApp मैसेज में अपनी ज़रूरत लिखें।"
+        ],
+        [
+          "क्या आप पूरे भारत में डिलीवरी करते हैं?",
+          "कार्ट में अपना शहर या पिन कोड लिखें। Velora Apparel डिलीवरी के विकल्प और शुल्क की पुष्टि करेगा।"
+        ],
+        [
+          "क्या आप मेरे माप के अनुसार कपड़े सिलते हैं?",
+          "हाँ। Velora Apparel लेडीज़, जेंट्स और किड्स के लिए नए कपड़े सिलता है। कपड़े का प्रकार, मात्रा और ज़रूरी तारीख के साथ सिलाई पूछताछ भेजें; हम सिलाई का शुल्क और डिलीवरी का समय बताएंगे।"
+        ],
+        [
+          "क्या आप Meesho, Amazon या Flipkart पर हैं?",
+          "Meesho, Amazon, Flipkart, JioMart और IndiaMART पर लिस्टिंग जल्द आ रही है। आज ही WhatsApp पर सीधे ऑर्डर करें।"
+        ]
+      ],
+      "footer": "किचन नैपकिन और सफ़ाई के कपड़े, Velora Apparel द्वारा अलिंद्रा, गुजरात, भारत में निर्मित।",
+      "privacy": "गोपनीयता नीति",
+      "terms": "उपयोग की शर्तें",
+      "breadcrumb_home": "होम",
+      "msg": {
+        "greet": "नमस्ते Velora Apparel,",
+        "intro": "कृपया मेरा ऑर्डर नोट करें:",
+        "qty": "मात्रा: {qty} × {pack} का पैक ({pieces} पीस)",
+        "total": "कुल: {items} उत्पाद · {packs} पैक · {pieces} पीस",
+        "type": "ऑर्डर का प्रकार",
+        "name": "नाम",
+        "city": "शहर / पिन",
+        "close": "कृपया कीमत, उपलब्धता और डिलीवरी का समय बताएं।",
+        "thanks": "धन्यवाद।"
+      },
+      "err_name_required": "कृपया अपना नाम लिखें।",
+      "err_name_invalid": "केवल अक्षर, स्पेस, बिंदु, एपॉस्ट्रॉफ़ी या हाइफ़न का उपयोग करें (2–60 अक्षर)। अंक, लिंक और चिह्नों की अनुमति नहीं है।",
+      "err_city_required": "कृपया अपना शहर या पिन कोड लिखें।",
+      "err_city_invalid": "केवल अक्षर, अंक, स्पेस, कॉमा, बिंदु, हाइफ़न या स्लैश का उपयोग करें (2–80 अक्षर)। लिंक और फ़ोन नंबर की अनुमति नहीं है।",
+      "err_cart_full": "कार्ट में अधिकतम {max} अलग उत्पाद रखे जा सकते हैं। पहले यह ऑर्डर भेजें, फिर नया शुरू करें।",
+      "err_fix": "कृपया चिह्नित फ़ील्ड ठीक करें।",
+      "err_item": "यह विकल्प उपलब्ध नहीं है। कृपया फिर से चुनें।",
+      "nav_tailoring": "सिलाई",
+      "t_eyebrow": "सिलाई सेवा",
+      "t_h2": "लेडीज़, जेंट्स और किड्स के लिए सिलाई",
+      "t_lead": "Velora Apparel द्वारा आपके माप के अनुसार नए कपड़ों की सिलाई। जानकारी भरें और WhatsApp पर पूछताछ भेजें; हम सिलाई का शुल्क और डिलीवरी का समय बताएंगे।",
+      "t_points": [
+        "आपके माप के अनुसार सिलाई",
+        "लेडीज़, जेंट्स और किड्स",
+        "एक पीस या थोक"
+      ],
+      "t_form_h": "सिलाई पूछताछ",
+      "t_for": "किसके लिए",
+      "t_garment": "कपड़े का प्रकार",
+      "t_qty": "मात्रा (पीस)",
+      "t_fabric": "कपड़ा",
+      "t_measure": "माप",
+      "t_date": "कब तक चाहिए (वैकल्पिक)",
+      "t_notes": "डिज़ाइन नोट (वैकल्पिक)",
+      "t_notes_ph": "स्टाइल, गले का डिज़ाइन, आस्तीन, रंग…",
+      "t_send": "WhatsApp पर पूछताछ भेजें",
+      "err_notes_invalid": "केवल अक्षर, अंक और सामान्य विराम चिह्नों का उपयोग करें (अधिकतम 300 अक्षर)। लिंक और फ़ोन नंबर की अनुमति नहीं है।",
+      "err_date": "आज से एक साल के भीतर की तारीख चुनें।",
+      "err_tqty": "1 से 999 के बीच मात्रा लिखें।",
+      "tmsg": {
+        "intro": "कृपया सिलाई का कोटेशन भेजें:",
+        "category": "किसके लिए",
+        "garment": "कपड़े का प्रकार",
+        "qty": "मात्रा",
+        "fabric": "कपड़ा",
+        "measure": "माप",
+        "date": "कब तक चाहिए",
+        "notes": "नोट",
+        "close": "कृपया सिलाई का शुल्क और डिलीवरी का समय बताएं।"
+      },
+      "t_send_note": "WhatsApp आपकी पूछताछ के साथ खुलेगा। WhatsApp में भेजें दबाने पर ही यह भेजी जाएगी।"
+    },
+    "de": {
+      "home": "/de/",
+      "lang_name": "Deutsch",
+      "title": "Küchentücher, Putztücher & Schneiderei | Velora Apparel",
+      "description": "Küchen-, Mikrofaser- und Reinigungstücher sowie Schneiderei für Damen, Herren und Kinder von Velora Apparel, Gujarat. Anfrage per WhatsApp.",
+      "eyebrow": "Velora Apparel · Hergestellt in Gujarat, Indien",
+      "h1": "Tücher & Schneiderei",
+      "lead": "Küchentücher, Mikrofaser-Autoputztücher, Bürotücher und Mehrzweck-Reinigungstücher aus Baumwolle, Frottee, Waffelpiqué und Mikrofaser. Wählen Sie unten Ihre Produkte, legen Sie sie in den Warenkorb und senden Sie Ihre Bestellung per WhatsApp. Außerdem schneidern wir neue Kleidung für Damen, Herren und Kinder.",
+      "trust": [
+        "Direkt vom Hersteller",
+        "Einzel- und Großhandel",
+        "Sondergrößen für Großaufträge"
+      ],
+      "nav_home": "Startseite",
+      "nav_ladies": "Damenmode",
+      "nav_products": "Produkte",
+      "nav_contact": "Kontakt",
+      "nav_cart": "Warenkorb",
+      "channels_h": "Bezugsquellen",
+      "whatsapp": "WhatsApp",
+      "available": "Jetzt bestellen",
+      "soon": "Demnächst",
+      "products_h": "Unsere Produkte",
+      "choose": "Auswählen",
+      "l_materials": "Materialien",
+      "l_sizes": "Größen",
+      "l_colours": "Farben",
+      "l_packs": "Packungen",
+      "pcs": "Stück",
+      "form_h": "Bestellformular",
+      "f_product": "Produkt",
+      "f_material": "Material",
+      "f_size": "Größe",
+      "f_colour": "Farbe",
+      "f_pack": "Packung",
+      "f_qty": "Menge (Packungen)",
+      "pack_of": "{n}er-Pack",
+      "add": "In den Warenkorb",
+      "added": "Zum Warenkorb hinzugefügt: {item}",
+      "cart_h": "Ihr Warenkorb",
+      "cart_empty": "Ihr Warenkorb ist leer. Fügen Sie Produkte über das Bestellformular hinzu.",
+      "remove": "Entfernen",
+      "decrease": "Menge verringern",
+      "increase": "Menge erhöhen",
+      "empty_cart": "Warenkorb leeren",
+      "empty_confirm": "Alle Artikel aus dem Warenkorb entfernen?",
+      "totals": "{items} Produkte · {packs} Packungen · {pieces} Stück",
+      "name": "Ihr Name",
+      "city": "Stadt / PLZ",
+      "type": "Bestellart",
+      "retail": "Einzelkauf",
+      "wholesale": "Großhandel",
+      "preview": "Nachricht ansehen",
+      "send": "Bestellung per WhatsApp senden",
+      "send_note": "WhatsApp öffnet sich mit Ihrer Bestellung. Sie wird erst gesendet, wenn Sie in WhatsApp auf Senden tippen.",
+      "guide_h": "Welches Material passt?",
+      "th_material": "Material",
+      "th_best": "Ideal für",
+      "faq_h": "Fragen und Antworten",
+      "faq": [
+        [
+          "Wie bestelle ich?",
+          "Wählen Sie im Bestellformular Produkt, Material, Größe, Farbe, Packung und Menge und legen Sie den Artikel in den Warenkorb. Wiederholen Sie dies für weitere Artikel und senden Sie den Warenkorb per WhatsApp. Velora Apparel antwortet mit Preis, Verfügbarkeit und Lieferzeit."
+        ],
+        [
+          "Verkaufen Sie im Großhandel?",
+          "Ja. Geschäfte, Händler, Hotels, Restaurants, Büros und Autozubehörhändler können in großen Mengen bestellen. Wählen Sie im Warenkorb die Bestellart Großhandel."
+        ],
+        [
+          "Sind Sondergrößen, Sonderfarben oder eigene Markenverpackung möglich?",
+          "Ja, bei Großaufträgen auf Anfrage. Nennen Sie Ihren Wunsch in der WhatsApp-Nachricht."
+        ],
+        [
+          "Liefern Sie in ganz Indien?",
+          "Geben Sie im Warenkorb Ihre Stadt oder Postleitzahl an. Velora Apparel bestätigt Liefermöglichkeiten und Kosten."
+        ],
+        [
+          "Schneidern Sie Kleidung nach meinen Maßen?",
+          "Ja. Velora Apparel schneidert neue Kleidung für Damen, Herren und Kinder. Senden Sie eine Anfrage mit Kleidungsstück, Menge und Wunschtermin; wir antworten mit Preis und Lieferzeit."
+        ],
+        [
+          "Sind Sie auf Meesho, Amazon oder Flipkart?",
+          "Angebote auf Meesho, Amazon, Flipkart, JioMart und IndiaMART folgen demnächst. Bestellen Sie schon heute direkt per WhatsApp."
+        ]
+      ],
+      "footer": "Küchen- und Reinigungstücher, hergestellt von Velora Apparel in Alindra, Gujarat, Indien.",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "breadcrumb_home": "Startseite",
+      "msg": {
+        "greet": "Guten Tag Velora Apparel,",
+        "intro": "ich möchte folgende Bestellung aufgeben:",
+        "qty": "Menge: {qty} × {pack}er-Pack ({pieces} Stück)",
+        "total": "Gesamt: {items} Produkte · {packs} Packungen · {pieces} Stück",
+        "type": "Bestellart",
+        "name": "Name",
+        "city": "Stadt / PLZ",
+        "close": "Bitte bestätigen Sie Preis, Verfügbarkeit und Lieferzeit.",
+        "thanks": "Vielen Dank."
+      },
+      "err_name_required": "Bitte geben Sie Ihren Namen ein.",
+      "err_name_invalid": "Nur Buchstaben, Leerzeichen, Punkt, Apostroph oder Bindestrich (2–60 Zeichen). Ziffern, Links und Sonderzeichen sind nicht erlaubt.",
+      "err_city_required": "Bitte geben Sie Ihre Stadt oder Postleitzahl ein.",
+      "err_city_invalid": "Nur Buchstaben, Ziffern, Leerzeichen, Komma, Punkt, Bindestrich oder Schrägstrich (2–80 Zeichen). Links und Telefonnummern sind nicht erlaubt.",
+      "err_cart_full": "Ihr Warenkorb kann bis zu {max} verschiedene Produkte enthalten. Senden Sie zuerst diese Bestellung und beginnen Sie dann eine neue.",
+      "err_fix": "Bitte korrigieren Sie die markierten Felder.",
+      "err_item": "Diese Auswahl ist nicht verfügbar. Bitte wählen Sie erneut.",
+      "nav_tailoring": "Schneiderei",
+      "t_eyebrow": "Schneiderservice",
+      "t_h2": "Schneiderei für Damen, Herren und Kinder",
+      "t_lead": "Neue Kleidung nach Ihren Maßen, geschneidert von Velora Apparel. Füllen Sie die Angaben aus und senden Sie Ihre Anfrage per WhatsApp; wir antworten mit Preis und Lieferzeit.",
+      "t_points": [
+        "Nach Ihren Maßen",
+        "Damen, Herren und Kinder",
+        "Einzelstücke oder Großaufträge"
+      ],
+      "t_form_h": "Schneider-Anfrage",
+      "t_for": "Kleidung für",
+      "t_garment": "Kleidungsstück",
+      "t_qty": "Menge (Stück)",
+      "t_fabric": "Stoff",
+      "t_measure": "Maße",
+      "t_date": "Benötigt bis (optional)",
+      "t_notes": "Designhinweise (optional)",
+      "t_notes_ph": "Stil, Ausschnitt, Ärmel, Farbe …",
+      "t_send": "Anfrage per WhatsApp senden",
+      "err_notes_invalid": "Nur Buchstaben, Ziffern und einfache Satzzeichen (max. 300 Zeichen). Links und Telefonnummern sind nicht erlaubt.",
+      "err_date": "Wählen Sie ein Datum zwischen heute und in einem Jahr.",
+      "err_tqty": "Geben Sie eine Menge von 1 bis 999 ein.",
+      "tmsg": {
+        "intro": "ich bitte um ein Angebot für Schneiderarbeiten:",
+        "category": "Kleidung für",
+        "garment": "Kleidungsstück",
+        "qty": "Menge",
+        "fabric": "Stoff",
+        "measure": "Maße",
+        "date": "Benötigt bis",
+        "notes": "Hinweise",
+        "close": "Bitte nennen Sie mir Preis und Lieferzeit."
+      },
+      "t_send_note": "WhatsApp öffnet sich mit Ihrer Anfrage. Sie wird erst gesendet, wenn Sie in WhatsApp auf Senden tippen."
+    }
+  },
+  "limits": {
+    "name_max": 60,
+    "city_max": 80,
+    "qty_max": 9999,
+    "cart_max": 30,
+    "notes_max": 300,
+    "tailor_qty_max": 999,
+    "date_max_days": 365
+  },
+  "tailoring": {
+    "categories": [
+      {
+        "id": "ladies",
+        "name": {
+          "en": "Ladies wear",
+          "gu": "લેડીઝ વેર",
+          "hi": "लेडीज़ वियर",
+          "de": "Damenmode"
+        },
+        "garments": [
+          "kurti",
+          "salwar-suit",
+          "blouse",
+          "dress",
+          "co-ord",
+          "lehenga",
+          "other"
+        ]
+      },
+      {
+        "id": "gents",
+        "name": {
+          "en": "Gents wear",
+          "gu": "જેન્ટ્સ વેર",
+          "hi": "जेंट्स वियर",
+          "de": "Herrenmode"
+        },
+        "garments": [
+          "shirt",
+          "trousers",
+          "kurta",
+          "kurta-pyjama",
+          "other"
+        ]
+      },
+      {
+        "id": "kids",
+        "name": {
+          "en": "Kids wear",
+          "gu": "કિડ્સ વેર",
+          "hi": "किड्स वियर",
+          "de": "Kindermode"
+        },
+        "garments": [
+          "frock",
+          "shirt",
+          "trousers",
+          "kurta",
+          "school-uniform",
+          "other"
+        ]
+      },
+      {
+        "id": "others",
+        "name": {
+          "en": "Others",
+          "gu": "અન્ય",
+          "hi": "अन्य",
+          "de": "Sonstiges"
+        },
+        "garments": [
+          "uniform",
+          "curtains",
+          "cushion",
+          "other"
+        ]
+      }
+    ],
+    "garments": {
+      "kurti": {
+        "en": "Kurti",
+        "gu": "કુર્તી",
+        "hi": "कुर्ती",
+        "de": "Kurti"
+      },
+      "salwar-suit": {
+        "en": "Salwar suit",
+        "gu": "સલવાર સૂટ",
+        "hi": "सलवार सूट",
+        "de": "Salwar-Anzug"
+      },
+      "blouse": {
+        "en": "Blouse",
+        "gu": "બ્લાઉઝ",
+        "hi": "ब्लाउज़",
+        "de": "Bluse"
+      },
+      "dress": {
+        "en": "Dress",
+        "gu": "ડ્રેસ",
+        "hi": "ड्रेस",
+        "de": "Kleid"
+      },
+      "co-ord": {
+        "en": "Co-ord set",
+        "gu": "કો-ઓર્ડ સેટ",
+        "hi": "को-ऑर्ड सेट",
+        "de": "Co-Ord-Set"
+      },
+      "lehenga": {
+        "en": "Lehenga / chaniya choli",
+        "gu": "લહેંગા / ચણિયા ચોળી",
+        "hi": "लहंगा / चनिया चोली",
+        "de": "Lehenga"
+      },
+      "shirt": {
+        "en": "Shirt",
+        "gu": "શર્ટ",
+        "hi": "शर्ट",
+        "de": "Hemd"
+      },
+      "trousers": {
+        "en": "Trousers",
+        "gu": "પેન્ટ",
+        "hi": "पैंट",
+        "de": "Hose"
+      },
+      "kurta": {
+        "en": "Kurta",
+        "gu": "કુર્તો",
+        "hi": "कुर्ता",
+        "de": "Kurta"
+      },
+      "kurta-pyjama": {
+        "en": "Kurta pyjama",
+        "gu": "કુર્તો પાયજામો",
+        "hi": "कुर्ता पायजामा",
+        "de": "Kurta-Pyjama"
+      },
+      "frock": {
+        "en": "Frock",
+        "gu": "ફ્રોક",
+        "hi": "फ्रॉक",
+        "de": "Kinderkleid"
+      },
+      "school-uniform": {
+        "en": "School uniform",
+        "gu": "સ્કૂલ યુનિફોર્મ",
+        "hi": "स्कूल यूनिफ़ॉर्म",
+        "de": "Schuluniform"
+      },
+      "uniform": {
+        "en": "Work uniform",
+        "gu": "વર્ક યુનિફોર્મ",
+        "hi": "वर्क यूनिफ़ॉर्म",
+        "de": "Arbeitskleidung"
+      },
+      "curtains": {
+        "en": "Curtains",
+        "gu": "પડદા",
+        "hi": "पर्दे",
+        "de": "Vorhänge"
+      },
+      "cushion": {
+        "en": "Cushion covers",
+        "gu": "કુશન કવર",
+        "hi": "कुशन कवर",
+        "de": "Kissenbezüge"
+      },
+      "other": {
+        "en": "Other",
+        "gu": "અન્ય",
+        "hi": "अन्य",
+        "de": "Sonstiges"
+      }
+    },
+    "fabric": {
+      "own": {
+        "en": "I will provide the fabric",
+        "gu": "કાપડ હું આપીશ",
+        "hi": "कपड़ा मेरी ओर से होगा",
+        "de": "Ich stelle den Stoff"
+      },
+      "help": {
+        "en": "Need help with fabric",
+        "gu": "કાપડ માટે મદદ જોઈએ",
+        "hi": "कपड़े के लिए मदद चाहिए",
+        "de": "Ich brauche Hilfe beim Stoff"
+      }
+    },
+    "measure": {
+      "share": {
+        "en": "I will share measurements",
+        "gu": "માપ હું મોકલીશ",
+        "hi": "माप मेरी ओर से भेजा जाएगा",
+        "de": "Ich sende die Maße"
+      },
+      "sample": {
+        "en": "I have a sample garment",
+        "gu": "મારી પાસે નમૂનાનું કપડું છે",
+        "hi": "मेरे पास नमूने का कपड़ा है",
+        "de": "Ich habe ein Musterstück"
+      },
+      "help": {
+        "en": "Need help with measurements",
+        "gu": "માપ લેવામાં મદદ જોઈએ",
+        "hi": "माप लेने में मदद चाहिए",
+        "de": "Ich brauche Hilfe beim Maßnehmen"
+      }
+    }
+  }
+}
