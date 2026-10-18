@@ -10,11 +10,18 @@ Upload images to assets/images/products and enable GitHub Pages.
 
 ## Image credits
 
-Homepage banner photos (`assets/images/banner/`) are from Unsplash, used under the
-[Unsplash License](https://unsplash.com/license) and self-hosted so they load
-without third-party requests. They show fabrics and machinery only (no people):
+All photos are self-hosted, show no people, and are free for commercial use.
 
-- Fabric rolls by Bernd Dittrich: https://unsplash.com/photos/rEb9iHOF638
-- Folded cloth stacks: https://unsplash.com/photos/wl2TODALiAY
-- Sewing machine needle by J Williams: https://unsplash.com/photos/tabzu_kbVs0
-- Embroidery machine with thread cones by Declan Sun (phone banner, cropped to exclude branding): https://unsplash.com/photos/cQr2x2ALizA
+Homepage banner (`assets/images/banner/`):
+
+- Thread spools: Patryk Dziejma, StockSnap, CC0 (https://stocksnap.io/photo/thread-spools-OT78IG5U1C)
+- Sewing kit with spools and scissors: rawpixel, CC0 (https://www.rawpixel.com/image/6043228)
+- Blue and white striped towels: Unsplash License (https://unsplash.com/photos/3CVqadZfHJg)
+- Folded towels in warm light: Irham Setyaki, Unsplash License (https://unsplash.com/photos/sHK_MA3nKWM)
+- Measuring tape on silk: Unsplash License (https://unsplash.com/photos/xFcqV_XZNNU)
+- Sewing kit with thimbles: rawpixel, CC0, cropped to exclude thread-brand labels (https://www.rawpixel.com/image/5904602)
+
+Products page (`assets/images/products/`):
+
+- Sewing thread: StockSnap, CC0 (https://stocksnap.io/photo/sewing-thread-TUSNCRKPBJ)
+- Thread spools with thimble: rawpixel, CC0 (https://www.rawpixel.com/image/5916189)

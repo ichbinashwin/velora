@@ -171,6 +171,7 @@ def tailoring_section(lang):
           <p class="pp-lead">{e(ui['t_lead'])}</p>
           <ul class="pp-trust">{points}</ul>
           <div class="pp-tgroups">{groups}</div>
+          <figure class="pp-art pp-tailor-art"><picture><source type="image/webp" srcset="/assets/images/products/tailoring-800.webp"><img src="/assets/images/products/tailoring-800.jpg" width="800" height="640" alt="" loading="lazy" decoding="async"></picture></figure>
         </div>
         <form class="pp-panel pp-form pp-tailor-form" data-tailor-form novalidate>
           <h2 class="pp-h2">{e(ui['t_form_h'])}</h2>
@@ -328,7 +329,8 @@ def build(lang):
 
   <main id="main">
     <section class="pp-hero">
-      <div class="container">
+      <div class="container pp-hero-grid">
+        <figure class="pp-art pp-hero-art"><picture><source type="image/webp" srcset="/assets/images/products/hero-800.webp"><img src="/assets/images/products/hero-800.jpg" width="800" height="640" alt="" decoding="async"></picture></figure>
         <nav class="pp-breadcrumb" aria-label="Breadcrumb"><a href="{home}">{e(ui['breadcrumb_home'])}</a> › <span aria-current="page">{e(ui['nav_products'])}</span></nav>
         <p class="eyebrow">{e(ui['eyebrow'])}</p>
         <h1>{e(ui['h1'])}</h1>
