@@ -839,3 +839,57 @@
     scroll-margin-top: 120px;
   }
 }
+
+/* Framed "focused" photos (same treatment as the homepage banner card) */
+.pp-art {
+  margin: 0;
+  overflow: hidden;
+  border: 5px solid transparent;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #ff4fa3, #a78bfa, #60a5fa) border-box;
+  box-shadow: 0 24px 50px rgba(37, 46, 80, .22);
+}
+
+.pp-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 21px;
+}
+
+.pp-hero-grid {
+  position: relative;
+}
+
+.pp-hero-art {
+  position: absolute;
+  top: 40px;
+  right: 56px;
+  width: min(30vw, 380px);
+  transform: rotate(2.5deg);
+}
+
+.pp-hero-grid > :not(.pp-hero-art) {
+  max-width: calc(100% - min(30vw, 380px) - 80px);
+}
+
+.pp-hero-grid > .pp-channels,
+.pp-hero-grid > .pp-channels-h {
+  max-width: none;
+}
+
+.pp-tailor-art {
+  margin-top: 18px;
+}
+
+@media (max-width: 1099.98px) {
+  .pp-hero-art {
+    display: none;
+  }
+
+  .pp-hero-grid > :not(.pp-hero-art) {
+    max-width: none;
+  }
+}
