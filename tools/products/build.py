@@ -88,7 +88,9 @@ def localized_catalog(lang):
     ui = DATA["ui"][lang]
     keys = ["pack_of", "add", "added", "cart_empty", "remove", "decrease", "increase", "empty_confirm",
             "totals", "retail", "wholesale", "pcs", "err_name_required", "err_name_invalid",
-            "err_city_required", "err_city_invalid", "err_cart_full", "err_fix", "err_item"]
+            "err_city_required", "err_city_invalid", "err_cart_full", "err_fix", "err_item",
+            "err_notes_invalid", "err_date", "err_tqty"]
+    t = DATA["tailoring"]
     return {
         "lang": lang,
         "whatsapp": DATA["whatsapp"],
@@ -99,6 +101,13 @@ def localized_catalog(lang):
                       "colours": p["colours"], "packs": p["packs"]} for p in DATA["products"]],
         "materials": {k: v["name"][lang] for k, v in DATA["materials"].items()},
         "colours": {k: v["name"][lang] for k, v in DATA["colours"].items()},
+        "tmsg": ui["tmsg"],
+        "tailoring": {
+            "categories": [{"id": c["id"], "name": c["name"][lang], "garments": c["garments"]} for c in t["categories"]],
+            "garments": {k: v[lang] for k, v in t["garments"].items()},
+            "fabric": {k: v[lang] for k, v in t["fabric"].items()},
+            "measure": {k: v[lang] for k, v in t["measure"].items()},
+        },
     }
 
 
@@ -123,10 +132,67 @@ def schema(lang):
                 "variesBy": ["https://schema.org/color", "https://schema.org/size", "https://schema.org/material"],
                 "countryOfOrigin": {"@type": "Country", "name": "India"}}}
             for i, p in enumerate(DATA["products"])]},
+        {"@type": "Service", "@id": url + "#tailoring", "name": ui["t_h2"], "serviceType": "Tailoring",
+         "description": ui["t_lead"], "provider": org, "areaServed": {"@type": "Country", "name": "India"},
+         "url": url + "#tailoring", "inLanguage": lang},
         {"@type": "FAQPage", "@id": url + "#faq", "inLanguage": lang, "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in ui["faq"]]},
     ]
     return safe_json({"@context": "https://schema.org", "@graph": graph}, indent=2)
+
+
+def tailoring_section(lang):
+    ui = DATA["ui"][lang]
+    t = DATA["tailoring"]
+    lim = DATA["limits"]
+    first = t["categories"][0]
+
+    def radios(name, options, first_checked=True):
+        return "".join(
+            f'<label class="pp-choice"><input type="radio" name="{name}" value="{k}"{" checked" if i == 0 and first_checked else ""}> {e(v)}</label>'
+            for i, (k, v) in enumerate(options))
+
+    categories = radios("tailor-category", [(c["id"], c["name"][lang]) for c in t["categories"]])
+    garments = "".join(f'<option value="{g}">{e(t["garments"][g][lang])}</option>' for g in first["garments"])
+    fabric = radios("tailor-fabric", [(k, v[lang]) for k, v in t["fabric"].items()])
+    measure = radios("tailor-measure", [(k, v[lang]) for k, v in t["measure"].items()])
+    points = "".join(f"<li>{e(x)}</li>" for x in ui["t_points"])
+    groups = "".join(
+        f'<div class="pp-tgroup"><h3>{e(c["name"][lang])}</h3><p>{e(", ".join(t["garments"][g][lang] for g in c["garments"] if g != "other"))}</p></div>'
+        for c in t["categories"])
+    return f"""    <section class="pp-section pp-tailoring" id="tailoring" aria-labelledby="tailoring-h">
+      <div class="container pp-order-grid">
+        <div class="pp-tailor-info">
+          <p class="eyebrow">{e(ui['t_eyebrow'])}</p>
+          <h2 class="pp-h2" id="tailoring-h">{e(ui['t_h2'])}</h2>
+          <p class="pp-lead">{e(ui['t_lead'])}</p>
+          <ul class="pp-trust">{points}</ul>
+          <div class="pp-tgroups">{groups}</div>
+        </div>
+        <form class="pp-panel pp-form pp-tailor-form" data-tailor-form novalidate>
+          <h2 class="pp-h2">{e(ui['t_form_h'])}</h2>
+          <fieldset><legend>{e(ui['t_for'])}</legend><div class="pp-choices">{categories}</div></fieldset>
+          <div class="pp-row">
+            <label>{e(ui['t_garment'])}<select name="tailor-garment" data-tailor-garment>{garments}</select></label>
+            <label>{e(ui['t_qty'])}<input type="number" name="tailor-qty" data-tailor-qty min="1" max="{lim['tailor_qty_max']}" step="1" value="1" inputmode="numeric" required aria-describedby="err-t-qty"><span class="pp-error" id="err-t-qty" hidden></span></label>
+          </div>
+          <fieldset><legend>{e(ui['t_fabric'])}</legend><div class="pp-choices">{fabric}</div></fieldset>
+          <fieldset><legend>{e(ui['t_measure'])}</legend><div class="pp-choices">{measure}</div></fieldset>
+          <label>{e(ui['t_date'])}<input type="date" name="tailor-date" data-tailor-date aria-describedby="err-t-date"><span class="pp-error" id="err-t-date" hidden></span></label>
+          <label>{e(ui['t_notes'])}<textarea name="tailor-notes" data-tailor-notes rows="3" maxlength="{lim['notes_max']}" placeholder="{e(ui['t_notes_ph'])}" aria-describedby="err-t-notes"></textarea><span class="pp-error" id="err-t-notes" hidden></span></label>
+          <div class="pp-row">
+            <label>{e(ui['name'])}<input type="text" name="tailor-name" data-tailor-name autocomplete="name" required minlength="2" maxlength="{lim['name_max']}" aria-describedby="err-t-name"><span class="pp-error" id="err-t-name" hidden></span></label>
+            <label>{e(ui['city'])}<input type="text" name="tailor-city" data-tailor-city autocomplete="address-level2" required minlength="2" maxlength="{lim['city_max']}" spellcheck="false" aria-describedby="err-t-city"><span class="pp-error" id="err-t-city" hidden></span></label>
+          </div>
+          <details class="pp-preview"><summary>{e(ui['preview'])}</summary><pre data-tailor-preview></pre></details>
+          <p class="pp-error pp-error-summary" data-tailor-summary role="alert" hidden></p>
+          <button type="submit" class="btn btn-main w-100 pp-send" data-tailor-send><svg viewBox="0 0 24 24" aria-hidden="true"><path d="{BRAND_ICONS['whatsapp']['path']}"/></svg>{e(ui['t_send'])}</button>
+          <p class="pp-note">{e(ui['t_send_note'])}</p>
+        </form>
+      </div>
+    </section>
+
+"""
 
 
 def build(lang):
@@ -174,6 +240,7 @@ def build(lang):
     faq = "\n".join(f'          <details class="faq-item"{" open" if i == 0 else ""}>\n            <summary><h3>{e(q)}</h3></summary>\n            <p>{e(a)}</p>\n          </details>'
                     for i, (q, a) in enumerate(ui["faq"]))
     trust = "".join(f"<li>{e(t)}</li>" for t in ui["trust"])
+    tailoring = tailoring_section(lang)
 
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -221,6 +288,7 @@ def build(lang):
         <a href="{home}">{e(ui['nav_home'])}</a>
         <a href="{home}#products">{e(ui['nav_ladies'])}</a>
         <a href="{prefix(lang)}products/" aria-current="page">{e(ui['nav_products'])}</a>
+        <a href="#tailoring">{e(ui['nav_tailoring'])}</a>
         <a href="{home}#contact">{e(ui['nav_contact'])}</a>
       </nav>
       <div class="pp-header-tools">
@@ -255,7 +323,7 @@ def build(lang):
 
     <section class="pp-section pp-order-section" id="order">
       <div class="container pp-order-grid">
-        <form class="pp-panel pp-form" data-order-form>
+        <form class="pp-panel pp-form" data-order-form novalidate>
           <h2 class="pp-h2">{e(ui['form_h'])}</h2>
           <label>{e(ui['f_product'])}<select name="product" data-field="product">{product_opts}</select></label>
           <div class="pp-row">
@@ -297,6 +365,7 @@ def build(lang):
       </div>
     </section>
 
+{tailoring}
     <section class="pp-section">
       <div class="container pp-info-grid">
         <div>
@@ -330,7 +399,9 @@ def build(lang):
   <a class="pp-cart-fab" href="#cart">{e(ui['nav_cart'])} <span class="pp-badge" data-cart-count>0</span></a>
 
   <script type="application/json" id="catalog">{safe_json(localized_catalog(lang))}</script>
+  <script src="/assets/js/validate.js" defer></script>
   <script src="/assets/js/cart.js" defer></script>
+  <script src="/assets/js/tailoring.js" defer></script>
 </body>
 </html>
 """
