@@ -829,7 +829,9 @@
     const languageSelect = document.querySelector("[data-language-select]");
     if (languageSelect) {
       languageSelect.addEventListener("change", () => {
-        window.location.href = languageSelect.value;
+        // Only the four language homepages are allowed targets (blocks javascript: and external URLs).
+        const target = languageSelect.value;
+        if (/^\/(?:(?:gu|hi|de)\/)?$/.test(target)) window.location.href = target;
       });
     }
 
