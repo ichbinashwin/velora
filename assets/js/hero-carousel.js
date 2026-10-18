@@ -1,7 +1,8 @@
 // Homepage banner: three slides in a scroll-snap track (native swipe on touch),
 // with labelled tabs, previous/next buttons and an auto-advance that can be
-// paused (WCAG 2.2.2). Auto-advance never starts for reduced-motion users and
-// stops after any manual navigation.
+// paused (WCAG 2.2.2). Auto-advance runs on desktop only: never on phones and
+// tablets (people swipe or tap the tabs), never for reduced-motion users, and
+// it stops after any manual navigation.
 (() => {
   const root = document.querySelector("[data-hero-carousel]");
   if (!root) return;
@@ -11,10 +12,17 @@
   const pauseButton = root.querySelector("[data-hb-pause]");
   const INTERVAL_MS = 6500;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const compactLayout = window.matchMedia("(max-width: 991.98px)");
+  const header = document.querySelector("[data-site-header]");
+
+  // The mobile banner fills the screen below the header.
+  function syncHeaderHeight() {
+    if (header) document.documentElement.style.setProperty("--site-header-h", `${header.offsetHeight}px`);
+  }
 
   let index = 0;
   let timer = null;
-  let stopped = reducedMotion; // user pressed pause, navigated manually, or prefers reduced motion
+  let stopped = reducedMotion || compactLayout.matches; // paused, navigated, reduced motion, or phone/tablet
   let hovering = false;
   let focused = false;
 
@@ -101,8 +109,15 @@
     if (!root.contains(event.relatedTarget)) { focused = false; schedule(); }
   });
   document.addEventListener("visibilitychange", schedule);
-  window.addEventListener("resize", () => goTo(index, false));
+  window.addEventListener("resize", () => {
+    syncHeaderHeight();
+    goTo(index, false);
+  });
+  compactLayout.addEventListener("change", (event) => {
+    if (event.matches) stopAutoplay();
+  });
 
+  syncHeaderHeight();
   root.classList.add("is-ready");
   setActive(0);
   schedule();
