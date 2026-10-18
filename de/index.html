@@ -681,6 +681,25 @@
       </div>
     </section>
 
+    <section id="how-we-work" class="section-pad how-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">So arbeiten wir</p>
+          <h2>So arbeitet Velora Apparel</h2>
+          <p class="section-copy">Klare Fakten vor Ihrer Bestellung – für Marken, Händler und Familien.</p>
+        </div>
+        <ul class="hw-list">
+            <li class="hw-item"><strong>Eigene Fertigung</strong><span>Zuschnitt, Nähen, Qualitätskontrolle und Verpackung erfolgen in unserer eigenen Werkstatt in Alindra, Gujarat.</span></li>
+            <li class="hw-item"><strong>Auf Bestellung gefertigt</strong><span>Wir produzieren nach bestätigten Aufträgen. Preis, Menge, Stoff, Termin und Lieferung werden vor Produktionsbeginn schriftlich per WhatsApp oder E-Mail vereinbart.</span></li>
+            <li class="hw-item"><strong>Muster vor der Serie</strong><span>Für neue Seriendesigns fertigen wir vor Produktionsbeginn ein Muster zu Ihrer Freigabe.</span></li>
+            <li class="hw-item"><strong>Keine Zahlung auf dieser Website</strong><span>Bestellungen und Anfragen laufen über WhatsApp oder E-Mail. Zahlungsbedingungen werden direkt mit Ihnen vereinbart. Wir fragen auf dieser Website nie nach Karten- oder Bankdaten.</span></li>
+            <li class="hw-item"><strong>Lieferung je Auftrag bestätigt</strong><span>Liefermöglichkeiten und Kosten hängen von Ihrer Stadt oder Ihrem Land ab und werden vor dem Versand bestätigt.</span></li>
+            <li class="hw-item"><strong>Symbolbilder</strong><span>Die Fotos auf dieser Website sind Symbolbilder von Stoffen und Maschinen, keine Fotos unserer fertigen Produkte. Fragen Sie uns nach echten Produktfotos oder Mustern.</span></li>
+            <li class="hw-item"><strong>Direkt mit dem Inhaber</strong><span>Ihre Anfrage geht direkt an den Inhaber, Rajanikant Dhirajlal Parmar, unter +91 79909 65209.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section-pad contact-section" data-nav-section data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
       <div class="container">
         <div class="row g-5 align-items-start">
@@ -688,6 +707,31 @@
             <p class="eyebrow">Kontakt</p>
             <h2>Angebot für die Produktion von Damenbekleidung anfordern</h2>
             <p class="section-copy">Senden Sie Produktkategorie, Zielmenge, Stoffwunsch, Größenbereich und Liefertermin. Velora Apparel meldet sich mit den nächsten Schritten.</p>
+            <form class="quote-card" data-quote-form novalidate>
+              <h3>Fertigungsangebot anfragen</h3>
+              <fieldset><legend>Art der Anfrage</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-type" value="oem" checked> OEM / Private Label</label><label class="qc-choice"><input type="radio" name="quote-type" value="jobwork"> Lohnfertigung</label><label class="qc-choice"><input type="radio" name="quote-type" value="bulk"> Tücher in großen Mengen</label><label class="qc-choice"><input type="radio" name="quote-type" value="other"> Sonstiges</label></div></fieldset>
+              <div class="qc-row">
+                <label>Produkt<select name="quote-product"><option value="kurtis">Kurtis</option><option value="coords">Co-Ord-Sets</option><option value="tops">Oberteile</option><option value="office">Bürokleidung</option><option value="night">Nachtwäsche</option><option value="dresses">Kleider</option><option value="napkins">Tücher</option><option value="other">Sonstiges</option></select></label>
+                <label>Geschätzte Menge (Stück)<input type="number" name="quote-qty" min="1" max="99999" step="1" value="100" inputmode="numeric" aria-describedby="err-quote-qty"><span class="qc-error" id="err-quote-qty" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <fieldset><legend>Muster benötigt?</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-sample" value="yes" checked> Ja</label><label class="qc-choice"><input type="radio" name="quote-sample" value="no"> Nein</label></div></fieldset>
+                <label>Benötigt bis (optional)<input type="date" name="quote-date" aria-describedby="err-quote-date"><span class="qc-error" id="err-quote-date" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Land<input type="text" name="quote-country" value="Indien" autocomplete="country-name" maxlength="56" aria-describedby="err-quote-country"><span class="qc-error" id="err-quote-country" hidden></span></label>
+                <label>Stadt / PLZ<input type="text" name="quote-city" autocomplete="address-level2" maxlength="80" spellcheck="false" aria-describedby="err-quote-city"><span class="qc-error" id="err-quote-city" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Ihr Name<input type="text" name="quote-name" autocomplete="name" maxlength="60" aria-describedby="err-quote-name"><span class="qc-error" id="err-quote-name" hidden></span></label>
+                <label>Firma / Marke (optional)<input type="text" name="quote-company" autocomplete="organization" maxlength="80" aria-describedby="err-quote-company"><span class="qc-error" id="err-quote-company" hidden></span></label>
+              </div>
+              <label>Details (optional)<textarea name="quote-notes" rows="2" maxlength="300" placeholder="Stoff, Größen, Design oder Branding …" aria-describedby="err-quote-notes"></textarea><span class="qc-error" id="err-quote-notes" hidden></span></label>
+              <details class="qc-preview"><summary>Nachricht ansehen</summary><pre data-quote-preview></pre></details>
+              <p class="qc-error qc-summary" data-quote-summary role="alert" hidden></p>
+              <button type="submit" class="btn btn-main w-100">Angebotsanfrage per WhatsApp senden</button>
+              <p class="qc-note">WhatsApp öffnet sich mit Ihrer Anfrage. Sie wird erst gesendet, wenn Sie in WhatsApp auf Senden tippen.</p>
+            </form>
           </div>
           <div class="col-lg-6" data-animate="fade-left">
             <div class="contact-panel">
@@ -710,6 +754,7 @@
       <p>Hersteller für Damenbekleidung in Alindra, Gujarat, Indien: OEM, Private Label, Lohnfertigung und Großproduktion von Kurtis, Co-Ord-Sets, Oberteilen, Bürokleidung, Nachtwäsche und Kleidern.</p>
       <p class="footer-nap">Velora Apparel · Dorf Alindra, Gujarat, Indien · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>KI-Transparenz:</strong> Einige Website-Texte, Designelemente und Bilder wurden mit Unterstützung von KI erstellt und von Velora Apparel geprüft. KI wird nicht eingesetzt, um Entscheidungen über Besucher zu treffen oder personenbezogene Daten zu verarbeiten.</p>
+      <p class="footer-photos"><strong>Fotos:</strong> Banner- und Kategoriefotos sind Symbolbilder (Unsplash), keine Fotos von Produkten von Velora Apparel.</p>
       <p class="footer-privacy-note"><strong>Datenschutz und Cookies:</strong> Wir verwenden den notwendigen lokalen Speicher, um Ihre Cookie-Auswahl und Anzeigeeinstellungen zu speichern. Bei optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr geladen. Wir verwenden keine Analyse- oder Werbe-Cookies. Sie können optionale Elemente ablehnen oder Ihre Auswahl jederzeit ändern.</p>
       <p class="footer-links"><a href="../privacy.html">Datenschutzerklärung</a> · <a href="../terms.html">Nutzungsbedingungen</a></p>
       <p class="footer-language-links"><strong>Sprachen:</strong> <a href="../">English</a> · <a href="../gu/">ગુજરાતી</a> · <a href="../hi/">हिन्दी</a> · <a href="./">Deutsch</a></p>
@@ -1037,6 +1082,9 @@
       openCookiePanel();
     }
   </script>
+  <script type="application/json" id="quote-config">{"lang": "de", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "notes_max": 300, "date_max_days": 365, "quote_qty_max": 99999}, "types": {"oem": "OEM / Private Label", "jobwork": "Lohnfertigung", "bulk": "Tücher in großen Mengen", "other": "Sonstiges"}, "products": {"kurtis": "Kurtis", "coords": "Co-Ord-Sets", "tops": "Oberteile", "office": "Bürokleidung", "night": "Nachtwäsche", "dresses": "Kleider", "napkins": "Tücher", "other": "Sonstiges"}, "ui": {"err_name_required": "Bitte geben Sie Ihren Namen ein.", "err_name_invalid": "Nur Buchstaben, Leerzeichen, Punkt, Apostroph oder Bindestrich (2–60 Zeichen). Ziffern, Links und Sonderzeichen sind nicht erlaubt.", "err_city_required": "Bitte geben Sie Ihre Stadt oder Postleitzahl ein.", "err_city_invalid": "Nur Buchstaben, Ziffern, Leerzeichen, Komma, Punkt, Bindestrich oder Schrägstrich (2–80 Zeichen). Links und Telefonnummern sind nicht erlaubt.", "err_notes_invalid": "Nur Buchstaben, Ziffern und einfache Satzzeichen (max. 300 Zeichen). Links und Telefonnummern sind nicht erlaubt.", "err_date": "Wählen Sie ein Datum zwischen heute und in einem Jahr.", "err_fix": "Bitte korrigieren Sie die markierten Felder.", "err_qty": "Geben Sie eine Menge von 1 bis 99.999 ein.", "err_country": "Geben Sie einen gültigen Ländernamen ein (nur Buchstaben).", "err_company": "Nur Buchstaben, Ziffern, Leerzeichen und . \u0026 ' - (max. 80). Links sind nicht erlaubt.", "yes": "Ja", "no": "Nein"}, "msg": {"greet": "Guten Tag Velora Apparel,", "intro": "ich bitte um ein Fertigungsangebot:", "type": "Art der Anfrage", "product": "Produkt", "qty": "Geschätzte Menge", "pcs": "Stück", "sample": "Muster benötigt", "date": "Benötigt bis", "country": "Land", "city": "Stadt / PLZ", "name": "Name", "company": "Firma / Marke", "notes": "Details", "close": "Bitte nennen Sie mir Preis, Mindestmenge, Musterung und Liefertermin.", "thanks": "Vielen Dank."}}</script>
+  <script src="/assets/js/validate.js" defer></script>
+  <script src="/assets/js/quote.js" defer></script>
   <script src="/assets/js/hero-carousel.js" defer></script>
 </body>
 </html>
