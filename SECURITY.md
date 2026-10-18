@@ -8,7 +8,7 @@ For production deployment, configure these HTTP response headers at the
 hosting or CDN layer:
 
 - `Strict-Transport-Security: max-age=31536000; includeSubDomains`
-- `Content-Security-Policy` restricted to the site, Unsplash, and jsDelivr
+- `Content-Security-Policy` restricted to the site and Google Analytics
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `X-Content-Type-Options: nosniff`
 - `Permissions-Policy` with unused browser capabilities disabled

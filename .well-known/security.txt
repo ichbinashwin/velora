@@ -1,3 +1,5 @@
 Contact: mailto:rajani.parmar.tailor@gmail.com
+Expires: 2027-10-18T00:00:00.000Z
+Policy: https://github.com/ichbinashwin/velora/blob/main/SECURITY.md
 Canonical: https://www.velora-apparel.store/.well-known/security.txt
 Preferred-Languages: en, gu, hi, de

@@ -156,7 +156,7 @@ PRIVACY = "".join([
             "<p>We do not sell personal data. It is shared only with services needed to run the website and your order:</p>",
             "<ul><li><strong>Meta (WhatsApp)</strong> and <strong>Google (Gmail)</strong>, when you choose to message or email us;</li>"
             "<li><strong>Google (Analytics)</strong>, only if you allow Analytics;</li>"
-            "<li><strong>GitHub</strong>, which hosts this website, and <strong>jsDelivr</strong>, which delivers animation files if you allow preferences;</li>"
+            "<li><strong>GitHub</strong>, which hosts this website;</li>"
             "<li>courier or transport partners, with only the name, address and phone number needed for delivery;</li>"
             "<li>authorities, when the law requires it.</li></ul>",
             "<p>Some of these providers process data outside India (for example in the USA or the EU). Such transfers are allowed under the DPDP Act unless the Government of India restricts a country; for visitors in the EU, the providers use safeguards such as the EU Standard Contractual Clauses.</p>"),
