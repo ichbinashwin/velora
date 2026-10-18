@@ -3269,3 +3269,341 @@ main {
     transform: none;
   }
 }
+
+/* ===== Phones & tablets: compact header + bottom-sheet banner =====
+   Goal: header, banner, buttons and slide switcher all visible on the first
+   screen (e.g. iPhone 16 Pro Max in Safari) without scrolling. */
+@media (max-width: 991.98px) {
+  /* Slim one-line contact strip */
+  .site-header .topbar {
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  .site-header .topbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-header .topbar-title,
+  .site-header .topbar-contact > a[href^="mailto:"],
+  .site-header .topbar-contact > span[aria-hidden="true"],
+  .site-header .theme-toggle [data-theme-label] {
+    display: none;
+  }
+
+  .site-header .topbar-contact {
+    flex-wrap: nowrap;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .site-header .topbar-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .14);
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  .site-header .theme-toggle {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  /* One navigation row: logo, language, menu */
+  .site-header .navbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    min-height: 60px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .site-header .brand {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-inline: 0;
+  }
+
+  .site-header .brand-logo {
+    height: 44px;
+  }
+
+  .site-header .brand-text {
+    overflow: hidden;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+  }
+
+  .site-header .language-switcher {
+    order: 1;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .site-header .language-switcher select {
+    width: auto;
+    min-height: 40px;
+    padding: 4px 30px 4px 12px;
+    border-width: 1px;
+    border-radius: 999px;
+    font-size: 16px; /* 16px stops iOS zooming when the menu opens */
+  }
+
+  .site-header .navbar-toggle {
+    position: static;
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Banner: photo on top, frosted bottom sheet with text, buttons and tabs */
+  .hero.hero-v3 .hb-slide {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: max(520px, calc(100svh - var(--site-header-h, 104px)));
+    padding: 0;
+  }
+
+  .hero.hero-v3 .hb-slide::before,
+  .hero.hero-v3 .hb-slide-napkins::before,
+  .hero.hero-v3 .hb-slide-tailoring::before {
+    background: linear-gradient(180deg, rgba(27, 11, 61, .05) 0%, rgba(27, 11, 61, .2) 35%, rgba(27, 11, 61, .65) 100%);
+  }
+
+  .hero.hero-v3 .hb-media img {
+    object-position: center 35%;
+  }
+
+  .hero.hero-v3 .hb-content {
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 22px 20px 96px;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 28px 28px 0 0;
+    background: rgba(24, 10, 56, .72);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 -18px 40px rgba(10, 4, 30, .35);
+  }
+
+  /* Label floats on the photo, top-left */
+  .hero.hero-v3 .hb-kicker {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+    margin: 0;
+    padding: 6px 12px;
+    background: rgba(24, 10, 56, .55);
+    font-size: 11px;
+  }
+
+  .hero.hero-v3 .hb-title {
+    font-size: clamp(26px, 7.2vw, 36px);
+    line-height: 1.1;
+  }
+
+  .hero.hero-v3 .hb-text {
+    display: -webkit-box;
+    margin: 12px 0 18px;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .hero.hero-v3 .hb-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .hero.hero-v3 .hb-actions .btn {
+    min-height: 48px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* Segmented slide switcher pinned to the bottom of the sheet */
+  .hero.hero-v3 .hb-controls {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: auto;
+    margin: 0;
+    flex-direction: row;
+  }
+
+  .hero.hero-v3 .hb-buttons {
+    display: none;
+  }
+
+  .hero.hero-v3 .hb-tabs {
+    width: 100%;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .08);
+  }
+
+  .hero.hero-v3 .hb-tab {
+    flex: 1 1 0;
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    min-width: 0;
+    min-height: 52px;
+    padding: 9px 6px 7px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    font-size: 13px;
+    text-align: center;
+    backdrop-filter: none;
+  }
+
+  .hero.hero-v3 .hb-tab-num {
+    display: none;
+  }
+
+  .hero.hero-v3 .hb-tab-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] {
+    background: #fff;
+    color: var(--v-purple-deep);
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] .hb-tab-bar {
+    background: rgba(109, 74, 255, .2);
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] .hb-tab-bar i {
+    background: var(--v-purple);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  /* Tablets: the sheet becomes a floating card */
+  .hero.hero-v3 .hb-content {
+    width: auto;
+    margin: 0 24px 24px;
+    padding: 28px 28px 100px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 28px;
+  }
+
+  .hero.hero-v3 .hb-controls {
+    right: 48px;
+    bottom: 44px;
+    left: 48px;
+  }
+
+  .hero.hero-v3 .hb-kicker {
+    top: 24px;
+    left: 24px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* The label sits at the top of the sheet (the sheet's blur would otherwise
+     re-anchor an absolutely positioned label onto the headline). */
+  .hero.hero-v3 .hb-kicker {
+    position: static;
+    margin: 0 0 12px;
+    background: rgba(255, 255, 255, .12);
+  }
+
+  .hero.hero-v3 .hb-media img {
+    object-position: center top;
+  }
+
+  /* Brand name wraps like a two-line logo lock-up instead of being cut off. */
+  .site-header .brand-text {
+    overflow: visible;
+    font-size: .98rem;
+    line-height: 1.1;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-header .brand-logo {
+    height: 38px;
+  }
+
+  .site-header .brand-text {
+    max-width: 5.5em;
+  }
+
+  .site-header .topbar-contact a {
+    padding: 5px 8px;
+  }
+}
+
+/* Short phone screens (e.g. iPhone SE in Safari): tighten the sheet so the
+   buttons and the slide switcher still fit on the first screen. */
+@media (max-width: 991.98px) and (max-height: 700px) {
+  .hero.hero-v3 .hb-slide {
+    min-height: max(420px, calc(100svh - var(--site-header-h, 104px)));
+  }
+
+  .hero.hero-v3 .hb-content {
+    padding: 16px 16px 80px;
+  }
+
+  .hero.hero-v3 .hb-kicker {
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .hero.hero-v3 .hb-title {
+    font-size: clamp(22px, 6.4vw, 28px);
+  }
+
+  .hero.hero-v3 .hb-text {
+    margin: 8px 0 12px;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+  }
+
+  .hero.hero-v3 .hb-actions .btn {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .hero.hero-v3 .hb-controls {
+    bottom: 12px;
+  }
+
+  .hero.hero-v3 .hb-tab {
+    min-height: 44px;
+    padding: 7px 6px 6px;
+    font-size: 12px;
+  }
+}
