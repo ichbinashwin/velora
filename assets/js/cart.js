@@ -2,12 +2,10 @@
 // WhatsApp order message written in the page language. The cart is kept only
 // in this browser and is shared by all language versions of the page.
 //
-// Input handling follows OWASP guidance: every value that reaches the message
-// is allowlist-validated (products, options, quantities) or normalised and
-// pattern-checked (name, city); the DOM is only written with textContent; and
-// the WhatsApp URL is built from a fixed host, a digits-only number and an
-// encoded message. This is client-side protection against accidental or casual
-// bad input. It cannot stop someone messaging the WhatsApp number directly.
+// Every value that reaches the message is allowlist-validated (products,
+// options, quantities) or checked by validate.js (name, city); the DOM is only
+// written with textContent; and the WhatsApp URL is built from a fixed host, a
+// digits-only number and an encoded message.
 (() => {
   const catalog = JSON.parse(document.getElementById("catalog").textContent);
   const { ui, msg, limits } = catalog;
@@ -34,54 +32,9 @@
 
   // ---- Validation -----------------------------------------------------------
 
-  // Control characters, and invisible format characters such as bidi overrides
-  // (U+202A–U+202E, U+2066–U+2069) and zero-width spaces, which can disguise
-  // text. ZWNJ/ZWJ (U+200C/U+200D) are kept because Gujarati and Hindi need them.
-  const INVISIBLE = /[\p{Cc}\p{Cf}\p{Co}\p{Cn}\u2028\u2029]/gu;
-  const KEEP_JOINERS = /[\u200C\u200D]/;
-  // Letters (any script) with combining marks, plus . ' ’ - and spaces.
-  const NAME_PATTERN = /^[\p{L}\p{M}](?:[\p{L}\p{M} .'’-]*[\p{L}\p{M}.])?$/u;
-  // Letters, digits, spaces and , . / - for "City / PIN code".
-  const CITY_PATTERN = /^[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N} ,./-]*[\p{L}\p{M}\p{N}.])?$/u;
-  // Anything that looks like a link or a web address.
-  const LINK_PATTERN = /(?:https?|ftp|file|javascript|data|mailto|tel|whatsapp)\s*:|www\.|[\p{L}\p{N}-]+\.(?:com|net|org|in|io|co|me|ly|xyz|info|biz|app|link|site|online|shop|store|top|click|ru|cn|tk)\b/iu;
-  // 7+ digits in a row: phone numbers, UPI/bank references; a PIN code has 6.
-  const LONG_NUMBER = /\d{7,}/;
-  // Bidi embedding/override/isolate controls only appear in deliberately crafted
-  // text (e.g. disguising "exe.txt"), so input containing them is rejected.
-  const BIDI_CONTROLS = /[\u202A-\u202E\u2066-\u2069]/u;
-  // A dot followed by 2+ letters looks like a domain or file extension; initials
-  // such as "A.K. Sharma" are still allowed.
-  const DOT_WORD = /\.\p{L}{2,}/u;
-
-  function normalizeText(value) {
-    return String(value ?? "")
-      .normalize("NFKC")
-      .replace(/\s+/g, " ")
-      .replace(INVISIBLE, (ch) => (KEEP_JOINERS.test(ch) ? ch : ""))
-      .trim();
-  }
-
-  function checkName(raw) {
-    const value = normalizeText(raw);
-    if (!value) return { value, error: ui.err_name_required };
-    const valid = !BIDI_CONTROLS.test(raw) && value.length >= 2 && value.length <= limits.name_max
-      && NAME_PATTERN.test(value) && !LINK_PATTERN.test(value) && !DOT_WORD.test(value);
-    return { value, error: valid ? "" : ui.err_name_invalid };
-  }
-
-  function checkCity(raw) {
-    const value = normalizeText(raw);
-    if (!value) return { value, error: ui.err_city_required };
-    const valid = !BIDI_CONTROLS.test(raw) && value.length >= 2 && value.length <= limits.city_max
-      && CITY_PATTERN.test(value) && !LINK_PATTERN.test(value) && !LONG_NUMBER.test(value);
-    return { value, error: valid ? "" : ui.err_city_invalid };
-  }
-
-  function clampQty(value) {
-    const qty = Number.parseInt(value, 10);
-    return Number.isFinite(qty) ? Math.min(limits.qty_max, Math.max(1, qty)) : 1;
-  }
+  const V = window.VeloraValidate(ui, limits);
+  const { checkName, checkCity, showFieldError } = V;
+  const clampQty = (value) => V.clampInt(value, 1, limits.qty_max);
 
   // A cart item is valid only if every option is one the catalog offers for
   // that product. This rejects edited form values and tampered localStorage.
@@ -93,13 +46,6 @@
     if (!product.materials.includes(item.m) || !product.sizes.includes(item.s)
       || !product.colours.includes(item.c) || !product.packs.includes(pack)) return null;
     return { p: item.p, m: item.m, s: item.s, c: item.c, pack, qty: clampQty(item.qty) };
-  }
-
-  function showFieldError(input, error) {
-    const slot = input.parentElement.querySelector(".pp-error");
-    input.setAttribute("aria-invalid", error ? "true" : "false");
-    slot.textContent = error;
-    slot.hidden = !error;
   }
 
   // ---- Storage --------------------------------------------------------------
