@@ -46,23 +46,39 @@
     <lastmod>2026-10-18</lastmod>
   </url>
   <url>
-    <loc>https://www.velora-apparel.store/napkins/</loc>
+    <loc>https://www.velora-apparel.store/products/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velora-apparel.store/products/"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.velora-apparel.store/gu/products/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.velora-apparel.store/hi/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.velora-apparel.store/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velora-apparel.store/products/"/>
   </url>
   <url>
-    <loc>https://www.velora-apparel.store/napkins/kitchen-napkins/</loc>
+    <loc>https://www.velora-apparel.store/gu/products/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velora-apparel.store/products/"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.velora-apparel.store/gu/products/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.velora-apparel.store/hi/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.velora-apparel.store/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velora-apparel.store/products/"/>
   </url>
   <url>
-    <loc>https://www.velora-apparel.store/napkins/car-cleaning-cloths/</loc>
+    <loc>https://www.velora-apparel.store/hi/products/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velora-apparel.store/products/"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.velora-apparel.store/gu/products/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.velora-apparel.store/hi/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.velora-apparel.store/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velora-apparel.store/products/"/>
   </url>
   <url>
-    <loc>https://www.velora-apparel.store/napkins/office-napkins/</loc>
+    <loc>https://www.velora-apparel.store/de/products/</loc>
     <lastmod>2026-10-18</lastmod>
-  </url>
-  <url>
-    <loc>https://www.velora-apparel.store/napkins/multipurpose-cleaning-cloths/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velora-apparel.store/products/"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.velora-apparel.store/gu/products/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.velora-apparel.store/hi/products/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.velora-apparel.store/de/products/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velora-apparel.store/products/"/>
   </url>
 </urlset>

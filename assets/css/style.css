@@ -2825,7 +2825,7 @@ a:focus {
   border-color: var(--primary);
 }
 
-/* Keep the primary nav (now with the Velora Home link) on one line on small laptops */
+/* Keep the primary nav (8 links) on one line on small laptops */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .nav-list {
     gap: 16px;
@@ -2886,4 +2886,10 @@ h3 {
 
 #velora-home h2 {
   font-size: clamp(32px, 4vw, 52px);
+}
+
+@media (min-width: 992px) and (max-width: 1099.98px) {
+  .nav-list {
+    gap: 12px;
+  }
 }
