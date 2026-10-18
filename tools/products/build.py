@@ -11,6 +11,7 @@ serves them without a build step.
 import html
 import json
 import os
+import re
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -20,6 +21,21 @@ BRAND_ICONS = json.load(open(os.path.join(HERE, "brand-icons.json"), encoding="u
 SITE = "https://www.velora-apparel.store"
 TODAY = date.today().isoformat()
 LOCALES = {"en": "en_IN", "gu": "gu_IN", "hi": "hi_IN", "de": "de_DE"}
+
+# The WhatsApp number goes into a URL, so only plain international digits are accepted.
+assert re.fullmatch(r"\d{10,15}", DATA["whatsapp"]), "catalog.json: whatsapp must be 10-15 digits"
+
+# Products page only loads its own files, so it can run under a strict policy.
+# (GitHub Pages cannot send headers; frame-ancestors is not supported in a meta CSP.)
+CSP = ("default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
+       "font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; "
+       "base-uri 'none'; object-src 'none'")
+
+
+def safe_json(obj, **kwargs):
+    """JSON that is safe inside a <script> element: no '</script>' or HTML comment break-out."""
+    text = json.dumps(obj, ensure_ascii=False, **kwargs)
+    return text.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
 ICONS = {
     "kitchen": '<path d="M7 3v8a3 3 0 0 0 2 2.8V21h2v-7.2A3 3 0 0 0 13 11V3h-1.5v6h-1V3h-1v6h-1V3H7Zm9 0c-1.7 0-3 2.2-3 5.5 0 2 .8 3.4 2 3.9V21h2V3h-1Z"/>',
@@ -71,10 +87,12 @@ def localized_catalog(lang):
     """The subset of catalog data cart.js needs, already in the page language."""
     ui = DATA["ui"][lang]
     keys = ["pack_of", "add", "added", "cart_empty", "remove", "decrease", "increase", "empty_confirm",
-            "totals", "retail", "wholesale", "pcs"]
+            "totals", "retail", "wholesale", "pcs", "err_name_required", "err_name_invalid",
+            "err_city_required", "err_city_invalid", "err_cart_full", "err_fix", "err_item"]
     return {
         "lang": lang,
         "whatsapp": DATA["whatsapp"],
+        "limits": DATA["limits"],
         "ui": {k: ui[k] for k in keys},
         "msg": ui["msg"],
         "products": [{"id": p["id"], "name": p["name"][lang], "materials": p["materials"], "sizes": p["sizes"],
@@ -108,7 +126,7 @@ def schema(lang):
         {"@type": "FAQPage", "@id": url + "#faq", "inLanguage": lang, "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in ui["faq"]]},
     ]
-    return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+    return safe_json({"@context": "https://schema.org", "@graph": graph}, indent=2)
 
 
 def build(lang):
@@ -162,6 +180,8 @@ def build(lang):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="{CSP}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>{e(ui['title'])}</title>
   <meta name="description" content="{e(ui['description'])}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -245,7 +265,7 @@ def build(lang):
           <fieldset><legend>{e(ui['f_colour'])}</legend><div class="pp-swatches" data-field="colour">{colour_opts}</div></fieldset>
           <div class="pp-row">
             <label>{e(ui['f_pack'])}<select name="pack" data-field="pack">{pack_opts}</select></label>
-            <label>{e(ui['f_qty'])}<input type="number" name="qty" min="1" max="9999" value="1" inputmode="numeric"></label>
+            <label>{e(ui['f_qty'])}<input type="number" name="qty" min="1" max="{DATA['limits']['qty_max']}" step="1" value="1" inputmode="numeric" required></label>
           </div>
           <button type="submit" class="btn btn-main w-100">{e(ui['add'])}</button>
           <p class="pp-status" data-form-status role="status"></p>
@@ -261,14 +281,15 @@ def build(lang):
           <p class="pp-totals" data-cart-totals hidden></p>
           <div class="pp-checkout" data-checkout hidden>
             <div class="pp-row">
-              <label>{e(ui['name'])}<input type="text" data-cust-name autocomplete="name"></label>
-              <label>{e(ui['city'])}<input type="text" data-cust-city autocomplete="postal-code"></label>
+              <label>{e(ui['name'])}<input type="text" data-cust-name name="customer-name" autocomplete="name" required minlength="2" maxlength="{DATA['limits']['name_max']}" aria-describedby="err-name"><span class="pp-error" id="err-name" data-error-for="name" hidden></span></label>
+              <label>{e(ui['city'])}<input type="text" data-cust-city name="customer-city" autocomplete="address-level2" required minlength="2" maxlength="{DATA['limits']['city_max']}" spellcheck="false" aria-describedby="err-city"><span class="pp-error" id="err-city" data-error-for="city" hidden></span></label>
             </div>
             <fieldset class="pp-type"><legend>{e(ui['type'])}</legend>
               <label><input type="radio" name="order-type" value="retail" checked> {e(ui['retail'])}</label>
               <label><input type="radio" name="order-type" value="wholesale"> {e(ui['wholesale'])}</label>
             </fieldset>
             <details class="pp-preview"><summary>{e(ui['preview'])}</summary><pre data-cart-preview></pre></details>
+            <p class="pp-error pp-error-summary" data-error-summary role="alert" hidden></p>
             <button type="button" class="btn btn-main w-100 pp-send" data-cart-send><svg viewBox="0 0 24 24" aria-hidden="true"><path d="{BRAND_ICONS['whatsapp']['path']}"/></svg>{e(ui['send'])}</button>
             <p class="pp-note">{e(ui['send_note'])}</p>
           </div>
@@ -308,7 +329,7 @@ def build(lang):
 
   <a class="pp-cart-fab" href="#cart">{e(ui['nav_cart'])} <span class="pp-badge" data-cart-count>0</span></a>
 
-  <script type="application/json" id="catalog">{json.dumps(localized_catalog(lang), ensure_ascii=False)}</script>
+  <script type="application/json" id="catalog">{safe_json(localized_catalog(lang))}</script>
   <script src="/assets/js/cart.js" defer></script>
 </body>
 </html>

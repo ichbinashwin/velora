@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Kitchen Napkins &amp; Microfiber Cleaning Cloths | Velora Apparel</title>
   <meta name="description" content="Kitchen napkins, microfiber car cloths, office napkins and cleaning cloths by Velora Apparel, Gujarat. Many sizes and colours. Order on WhatsApp.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -38,7 +40,7 @@
       "@type": "WebPage",
       "@id": "https://www.velora-apparel.store/products/#webpage",
       "url": "https://www.velora-apparel.store/products/",
-      "name": "Kitchen Napkins & Microfiber Cleaning Cloths | Velora Apparel",
+      "name": "Kitchen Napkins \u0026 Microfiber Cleaning Cloths | Velora Apparel",
       "description": "Kitchen napkins, microfiber car cloths, office napkins and cleaning cloths by Velora Apparel, Gujarat. Many sizes and colours. Order on WhatsApp.",
       "inLanguage": "en",
       "dateModified": "2026-10-18",
@@ -76,7 +78,7 @@
           "item": {
             "@type": "ProductGroup",
             "@id": "https://www.velora-apparel.store/products/#p-kitchen",
-            "name": "Kitchen Napkins & Towels",
+            "name": "Kitchen Napkins \u0026 Towels",
             "description": "For drying dishes, wiping hands, covering rotis and cleaning counters.",
             "url": "https://www.velora-apparel.store/products/#p-kitchen",
             "productGroupID": "kitchen",
@@ -168,7 +170,7 @@
           "item": {
             "@type": "ProductGroup",
             "@id": "https://www.velora-apparel.store/products/#p-office",
-            "name": "Office Napkins & Desk Cloths",
+            "name": "Office Napkins \u0026 Desk Cloths",
             "description": "Pantry napkins and microfiber cloths for desks, screens and glasses.",
             "url": "https://www.velora-apparel.store/products/#p-office",
             "productGroupID": "office",
@@ -407,7 +409,7 @@
           <fieldset><legend>Colour</legend><div class="pp-swatches" data-field="colour"><label class="pp-swatch"><input type="radio" name="colour" value="white" checked><span class="pp-dot sw-white"></span><span>White</span></label><label class="pp-swatch"><input type="radio" name="colour" value="grey"><span class="pp-dot sw-grey"></span><span>Grey</span></label><label class="pp-swatch"><input type="radio" name="colour" value="beige"><span class="pp-dot sw-beige"></span><span>Beige</span></label><label class="pp-swatch"><input type="radio" name="colour" value="red-check"><span class="pp-dot sw-red-check"></span><span>Red check</span></label><label class="pp-swatch"><input type="radio" name="colour" value="blue-check"><span class="pp-dot sw-blue-check"></span><span>Blue check</span></label><label class="pp-swatch"><input type="radio" name="colour" value="green"><span class="pp-dot sw-green"></span><span>Green</span></label></div></fieldset>
           <div class="pp-row">
             <label>Pack<select name="pack" data-field="pack"><option value="3">Pack of 3</option><option value="6">Pack of 6</option><option value="12">Pack of 12</option></select></label>
-            <label>Quantity (packs)<input type="number" name="qty" min="1" max="9999" value="1" inputmode="numeric"></label>
+            <label>Quantity (packs)<input type="number" name="qty" min="1" max="9999" step="1" value="1" inputmode="numeric" required></label>
           </div>
           <button type="submit" class="btn btn-main w-100">Add to cart</button>
           <p class="pp-status" data-form-status role="status"></p>
@@ -423,14 +425,15 @@
           <p class="pp-totals" data-cart-totals hidden></p>
           <div class="pp-checkout" data-checkout hidden>
             <div class="pp-row">
-              <label>Your name<input type="text" data-cust-name autocomplete="name"></label>
-              <label>City / PIN code<input type="text" data-cust-city autocomplete="postal-code"></label>
+              <label>Your name<input type="text" data-cust-name name="customer-name" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="err-name"><span class="pp-error" id="err-name" data-error-for="name" hidden></span></label>
+              <label>City / PIN code<input type="text" data-cust-city name="customer-city" autocomplete="address-level2" required minlength="2" maxlength="80" spellcheck="false" aria-describedby="err-city"><span class="pp-error" id="err-city" data-error-for="city" hidden></span></label>
             </div>
             <fieldset class="pp-type"><legend>Order type</legend>
               <label><input type="radio" name="order-type" value="retail" checked> Retail</label>
               <label><input type="radio" name="order-type" value="wholesale"> Wholesale</label>
             </fieldset>
             <details class="pp-preview"><summary>Preview message</summary><pre data-cart-preview></pre></details>
+            <p class="pp-error pp-error-summary" data-error-summary role="alert" hidden></p>
             <button type="button" class="btn btn-main w-100 pp-send" data-cart-send><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Send order on WhatsApp</button>
             <p class="pp-note">WhatsApp opens with your order ready. It is sent only when you press send in WhatsApp.</p>
           </div>
@@ -492,7 +495,7 @@
 
   <a class="pp-cart-fab" href="#cart">Cart <span class="pp-badge" data-cart-count>0</span></a>
 
-  <script type="application/json" id="catalog">{"lang": "en", "whatsapp": "917990965209", "ui": {"pack_of": "Pack of {n}", "add": "Add to cart", "added": "Added to cart: {item}", "cart_empty": "Your cart is empty. Use the order form to add products.", "remove": "Remove", "decrease": "Decrease quantity", "increase": "Increase quantity", "empty_confirm": "Remove all items from your cart?", "totals": "{items} products · {packs} packs · {pieces} pieces", "retail": "Retail", "wholesale": "Wholesale", "pcs": "pcs"}, "msg": {"greet": "Hello Velora Apparel,", "intro": "Please note my order:", "qty": "Qty: {qty} × pack of {pack} ({pieces} pcs)", "total": "Total: {items} products · {packs} packs · {pieces} pieces", "type": "Order type", "name": "Name", "city": "City / PIN", "close": "Kindly confirm the price, availability and delivery time.", "thanks": "Thank you."}, "products": [{"id": "kitchen", "name": "Kitchen Napkins & Towels", "materials": ["cotton", "terry", "waffle"], "sizes": ["40 × 40 cm", "40 × 60 cm", "50 × 70 cm"], "colours": ["white", "grey", "beige", "red-check", "blue-check", "green"], "packs": [3, 6, 12]}, {"id": "car", "name": "Microfiber Car Cleaning Cloths", "materials": ["microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm", "40 × 60 cm"], "colours": ["blue", "grey", "yellow", "green", "red", "orange"], "packs": [3, 6, 12]}, {"id": "office", "name": "Office Napkins & Desk Cloths", "materials": ["cotton", "microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["white", "grey", "navy", "black", "sky"], "packs": [3, 6, 12]}, {"id": "multi", "name": "Multipurpose Cleaning Cloths", "materials": ["microfiber", "cotton"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["assorted", "blue", "yellow", "pink", "green"], "packs": [3, 6, 12]}], "materials": {"cotton": "Cotton", "terry": "Terry cotton", "waffle": "Waffle cotton", "microfiber": "Microfiber"}, "colours": {"white": "White", "grey": "Grey", "beige": "Beige", "red-check": "Red check", "blue-check": "Blue check", "green": "Green", "blue": "Blue", "yellow": "Yellow", "red": "Red", "orange": "Orange", "navy": "Navy", "black": "Black", "sky": "Sky blue", "pink": "Pink", "assorted": "Assorted colours"}}</script>
+  <script type="application/json" id="catalog">{"lang": "en", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "qty_max": 9999, "cart_max": 30}, "ui": {"pack_of": "Pack of {n}", "add": "Add to cart", "added": "Added to cart: {item}", "cart_empty": "Your cart is empty. Use the order form to add products.", "remove": "Remove", "decrease": "Decrease quantity", "increase": "Increase quantity", "empty_confirm": "Remove all items from your cart?", "totals": "{items} products · {packs} packs · {pieces} pieces", "retail": "Retail", "wholesale": "Wholesale", "pcs": "pcs", "err_name_required": "Please enter your name.", "err_name_invalid": "Use letters, spaces, dot, apostrophe or hyphen only (2–60 characters). Numbers, links and symbols are not allowed.", "err_city_required": "Please enter your city or PIN code.", "err_city_invalid": "Use letters, numbers, spaces, comma, dot, hyphen or slash only (2–80 characters). Links and phone numbers are not allowed.", "err_cart_full": "Your cart can hold up to {max} different products. Send this order first, then start a new one.", "err_fix": "Please correct the highlighted fields.", "err_item": "This selection is not available. Please choose again."}, "msg": {"greet": "Hello Velora Apparel,", "intro": "Please note my order:", "qty": "Qty: {qty} × pack of {pack} ({pieces} pcs)", "total": "Total: {items} products · {packs} packs · {pieces} pieces", "type": "Order type", "name": "Name", "city": "City / PIN", "close": "Kindly confirm the price, availability and delivery time.", "thanks": "Thank you."}, "products": [{"id": "kitchen", "name": "Kitchen Napkins \u0026 Towels", "materials": ["cotton", "terry", "waffle"], "sizes": ["40 × 40 cm", "40 × 60 cm", "50 × 70 cm"], "colours": ["white", "grey", "beige", "red-check", "blue-check", "green"], "packs": [3, 6, 12]}, {"id": "car", "name": "Microfiber Car Cleaning Cloths", "materials": ["microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm", "40 × 60 cm"], "colours": ["blue", "grey", "yellow", "green", "red", "orange"], "packs": [3, 6, 12]}, {"id": "office", "name": "Office Napkins \u0026 Desk Cloths", "materials": ["cotton", "microfiber"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["white", "grey", "navy", "black", "sky"], "packs": [3, 6, 12]}, {"id": "multi", "name": "Multipurpose Cleaning Cloths", "materials": ["microfiber", "cotton"], "sizes": ["30 × 30 cm", "40 × 40 cm"], "colours": ["assorted", "blue", "yellow", "pink", "green"], "packs": [3, 6, 12]}], "materials": {"cotton": "Cotton", "terry": "Terry cotton", "waffle": "Waffle cotton", "microfiber": "Microfiber"}, "colours": {"white": "White", "grey": "Grey", "beige": "Beige", "red-check": "Red check", "blue-check": "Blue check", "green": "Green", "blue": "Blue", "yellow": "Yellow", "red": "Red", "orange": "Orange", "navy": "Navy", "black": "Black", "sky": "Sky blue", "pink": "Pink", "assorted": "Assorted colours"}}</script>
   <script src="/assets/js/cart.js" defer></script>
 </body>
 </html>
