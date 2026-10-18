@@ -1,6 +1,11 @@
 // Mobile menu for pages that share the main site header but cannot use inline
 // scripts (Products pages run under a strict Content-Security-Policy).
 (() => {
+  // Language selector on pages without their own handler (only the four homepages are allowed targets).
+  document.querySelectorAll("[data-legal-lang]").forEach((select) => select.addEventListener("change", () => {
+    if (/^\/(?:(?:gu|hi|de)\/)?$/.test(select.value)) window.location.href = select.value;
+  }));
+
   const toggle = document.querySelector("[data-nav-toggle]");
   const panel = document.querySelector("[data-nav-panel]");
   if (!toggle || !panel) return;
