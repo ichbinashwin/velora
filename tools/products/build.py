@@ -21,6 +21,7 @@ BRAND_ICONS = json.load(open(os.path.join(HERE, "brand-icons.json"), encoding="u
 SITE = "https://www.velora-apparel.store"
 TODAY = date.today().isoformat()
 LOCALES = {"en": "en_IN", "gu": "gu_IN", "hi": "hi_IN", "de": "de_DE"}
+ART_ALT = {'en': ('Colourful sewing thread spools', 'Thread spools and a metal thimble'), 'gu': ('રંગબેરંગી સિલાઈ દોરાના રીલ', 'દોરાના રીલ અને ધાતુનું થિમ્બલ'), 'hi': ('रंग-बिरंगी सिलाई धागे की रीलें', 'धागे की रीलें और धातु का अंगुश्ताना'), 'de': ('Bunte Nähgarnrollen', 'Garnrollen und ein Metall-Fingerhut')}
 TOPBAR = {'en': 'Ladies wear manufacturer · Gujarat, India', 'gu': 'મહિલા વસ્ત્રોના ઉત્પાદક · ગુજરાત, ભારત', 'hi': 'महिलाओं के कपड़ों के निर्माता · गुजरात, भारत', 'de': 'Damenbekleidung Hersteller · Gujarat, Indien'}
 
 # The WhatsApp number goes into a URL, so only plain international digits are accepted.
@@ -171,7 +172,7 @@ def tailoring_section(lang):
           <p class="pp-lead">{e(ui['t_lead'])}</p>
           <ul class="pp-trust">{points}</ul>
           <div class="pp-tgroups">{groups}</div>
-          <figure class="pp-art pp-tailor-art"><picture><source type="image/webp" srcset="/assets/images/products/tailoring-800.webp"><img src="/assets/images/products/tailoring-800.jpg" width="800" height="640" alt="" loading="lazy" decoding="async"></picture></figure>
+          <figure class="pp-art pp-tailor-art"><picture><source type="image/webp" srcset="/assets/images/products/tailoring-800.webp"><img src="/assets/images/products/tailoring-800.jpg" width="800" height="640" alt="{e(ART_ALT[lang][1])}" loading="lazy" decoding="async"></picture></figure>
         </div>
         <form class="pp-panel pp-form pp-tailor-form" data-tailor-form novalidate>
           <h2 class="pp-h2">{e(ui['t_form_h'])}</h2>
@@ -330,7 +331,7 @@ def build(lang):
   <main id="main">
     <section class="pp-hero">
       <div class="container pp-hero-grid">
-        <figure class="pp-art pp-hero-art"><picture><source type="image/webp" srcset="/assets/images/products/hero-800.webp"><img src="/assets/images/products/hero-800.jpg" width="800" height="640" alt="" decoding="async"></picture></figure>
+        <figure class="pp-art pp-hero-art"><picture><source type="image/webp" srcset="/assets/images/products/hero-800.webp"><img src="/assets/images/products/hero-800.jpg" width="800" height="640" alt="{e(ART_ALT[lang][0])}" decoding="async"></picture></figure>
         <nav class="pp-breadcrumb" aria-label="Breadcrumb"><a href="{home}">{e(ui['breadcrumb_home'])}</a> › <span aria-current="page">{e(ui['nav_products'])}</span></nav>
         <p class="eyebrow">{e(ui['eyebrow'])}</p>
         <h1>{e(ui['h1'])}</h1>

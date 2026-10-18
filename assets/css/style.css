@@ -4156,3 +4156,321 @@ body.menu-open .consent-tab {
     transition: none;
   }
 }
+
+/* Homepage product cards: illustration on top, text below (never over it) */
+.product-card:has(.product-card-art) {
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.product-card .product-card-art {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: calc(100% + 68px);
+  height: 260px;
+  margin: -34px -34px 22px;
+  object-fit: cover;
+  object-position: center 22%;
+  transition: transform .5s ease;
+}
+
+.product-card:has(.product-card-art)::before {
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(8, 15, 38, 0) 0%, rgba(8, 15, 38, 0) 46%, rgba(8, 15, 38, .55) 100%);
+  pointer-events: none;
+}
+
+.product-card::after {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.product-card h3,
+.product-card p {
+  z-index: 2;
+}
+
+.product-card:hover .product-card-art {
+  transform: scale(1.04);
+}
+
+/* Topbar links: readable white pills on the gradient, clear hover state */
+.site-header .topbar-contact a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.site-header .topbar-contact a:hover,
+.site-header .topbar-contact a:focus-visible {
+  background: rgba(255, 255, 255, .22);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .45);
+}
+
+.site-header .topbar-contact a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card .product-card-art {
+    transition: none;
+  }
+}
+
+/* ===== Privacy Policy and Terms pages ===== */
+.legal-page .legal-container {
+  max-width: 920px;
+}
+
+.legal-breadcrumb {
+  margin-bottom: 18px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.legal-breadcrumb a {
+  color: var(--muted-strong);
+}
+
+.legal-page h1 {
+  margin: 0 0 8px;
+  font-size: clamp(34px, 5vw, 52px);
+  color: var(--ink);
+}
+
+.legal-page h2 {
+  margin: 34px 0 10px;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--ink);
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.legal-updated {
+  font-weight: 700;
+}
+
+.legal-summary {
+  margin: 24px 0 8px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--primary);
+  border-radius: 16px;
+  background: var(--accent-soft);
+}
+
+.legal-summary h2 {
+  margin: 0 0 8px;
+}
+
+.legal-summary ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+}
+
+.legal-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: .92rem;
+  background: var(--surface);
+}
+
+.legal-table th,
+.legal-table td {
+  padding: 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  color: var(--muted);
+}
+
+.legal-table th {
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+/* Legal pages: header is sticky, so a shorter top gap is enough */
+.legal-page.section-pad {
+  padding-top: 40px;
+}
+
+@media (max-width: 575.98px) {
+  .product-card .product-card-art {
+    height: 230px;
+  }
+
+  .legal-page.section-pad {
+    padding-top: 28px;
+  }
+}
+
+.product-card:has(.product-card-art) {
+  height: 100%;
+}
+
+/* Manufacturing process: big icon + text cards with hover and scroll effects */
+.process-grid .step {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 190px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 30px 18px 24px;
+  text-align: center;
+  font-size: 1.12rem;
+  transition: transform .35s ease, box-shadow .35s ease, color .35s ease, border-color .35s ease;
+}
+
+/* Gradient fill that rises on hover */
+.process-grid .step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transform: translateY(30%);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+/* Light shine sweep */
+.process-grid .step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  z-index: -1;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: skewX(-20deg);
+  transition: left .7s ease;
+}
+
+.process-grid .step .step-icon {
+  width: 72px;
+  height: 72px;
+  padding: 17px;
+  border-radius: 22px;
+  background: var(--gradient-primary);
+  fill: #fff;
+  box-shadow: 0 14px 28px rgba(109, 74, 255, .32);
+  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), background .35s ease, box-shadow .35s ease;
+}
+
+.process-grid .step:nth-child(even) .step-icon {
+  background: linear-gradient(135deg, #db2777, #7c3aed);
+  box-shadow: 0 14px 28px rgba(219, 39, 119, .28);
+}
+
+/* Step number becomes a corner badge */
+.process-grid .step span {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--primary);
+  font-size: .78rem;
+  font-weight: 800;
+  transition: background .35s ease, color .35s ease;
+}
+
+.process-grid .step:hover,
+.process-grid .step:focus-within {
+  transform: translateY(-8px);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 24px 48px rgba(109, 74, 255, .35);
+}
+
+.process-grid .step:hover::before {
+  opacity: 1;
+  transform: none;
+}
+
+.process-grid .step:hover::after {
+  left: 130%;
+}
+
+.process-grid .step:hover .step-icon {
+  background: rgba(255, 255, 255, .2);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .6);
+  transform: translateY(-4px) rotate(-8deg) scale(1.1);
+}
+
+.process-grid .step:hover span {
+  background: rgba(255, 255, 255, .22);
+  color: #fff;
+}
+
+/* Scroll effect: icons pop in as each card enters the screen (CSS only) */
+@supports (animation-timeline: view()) {
+  .process-grid .step .step-icon {
+    animation: step-pop linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 35%;
+  }
+
+  @keyframes step-pop {
+    from { opacity: 0; transform: scale(.4) rotate(-25deg); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .process-grid .step:hover .step-icon {
+    animation: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .process-grid .step {
+    min-height: 150px;
+  }
+
+  .process-grid .step .step-icon {
+    width: 60px;
+    height: 60px;
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-grid .step,
+  .process-grid .step::before,
+  .process-grid .step::after,
+  .process-grid .step .step-icon {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .process-grid .step {
+    min-height: 140px;
+    padding: 26px 10px 16px;
+    font-size: 1rem;
+  }
+}

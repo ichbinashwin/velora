@@ -6,27 +6,27 @@
   const CONSENT_KEY = "velora_cookie_consent_v1";
   const TEXT = {
     en: { tab: "Privacy", title: "Privacy and cookie preferences", close: "Close",
-      desc: "Necessary local storage remembers your choices. Optional items load images and animations on the homepage, and Google Analytics measures visits. We do not use advertising cookies.",
+      desc: "Necessary local storage remembers your choices. Optional items load animation files, and Google Analytics measures visits if you allow it. We do not use advertising cookies.",
       necessary: ["Necessary", "Consent record, cart and display settings. Always on."],
-      preferences: ["Preferences and media", "Loads third-party fashion images from Unsplash and GSAP animation libraries from jsDelivr."],
+      preferences: ["Preferences and animations", "Remembers dark mode and loads GSAP animation files from jsDelivr."],
       analytics: ["Analytics", "Measures visits and page use with Google Analytics 4 (pseudonymous statistics). Never used for advertising."],
       reject: "Reject optional", save: "Save choices", accept: "Accept optional" },
     gu: { tab: "ગોપનીયતા", title: "ગોપનીયતા અને કૂકી પસંદગીઓ", close: "બંધ કરો",
-      desc: "જરૂરી લોકલ સ્ટોરેજ તમારી પસંદગીઓ યાદ રાખે છે. વૈકલ્પિક વસ્તુઓ હોમપેજ પર ચિત્રો અને એનિમેશન લોડ કરે છે, અને Google Analytics મુલાકાતો માપે છે. અમે જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી.",
+      desc: "જરૂરી લોકલ સ્ટોરેજ તમારી પસંદગીઓ યાદ રાખે છે. વૈકલ્પિક વસ્તુઓ એનિમેશન ફાઇલો લોડ કરે છે, અને તમે મંજૂરી આપો તો Google Analytics મુલાકાતો માપે છે. અમે જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી.",
       necessary: ["જરૂરી", "મંજૂરીનો રેકોર્ડ, કાર્ટ અને ડિસ્પ્લે સેટિંગ્સ. હંમેશા ચાલુ."],
-      preferences: ["પસંદગીઓ અને મીડિયા", "Unsplashના તૃતીય-પક્ષ ફેશન ચિત્રો અને jsDelivrની GSAP એનિમેશન લાઇબ્રેરીઓ લોડ કરે છે."],
+      preferences: ["પસંદગીઓ અને એનિમેશન", "ડાર્ક મોડ યાદ રાખે છે અને jsDelivr પરથી GSAP એનિમેશન ફાઇલો લોડ કરે છે."],
       analytics: ["એનાલિટિક્સ", "Google Analytics 4 વડે મુલાકાતો અને પેજના ઉપયોગનું માપન (નામ વગરના આંકડા). જાહેરાત માટે ક્યારેય ઉપયોગ થતો નથી."],
       reject: "વૈકલ્પિક નકારો", save: "પસંદગીઓ સાચવો", accept: "વૈકલ્પિક સ્વીકારો" },
     hi: { tab: "गोपनीयता", title: "गोपनीयता और कुकी प्राथमिकताएं", close: "बंद करें",
-      desc: "आवश्यक लोकल स्टोरेज आपकी पसंद याद रखता है। वैकल्पिक आइटम होमपेज पर इमेज और एनीमेशन लोड करते हैं, और Google Analytics विज़िट मापता है। हम विज्ञापन कुकीज़ का उपयोग नहीं करते।",
+      desc: "आवश्यक लोकल स्टोरेज आपकी पसंद याद रखता है। वैकल्पिक आइटम एनीमेशन फ़ाइलें लोड करते हैं, और आपकी अनुमति से Google Analytics विज़िट मापता है। हम विज्ञापन कुकीज़ का उपयोग नहीं करते।",
       necessary: ["आवश्यक", "सहमति रिकॉर्ड, कार्ट और डिस्प्ले सेटिंग। हमेशा चालू।"],
-      preferences: ["प्राथमिकताएं और मीडिया", "Unsplash की थर्ड-पार्टी फैशन इमेज और jsDelivr की GSAP एनीमेशन लाइब्रेरी लोड करता है।"],
+      preferences: ["प्राथमिकताएं और एनीमेशन", "डार्क मोड याद रखता है और jsDelivr से GSAP एनीमेशन फ़ाइलें लोड करता है।"],
       analytics: ["एनालिटिक्स", "Google Analytics 4 से विज़िट और पेज उपयोग का माप (नाम रहित आंकड़े)। विज्ञापन के लिए कभी उपयोग नहीं होता।"],
       reject: "वैकल्पिक अस्वीकार करें", save: "पसंद सहेजें", accept: "वैकल्पिक स्वीकार करें" },
     de: { tab: "Datenschutz", title: "Datenschutz- und Cookie-Einstellungen", close: "Schließen",
-      desc: "Notwendiger lokaler Speicher merkt sich Ihre Auswahl. Optionale Elemente laden Bilder und Animationen auf der Startseite, und Google Analytics misst Besuche. Wir verwenden keine Werbe-Cookies.",
+      desc: "Notwendiger lokaler Speicher merkt sich Ihre Auswahl. Optionale Elemente laden Animationsdateien, und mit Ihrer Erlaubnis misst Google Analytics Besuche. Wir verwenden keine Werbe-Cookies.",
       necessary: ["Erforderlich", "Einwilligungsnachweis, Warenkorb und Anzeigeeinstellungen. Immer aktiv."],
-      preferences: ["Präferenzen und Medien", "Lädt externe Modebilder von Unsplash und GSAP-Animationsbibliotheken von jsDelivr."],
+      preferences: ["Präferenzen und Animationen", "Merkt sich den Dunkelmodus und lädt GSAP-Animationsdateien von jsDelivr."],
       analytics: ["Statistik", "Misst Besuche und Seitennutzung mit Google Analytics 4 (pseudonyme Statistiken). Nie für Werbung verwendet."],
       reject: "Optionale Elemente ablehnen", save: "Auswahl speichern", accept: "Optionale Elemente akzeptieren" }
   };
@@ -145,6 +145,10 @@
   }
 
   tab.addEventListener("click", () => setOpen(!isOpen()));
+  // Footer "privacy preferences" buttons on pages without the homepage panel.
+  if (!isHomePanel) {
+    document.querySelectorAll("[data-cookie-open]").forEach((button) => button.addEventListener("click", () => setOpen(true)));
+  }
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isOpen() && !isHomePanel) setOpen(false);
   });

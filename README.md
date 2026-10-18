@@ -21,6 +21,8 @@ Homepage banner (`assets/images/banner/`):
 - Measuring tape on silk: Unsplash License (https://unsplash.com/photos/xFcqV_XZNNU)
 - Sewing kit with thimbles: rawpixel, CC0, cropped to exclude thread-brand labels (https://www.rawpixel.com/image/5904602)
 
+Homepage product categories (`assets/images/categories/`): original SVG illustrations made for this site (`tools/make_category_art.py`); no licence or attribution needed.
+
 Products page (`assets/images/products/`):
 
 - Sewing thread: StockSnap, CC0 (https://stocksnap.io/photo/sewing-thread-TUSNCRKPBJ)
