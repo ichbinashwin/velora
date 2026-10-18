@@ -3827,3 +3827,50 @@ main {
     padding: 20px;
   }
 }
+
+/* Phones & tablets: the photo gets its own area above the sheet (instead of
+   filling the whole slide behind it), so the subject is fully visible. */
+@media (max-width: 991.98px) {
+  .hero.hero-v3 .hb-slide {
+    justify-content: flex-start;
+    background: #1b0b3d;
+  }
+
+  .hero.hero-v3 .hb-media {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 150px;
+  }
+
+  .hero.hero-v3 .hb-media img {
+    position: absolute;
+    inset: 0;
+    object-position: center;
+  }
+
+  .hero.hero-v3 .hb-slide::before,
+  .hero.hero-v3 .hb-slide-napkins::before,
+  .hero.hero-v3 .hb-slide-tailoring::before {
+    z-index: 1;
+    bottom: auto;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(27, 11, 61, .35) 0%, rgba(27, 11, 61, 0) 100%);
+    pointer-events: none;
+  }
+
+  .hero.hero-v3 .hb-content {
+    z-index: 2;
+    flex: 0 0 auto;
+    margin-top: -28px;
+    background: rgba(24, 10, 56, .92);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero.hero-v3 .hb-content {
+    margin-top: -56px;
+  }
+}
