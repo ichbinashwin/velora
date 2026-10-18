@@ -21,6 +21,7 @@ BRAND_ICONS = json.load(open(os.path.join(HERE, "brand-icons.json"), encoding="u
 SITE = "https://www.velora-apparel.store"
 TODAY = date.today().isoformat()
 LOCALES = {"en": "en_IN", "gu": "gu_IN", "hi": "hi_IN", "de": "de_DE"}
+TOPBAR = {'en': 'Ladies wear manufacturer · Gujarat, India', 'gu': 'મહિલા વસ્ત્રોના ઉત્પાદક · ગુજરાત, ભારત', 'hi': 'महिलाओं के कपड़ों के निर्माता · गुजरात, भारत', 'de': 'Damenbekleidung Hersteller · Gujarat, Indien'}
 
 # The WhatsApp number goes into a URL, so only plain international digits are accepted.
 assert re.fullmatch(r"\d{10,15}", DATA["whatsapp"]), "catalog.json: whatsapp must be 10-15 digits"
@@ -277,6 +278,8 @@ def build(lang):
 {schema(lang)}
   </script>
   <script src="/assets/js/analytics.js" defer></script>
+  <script src="/assets/js/consent-tab.js" defer></script>
+  <script src="/assets/js/site-nav.js" defer></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/products.css">
   <link rel="stylesheet" href="/assets/css/product-swatches.css">
@@ -284,22 +287,43 @@ def build(lang):
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 </head>
 <body class="pp-page">
-  <header class="pp-header">
-    <div class="container pp-header-inner">
-      <a class="pp-brand" href="{home}"><picture><source srcset="/assets/images/logo-240.webp" type="image/webp"><img src="/assets/images/logo-240.png" alt="Velora Apparel logo" width="240" height="159" decoding="async"></picture><span>Velora Apparel</span></a>
-      <nav class="pp-nav" aria-label="Primary">
-        <a href="{home}">{e(ui['nav_home'])}</a>
-        <a href="{home}#products">{e(ui['nav_ladies'])}</a>
-        <a href="{prefix(lang)}products/" aria-current="page">{e(ui['nav_products'])}</a>
-        <a href="#tailoring">{e(ui['nav_tailoring'])}</a>
-        <a href="{home}#contact">{e(ui['nav_contact'])}</a>
-      </nav>
-      <div class="pp-header-tools">
-        <label class="sr-only" for="pp-lang">Language</label>
-        <select id="pp-lang" class="pp-lang" data-lang-select>{lang_options}</select>
-        <a class="pp-cart-link" href="#cart">{e(ui['nav_cart'])} <span class="pp-badge" data-cart-count>0</span></a>
+  <header class="site-header pp-site-header" data-site-header>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-title">{e(TOPBAR[lang])}</span>
+        <span class="topbar-contact">
+          <a href="tel:+917990965209"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.2 9.2 2l2.1 5-2.2 1.6a15.7 15.7 0 0 0 6.3 6.3l1.6-2.2 5 2.1-1.2 2.6c-.6 1.4-2.1 2.1-3.6 1.7C10.9 17.6 6.4 13.1 4.9 6.8c-.3-1.5.4-3 1.7-3.6Z"/></svg><span>+91&nbsp;79909&nbsp;65209</span></a>
+          <span aria-hidden="true">|</span>
+          <a href="mailto:{DATA['email']}?subject=Velora%20Apparel%20enquiry" title="{DATA['email']}"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8v.3l7.2 5 7.2-5v-.3H4.8Zm14.4 9.4V9.8L12 14.7 4.8 9.8v6.9h14.4Z"/></svg><span>{DATA['email']}</span></a>
+          <span aria-hidden="true">|</span>
+          <a href="https://wa.me/{DATA['whatsapp']}" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="{BRAND_ICONS['whatsapp']['path']}"/></svg><span>WhatsApp</span></a>
+        </span>
       </div>
     </div>
+    <nav class="navbar" aria-label="Primary">
+      <div class="container navbar-inner">
+        <a class="brand" href="{home}"><picture><source srcset="/assets/images/logo-240.webp" type="image/webp"><img src="/assets/images/logo-240.png" alt="Velora Apparel logo" class="brand-logo" width="240" height="159" decoding="async"></picture><span class="brand-text">Velora Apparel</span></a>
+        <button class="navbar-toggle" type="button" data-nav-toggle aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+        </button>
+        <label class="language-switcher">
+          <span class="sr-only">Language</span>
+          <select data-lang-select aria-label="Language">{lang_options}</select>
+        </label>
+        <a class="pp-cart-link" href="#cart">{e(ui['nav_cart'])} <span class="pp-badge" data-cart-count>0</span></a>
+        <div class="nav-panel" id="mainNav" data-nav-panel>
+          <ul class="nav-list">
+            <li><a class="nav-link" href="{home}">{e(ui['nav_home'])}</a></li>
+            <li><a class="nav-link" href="{home}#products">{e(ui['nav_ladies'])}</a></li>
+            <li><a class="nav-link is-active" href="{prefix(lang)}products/" aria-current="page">{e(ui['nav_products'])}</a></li>
+            <li><a class="nav-link" href="#tailoring">{e(ui['nav_tailoring'])}</a></li>
+            <li><a class="nav-link" href="{home}#contact">{e(ui['nav_contact'])}</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
