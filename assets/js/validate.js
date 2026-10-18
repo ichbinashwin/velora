@@ -26,6 +26,10 @@ window.VeloraValidate = (ui, limits) => {
   // 7+ digits in a row: phone numbers, UPI/bank references; a PIN code has 6.
   const LONG_NUMBER = /\d{7,}/;
   const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
+  // Country names in any script: letters, spaces and . ' ’ ( ) -
+  const COUNTRY_PATTERN = /^[\p{L}\p{M}](?:[\p{L}\p{M} .'’()-]*[\p{L}\p{M}.)])?$/u;
+  // Company or brand: letters, digits, spaces and . , & ' ’ ( ) -
+  const COMPANY_PATTERN = /^[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N} .,&'’()-]*[\p{L}\p{M}\p{N}.)])?$/u;
 
   function normalizeText(value) {
     return String(value ?? "")
@@ -49,6 +53,21 @@ window.VeloraValidate = (ui, limits) => {
     const valid = !BIDI_CONTROLS.test(raw) && value.length >= 2 && value.length <= limits.city_max
       && CITY_PATTERN.test(value) && !LINK_PATTERN.test(value) && !LONG_NUMBER.test(value);
     return { value, error: valid ? "" : ui.err_city_invalid };
+  }
+
+  function checkCountry(raw) {
+    const value = normalizeText(raw);
+    const valid = !BIDI_CONTROLS.test(raw) && value.length >= 2 && value.length <= 56 && COUNTRY_PATTERN.test(value);
+    return { value, error: valid ? "" : ui.err_country };
+  }
+
+  // Optional company or brand name.
+  function checkCompany(raw) {
+    const value = normalizeText(raw);
+    if (!value) return { value, error: "" };
+    const valid = !BIDI_CONTROLS.test(raw) && value.length <= 80 && COMPANY_PATTERN.test(value)
+      && !LINK_PATTERN.test(value) && !DOT_WORD.test(value) && !LONG_NUMBER.test(value);
+    return { value, error: valid ? "" : ui.err_company };
   }
 
   // Optional free text: empty is fine.
@@ -100,5 +119,5 @@ window.VeloraValidate = (ui, limits) => {
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
   }
 
-  return { normalizeText, checkName, checkCity, checkNotes, checkDate, clampInt, isIntInRange, showFieldError, isoDate };
+  return { normalizeText, checkName, checkCity, checkCountry, checkCompany, checkNotes, checkDate, clampInt, isIntInRange, showFieldError, isoDate };
 };

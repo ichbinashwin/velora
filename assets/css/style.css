@@ -3607,3 +3607,223 @@ main {
     font-size: 12px;
   }
 }
+
+/* ===== How Velora Apparel works (transparency) ===== */
+.how-section {
+  background: var(--surface-soft);
+}
+
+.hw-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hw-item {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 22px 22px 22px 58px;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  counter-increment: hw;
+}
+
+.hw-list {
+  counter-reset: hw;
+}
+
+.hw-item::before {
+  content: counter(hw);
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.hw-item strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.hw-item span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== Manufacturing quote form (Contact section) ===== */
+.quote-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 26px;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 24px 50px rgba(14, 6, 40, .35);
+  text-align: left;
+}
+
+.quote-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.3rem;
+}
+
+.quote-card label,
+.quote-card legend {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.quote-card legend {
+  margin-bottom: 8px;
+}
+
+.quote-card fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.quote-card input[type="text"],
+.quote-card input[type="number"],
+.quote-card input[type="date"],
+.quote-card select,
+.quote-card textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.quote-card textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.quote-card [aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+
+.qc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.qc-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quote-card .qc-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quote-card .qc-choice:has(input:checked) {
+  border-color: var(--primary);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.quote-card input[type="radio"] {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+.qc-error {
+  color: var(--red);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.qc-summary {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--red-soft);
+}
+
+.qc-preview summary {
+  color: var(--muted-strong);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qc-preview pre {
+  max-height: 220px;
+  margin: 8px 0 0;
+  padding: 12px;
+  overflow: auto;
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font: .82rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+}
+
+.qc-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: .82rem;
+  text-align: center;
+}
+
+.quote-card .btn-main {
+  color: #fff;
+}
+
+.quote-card button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.footer .footer-photos {
+  margin-top: 8px;
+  font-size: .85rem;
+}
+
+@media (max-width: 575.98px) {
+  .qc-row {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    padding: 20px;
+  }
+}
