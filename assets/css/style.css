@@ -2785,3 +2785,105 @@ a:focus {
 .brand-text {
   white-space: nowrap;
 }
+
+.vh-teaser {
+  background: var(--gradient-soft);
+}
+
+.vh-teaser-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vh-teaser-links a {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+}
+
+.vh-teaser-links a::after {
+  content: "\2192";
+  margin-left: auto;
+  padding-left: 10px;
+  color: var(--primary);
+}
+
+.vh-teaser-links a:hover,
+.vh-teaser-links a:focus-visible {
+  border-color: var(--primary);
+}
+
+/* Keep the primary nav (now with the Velora Home link) on one line on small laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .nav-list {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+/* Row gutters must fit inside the 14px mobile container gutter */
+@media (max-width: 575.98px) {
+  .g-4,
+  .g-5 {
+    --grid-gap: 28px;
+  }
+}
+
+/* Long compound words (e.g. German "Damenbekleidungshersteller") must not overflow on phones */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+:lang(de) h1,
+:lang(de) h2,
+:lang(de) h3 {
+  hyphens: auto;
+}
+
+@media (max-width: 575.98px) {
+  .vh-teaser-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Outline buttons on light surfaces (the theme above styles them for the dark hero only) */
+.vh-teaser .btn-outline-dark,
+.vh-page .btn-outline-dark,
+.navbar .btn-outline-dark {
+  border-color: var(--primary);
+  background: transparent;
+  color: var(--primary);
+  backdrop-filter: none;
+}
+
+.vh-teaser .btn-outline-dark:hover,
+.vh-teaser .btn-outline-dark:focus,
+.vh-page .btn-outline-dark:hover,
+.vh-page .btn-outline-dark:focus,
+.navbar .btn-outline-dark:hover,
+.navbar .btn-outline-dark:focus {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+#velora-home h2 {
+  font-size: clamp(32px, 4vw, 52px);
+}
