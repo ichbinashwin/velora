@@ -313,6 +313,7 @@
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message(name.value, city.value))}`;
     window.open(url, "_blank", "noopener,noreferrer");
+    window.veloraAnalytics?.event("generate_lead", { lead_type: "product_order", order_type: orderType(), items: cart.length });
   });
 
   document.querySelector("[data-lang-select]").addEventListener("change", (event) => {

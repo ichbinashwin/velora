@@ -109,6 +109,7 @@
     button.disabled = true;
     window.setTimeout(() => { button.disabled = false; }, SEND_COOLDOWN_MS);
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message(d))}`, "_blank", "noopener,noreferrer");
+    window.veloraAnalytics?.event("generate_lead", { lead_type: "manufacturing_quote", enquiry_type: d.type, product: d.product });
   });
 
   updatePreview();

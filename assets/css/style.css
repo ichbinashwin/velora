@@ -3874,3 +3874,50 @@ main {
     margin-top: -56px;
   }
 }
+
+/* The header's backdrop blur makes it the containing block for position:fixed
+   children, which trapped the full-screen mobile menu inside the header strip.
+   Drop the blur while the menu is open so the menu covers the whole screen. */
+.site-header:has(.nav-panel.is-open),
+body.menu-open .site-header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  z-index: 1300;
+}
+
+@media (max-width: 991.98px) {
+  .nav-panel.is-open {
+    padding-top: 96px;
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .site-header .nav-panel.is-open .nav-list {
+    width: min(100%, 520px);
+  }
+
+  .site-header .nav-panel.is-open .nav-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+  }
+
+  .site-header .nav-panel.is-open .nav-link {
+    min-height: 52px;
+    padding: 12px 8px;
+    color: rgba(255, 255, 255, .92);
+    font-size: clamp(19px, 5vw, 24px);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .site-header .nav-panel.is-open .nav-link:hover,
+  .site-header .nav-panel.is-open .nav-link:focus-visible,
+  .site-header .nav-panel.is-open .nav-link.is-active {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  .site-header .nav-panel.is-open .nav-link::after {
+    bottom: 6px;
+  }
+}
