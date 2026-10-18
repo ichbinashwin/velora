@@ -761,7 +761,7 @@
       <p>Ladies wear manufacturer in Alindra, Gujarat, India: OEM, private label, job work and bulk production of kurtis, co-ord sets, tops, office wear, night wear and dresses.</p>
       <p class="footer-nap">Velora Apparel · Village Alindra, Gujarat, India · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>AI transparency:</strong> Some website text, design, and imagery were created with AI assistance and reviewed by Velora Apparel. AI is not used to make decisions about visitors or to process personal data on this website.</p>
-      <p class="footer-privacy-note"><strong>Privacy and cookies:</strong> Necessary local storage remembers your choices. With your consent, animation files load from jsDelivr and Google Analytics measures visits. We do not use advertising cookies. Change your choice anytime with the Privacy tab.</p>
+      <p class="footer-privacy-note"><strong>Privacy and cookies:</strong> Necessary local storage remembers your choices. With your consent, page animations are switched on and Google Analytics measures visits. We do not use advertising cookies. Change your choice anytime with the Privacy tab.</p>
       <p class="footer-links"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
       <p class="footer-language-links"><strong>Languages:</strong> <a href="/">English</a> · <a href="gu/">ગુજરાતી</a> · <a href="hi/">हिन्दी</a> · <a href="de/">Deutsch</a></p>
       <p class="footer-attribution">Website content reviewed by Velora Apparel.</p>
@@ -778,7 +778,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">Privacy controls</p>
         <h2 id="cookie-title">Privacy and cookie preferences</h2>
-        <p id="cookie-desc">This website uses necessary local storage to remember your choices. Optional consent loads animation files from jsDelivr/GSAP and, if you allow Analytics, Google Analytics measures visits. We do not use advertising cookies.</p>
+        <p id="cookie-desc">This website uses necessary local storage to remember your choices. Optional consent switches on page animations and, if you allow Analytics, Google Analytics measures visits. We do not use advertising cookies.</p>
         <div class="cookie-compliance">
           You can reject optional items without losing access to the website. You can also withdraw or change your choice at any time using the “Privacy and cookie preferences” button in the footer. For privacy questions, contact Velora Apparel at <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -790,7 +790,7 @@
         </label>
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
-          <span><strong>Preferences and animations</strong> Remembers dark mode and loads GSAP animation files from jsDelivr.</span>
+          <span><strong>Preferences and animations</strong> Remembers dark mode and switches on page animations.</span>
         </label>
         <label class="cookie-option">
           <input type="checkbox" data-cookie-analytics>
@@ -930,8 +930,8 @@
     function applyConsent(consent) {
       if (consent.preferences) {
         loadApprovedMedia();
-        loadScript("https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js")
-          .then(() => loadScript("https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"))
+        loadScript("/assets/js/vendor/gsap-3.13.0/gsap.min.js")
+          .then(() => loadScript("/assets/js/vendor/gsap-3.13.0/ScrollTrigger.min.js"))
           .then(runAnimations)
           .catch(setFinalStats);
       } else {
