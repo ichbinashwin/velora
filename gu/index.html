@@ -316,6 +316,8 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <script src="/assets/js/analytics.js" defer></script>
+  <script src="/assets/js/consent-tab.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-site-header>
@@ -328,7 +330,7 @@
             <span>+91&nbsp;79909&nbsp;65209</span>
           </a>
           <span aria-hidden="true">|</span>
-          <a href="mailto:rajani.parmar.tailor@gmail.com">
+          <a href="mailto:rajani.parmar.tailor@gmail.com?subject=Velora%20Apparel%20enquiry" title="rajani.parmar.tailor@gmail.com">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8v.3l7.2 5 7.2-5v-.3H4.8Zm14.4 9.4V9.8L12 14.7 4.8 9.8v6.9h14.4Z"/></svg>
             <span>rajani.parmar.tailor@gmail.com</span>
           </a>
@@ -382,20 +384,43 @@
   </header>
 
   <main>
-    <section id="home" class="hero" data-nav-section data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-animate="fade-up">
-            <p class="eyebrow">Velora Apparel · અલિન્દ્રા, ગુજરાત, ભારત</p>
-            <h1>ગુજરાતમાં મહિલાઓના કપડાં અને કુર્તીના ઉત્પાદક</h1>
-            <p class="lead">Velora Apparel અલિન્દ્રા, ગુજરાતમાં મહિલાઓના કપડાંના ઉત્પાદક છે. અમે બ્રાન્ડ્સ, બુટિક, રીસેલર્સ અને પ્રાઇવેટ લેબલ માટે કુર્તી, કો-ઓર્ડ સેટ, ટોપ્સ, ઓફિસ વેર, નાઇટ વેર અને ડ્રેસ બનાવીએ છીએ – OEM, પ્રાઇવેટ લેબલ, જોબ વર્ક અને જથ્થાબંધ ઉત્પાદન દ્વારા.</p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn btn-main" href="#contact">ક્વોટ મેળવો</a>
-              <a class="btn btn-outline-dark" href="#products">ઉત્પાદનો જુઓ</a>
+    <section id="home" class="hero hero-v3" data-nav-section aria-roledescription="carousel" aria-label="મુખ્ય વિશેષતાઓ">
+      <div class="hb" data-hero-carousel data-label-pause="સ્લાઇડશો રોકો" data-label-play="સ્લાઇડશો ચલાવો">
+        <div class="hb-track" data-hb-track>
+          <div class="hb-slide hb-slide-manufacturing is-active" id="hb-slide-1" role="group" aria-roledescription="slide" aria-label="1 / 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/manufacturing-card-720.webp 720w, /assets/images/banner/manufacturing-card-1080.webp 801w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/manufacturing-card-1080.jpg" width="801" height="641" alt="" decoding="async" fetchpriority="high"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/manufacturing-sticker-400.webp"><img src="/assets/images/banner/manufacturing-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Velora Apparel · અલિન્દ્રા, ગુજરાત</p>
+              <h1 class="hb-title">ગુજરાતમાં ગારમેન્ટ ઉત્પાદન, નેપકિન અને સિલાઈ કામ</h1>
+              <p class="hb-text">બ્રાન્ડ્સ અને બુટિક માટે લેડીઝ વેર, નેપકિન અને સફાઈ કાપડની અમારી પોતાની શ્રેણી, અને દરેક પરિવાર માટે સિલાઈ કામ – એક જ વિશ્વસનીય ઉત્પાદક પાસેથી.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="#contact">ક્વોટ મેળવો</a><a class="btn btn-outline-dark" href="/gu/products/">ઉત્પાદનો જુઓ</a></div>
             </div>
           </div>
-          <div class="col-lg-6" data-animate="zoom-in">
-            <div class="hero-media" role="img" aria-label="ગુજરાત, ભારતમાં મહિલાઓના કપડાંનું ઉત્પાદન" data-bg="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="hb-slide hb-slide-napkins" id="hb-slide-2" role="group" aria-roledescription="slide" aria-label="2 / 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/napkins-card-720.webp 720w, /assets/images/banner/napkins-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/napkins-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/napkins-sticker-400.webp"><img src="/assets/images/banner/napkins-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">નવું · નેપકિન અને સફાઈ કાપડ</p>
+              <h2 class="hb-title">કિચન, કાર અને ઓફિસ માટે દરેક રંગમાં કાપડ</h2>
+              <p class="hb-text">કોટન, ટેરી, વૅફલ અને માઇક્રોફાઇબર નેપકિન અનેક સાઇઝ અને પેકમાં. WhatsApp પર ઓર્ડર કરો, છૂટક અથવા જથ્થાબંધ.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/gu/products/#order">નેપકિન ઓર્ડર કરો</a><a class="btn btn-outline-dark" href="/gu/products/">શ્રેણી જુઓ</a></div>
+            </div>
+          </div>
+          <div class="hb-slide hb-slide-tailoring" id="hb-slide-3" role="group" aria-roledescription="slide" aria-label="3 / 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/tailoring-card-720.webp 720w, /assets/images/banner/tailoring-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/tailoring-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/tailoring-sticker-400.webp"><img src="/assets/images/banner/tailoring-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">સિલાઈ સેવા</p>
+              <h2 class="hb-title">માપ મુજબ સિલાઈ: લેડીઝ, જેન્ટ્સ અને કિડ્સ</h2>
+              <p class="hb-text">તમારા માપ મુજબ નવા કપડાંની સિલાઈ, એક નંગથી જથ્થાબંધ ઓર્ડર સુધી. WhatsApp પર પૂછપરછ મોકલો.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/gu/products/#tailoring">સિલાઈ બુક કરો</a><a class="btn btn-outline-dark" href="#contact">સંપર્ક કરો</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="container hb-controls">
+          <div class="hb-tabs"><button type="button" class="hb-tab" data-hb-go="0" aria-controls="hb-slide-1" aria-current="true"><span class="hb-tab-num">01</span><span class="hb-tab-label">ઉત્પાદન</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="1" aria-controls="hb-slide-2"><span class="hb-tab-num">02</span><span class="hb-tab-label">નેપકિન</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="2" aria-controls="hb-slide-3"><span class="hb-tab-num">03</span><span class="hb-tab-label">સિલાઈ</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button></div>
+          <div class="hb-buttons">
+            <button type="button" class="hb-btn" data-hb-prev aria-label="પાછલી સ્લાઇડ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-pause aria-label="સ્લાઇડશો રોકો"><svg class="hb-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg><svg class="hb-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-next aria-label="આગલી સ્લાઇડ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.6 18.6 1.4 1.4 8-8-8-8-1.4 1.4 6.6 6.6z"/></svg></button>
           </div>
         </div>
       </div>
@@ -658,6 +683,25 @@
       </div>
     </section>
 
+    <section id="how-we-work" class="section-pad how-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">અમે કેવી રીતે કામ કરીએ છીએ</p>
+          <h2>Velora Apparel કેવી રીતે કામ કરે છે</h2>
+          <p class="section-copy">ઓર્ડર આપતા પહેલાં સ્પષ્ટ માહિતી – બ્રાન્ડ, દુકાન કે પરિવાર માટે.</p>
+        </div>
+        <ul class="hw-list">
+            <li class="hw-item"><strong>પોતાના એકમમાં ઉત્પાદન</strong><span>કટિંગ, સિલાઈ, ગુણવત્તા ચકાસણી અને પેકિંગ અલિન્દ્રા, ગુજરાતમાં અમારા પોતાના એકમમાં થાય છે.</span></li>
+            <li class="hw-item"><strong>ઓર્ડર મુજબ ઉત્પાદન</strong><span>અમે પુષ્ટિ થયેલા ઓર્ડર મુજબ ઉત્પાદન કરીએ છીએ. કિંમત, જથ્થો, કાપડ, સમયમર્યાદા અને ડિલિવરી ઉત્પાદન શરૂ થાય તે પહેલાં WhatsApp અથવા ઇમેઇલ પર લેખિતમાં નક્કી થાય છે.</span></li>
+            <li class="hw-item"><strong>જથ્થાબંધ પહેલાં સેમ્પલ</strong><span>નવી જથ્થાબંધ ડિઝાઇન માટે, જથ્થાબંધ ઉત્પાદન શરૂ કરતા પહેલાં તમારી મંજૂરી માટે સેમ્પલ બનાવીએ છીએ.</span></li>
+            <li class="hw-item"><strong>આ વેબસાઇટ પર કોઈ ચુકવણી નહીં</strong><span>ઓર્ડર અને પૂછપરછ WhatsApp અથવા ઇમેઇલ પર મોકલાય છે. ચુકવણીની શરતો તમારી સાથે સીધી નક્કી થાય છે. અમે આ સાઇટ પર ક્યારેય કાર્ડ કે બેંક વિગતો માંગતા નથી.</span></li>
+            <li class="hw-item"><strong>દરેક ઓર્ડર માટે ડિલિવરીની પુષ્ટિ</strong><span>ડિલિવરીના વિકલ્પો અને ચાર્જ તમારા શહેર અથવા દેશ પર આધાર રાખે છે અને ડિસ્પેચ પહેલાં પુષ્ટિ થાય છે.</span></li>
+            <li class="hw-item"><strong>ઉદાહરણરૂપ ફોટા</strong><span>આ વેબસાઇટ પરના ફોટા કાપડ અને મશીનરીના ઉદાહરણરૂપ સ્ટોક ફોટા છે, અમારા તૈયાર ઉત્પાદનોના નહીં. સાચા ઉત્પાદન ફોટા અથવા સેમ્પલ માટે અમને પૂછો.</span></li>
+            <li class="hw-item"><strong>માલિક સાથે સીધી વાત</strong><span>તમારી પૂછપરછ સીધી માલિક Rajanikant Dhirajlal Parmar સુધી પહોંચે છે, +91 79909 65209 પર.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section-pad contact-section" data-nav-section data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
       <div class="container">
         <div class="row g-5 align-items-start">
@@ -665,6 +709,31 @@
             <p class="eyebrow">સંપર્ક</p>
             <h2>મહિલા વસ્ત્રોના ઉત્પાદન માટે ક્વોટ મેળવો</h2>
             <p class="section-copy">ઉત્પાદનની શ્રેણી, જથ્થો, કાપડની પસંદગી, સાઇઝ અને ડિલિવરી સમય જણાવો. Velora Apparel આગળની માહિતી આપશે.</p>
+            <form class="quote-card" data-quote-form novalidate>
+              <h3>ઉત્પાદન માટે ક્વોટ મંગાવો</h3>
+              <fieldset><legend>પૂછપરછનો પ્રકાર</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-type" value="oem" checked> OEM / પ્રાઇવેટ લેબલ</label><label class="qc-choice"><input type="radio" name="quote-type" value="jobwork"> જોબ વર્ક</label><label class="qc-choice"><input type="radio" name="quote-type" value="bulk"> જથ્થાબંધ નેપકિન અને કાપડ</label><label class="qc-choice"><input type="radio" name="quote-type" value="other"> અન્ય</label></div></fieldset>
+              <div class="qc-row">
+                <label>ઉત્પાદન<select name="quote-product"><option value="kurtis">કુર્તી</option><option value="coords">કો-ઓર્ડ સેટ</option><option value="tops">ટોપ્સ</option><option value="office">ઓફિસ વેર</option><option value="night">નાઇટ વેર</option><option value="dresses">ડ્રેસ</option><option value="napkins">નેપકિન અને કાપડ</option><option value="other">અન્ય</option></select></label>
+                <label>અંદાજિત જથ્થો (નંગ)<input type="number" name="quote-qty" min="1" max="99999" step="1" value="100" inputmode="numeric" aria-describedby="err-quote-qty"><span class="qc-error" id="err-quote-qty" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <fieldset><legend>સેમ્પલ જોઈએ?</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-sample" value="yes" checked> હા</label><label class="qc-choice"><input type="radio" name="quote-sample" value="no"> ના</label></div></fieldset>
+                <label>ક્યારે જોઈએ (વૈકલ્પિક)<input type="date" name="quote-date" aria-describedby="err-quote-date"><span class="qc-error" id="err-quote-date" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>દેશ<input type="text" name="quote-country" value="ભારત" autocomplete="country-name" maxlength="56" aria-describedby="err-quote-country"><span class="qc-error" id="err-quote-country" hidden></span></label>
+                <label>શહેર / પિન કોડ<input type="text" name="quote-city" autocomplete="address-level2" maxlength="80" spellcheck="false" aria-describedby="err-quote-city"><span class="qc-error" id="err-quote-city" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>તમારું નામ<input type="text" name="quote-name" autocomplete="name" maxlength="60" aria-describedby="err-quote-name"><span class="qc-error" id="err-quote-name" hidden></span></label>
+                <label>કંપની / બ્રાન્ડ (વૈકલ્પિક)<input type="text" name="quote-company" autocomplete="organization" maxlength="80" aria-describedby="err-quote-company"><span class="qc-error" id="err-quote-company" hidden></span></label>
+              </div>
+              <label>વિગતો (વૈકલ્પિક)<textarea name="quote-notes" rows="2" maxlength="300" placeholder="કાપડ, સાઇઝ, ડિઝાઇન અથવા બ્રાન્ડિંગની જરૂરિયાત…" aria-describedby="err-quote-notes"></textarea><span class="qc-error" id="err-quote-notes" hidden></span></label>
+              <details class="qc-preview"><summary>મેસેજ જુઓ</summary><pre data-quote-preview></pre></details>
+              <p class="qc-error qc-summary" data-quote-summary role="alert" hidden></p>
+              <button type="submit" class="btn btn-main w-100">WhatsApp પર ક્વોટ વિનંતી મોકલો</button>
+              <p class="qc-note">WhatsApp તમારી વિનંતી સાથે ખુલશે. તમે WhatsApp માં મોકલો દબાવો ત્યારે જ તે મોકલાશે.</p>
+            </form>
           </div>
           <div class="col-lg-6" data-animate="fade-left">
             <div class="contact-panel">
@@ -687,7 +756,8 @@
       <p>અલિન્દ્રા, ગુજરાત, ભારતમાં મહિલાઓના કપડાંના ઉત્પાદક: કુર્તી, કો-ઓર્ડ સેટ, ટોપ્સ, ઓફિસ વેર, નાઇટ વેર અને ડ્રેસનું OEM, પ્રાઇવેટ લેબલ, જોબ વર્ક અને જથ્થાબંધ ઉત્પાદન.</p>
       <p class="footer-nap">Velora Apparel · ગામ અલિન્દ્રા, ગુજરાત, ભારત · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>AI પારદર્શિતા:</strong> વેબસાઇટના કેટલાક ટેક્સ્ટ, ડિઝાઇન અને ચિત્રો AIની સહાયથી બનાવવામાં આવ્યા છે અને Velora Apparel દ્વારા સમીક્ષા કરવામાં આવી છે. મુલાકાતીઓ અંગે નિર્ણય લેવા અથવા વ્યક્તિગત ડેટા પ્રોસેસ કરવા માટે AIનો ઉપયોગ કરવામાં આવતો નથી.</p>
-      <p class="footer-privacy-note"><strong>ગોપનીયતા અને કૂકીઝ:</strong> તમારી કૂકી પસંદગી અને ડિસ્પ્લે પસંદગીઓ યાદ રાખવા માટે જરૂરી લોકલ સ્ટોરેજનો ઉપયોગ થાય છે. વૈકલ્પિક મંજૂરીથી Unsplashના તૃતીય-પક્ષ ચિત્રો અને jsDelivrની એનિમેશન ફાઇલો લોડ થાય છે. અમે એનાલિટિક્સ અથવા જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી. તમે વૈકલ્પિક વસ્તુઓ નકારી શકો છો અથવા તમારી પસંદગી કોઈપણ સમયે બદલી શકો છો.</p>
+      <p class="footer-photos"><strong>ફોટા:</strong> બેનર અને ઉત્પાદન શ્રેણીના ફોટા ઉદાહરણરૂપ સ્ટોક ફોટા (Unsplash) છે, Velora Apparel ના ઉત્પાદનોના ફોટા નથી.</p>
+      <p class="footer-privacy-note"><strong>ગોપનીયતા અને કૂકીઝ:</strong> તમારી કૂકી પસંદગી અને ડિસ્પ્લે પસંદગીઓ યાદ રાખવા માટે જરૂરી લોકલ સ્ટોરેજનો ઉપયોગ થાય છે. વૈકલ્પિક મંજૂરીથી Unsplashના તૃતીય-પક્ષ ચિત્રો અને jsDelivrની એનિમેશન ફાઇલો લોડ થાય છે. તમારી સંમતિથી Google Analytics મુલાકાતો માપે છે. અમે જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી. તમે વૈકલ્પિક વસ્તુઓ નકારી શકો છો અથવા તમારી પસંદગી કોઈપણ સમયે બદલી શકો છો.</p>
       <p class="footer-links"><a href="../privacy.html">ગોપનીયતા નીતિ</a> · <a href="../terms.html">ઉપયોગની શરતો</a></p>
       <p class="footer-language-links"><strong>ભાષાઓ:</strong> <a href="../">English</a> · <a href="./">ગુજરાતી</a> · <a href="../hi/">हिन्दी</a> · <a href="../de/">Deutsch</a></p>
       <button class="footer-cookie-btn" type="button" data-cookie-open>ગોપનીયતા અને કૂકી પસંદગીઓ</button>
@@ -703,7 +773,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">ગોપનીયતા નિયંત્રણો</p>
         <h2 id="cookie-title">ગોપનીયતા અને કૂકી પસંદગીઓ</h2>
-        <p id="cookie-desc">આ વેબસાઇટ તમારી પસંદગી અને ડિસ્પ્લે પસંદગીઓ યાદ રાખવા માટે જરૂરી લોકલ સ્ટોરેજનો ઉપયોગ કરે છે. વૈકલ્પિક મંજૂરીથી Unsplashના તૃતીય-પક્ષ ચિત્રો અને jsDelivr/GSAPની એનિમેશન ફાઇલો લોડ થાય છે. અમે એનાલિટિક્સ અથવા જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી.</p>
+        <p id="cookie-desc">આ વેબસાઇટ તમારી પસંદગી અને ડિસ્પ્લે પસંદગીઓ યાદ રાખવા માટે જરૂરી લોકલ સ્ટોરેજનો ઉપયોગ કરે છે. વૈકલ્પિક મંજૂરીથી Unsplashના તૃતીય-પક્ષ ચિત્રો અને jsDelivr/GSAPની એનિમેશન ફાઇલો લોડ થાય છે. તમારી સંમતિથી Google Analytics મુલાકાતો માપે છે. અમે જાહેરાત કૂકીઝનો ઉપયોગ કરતા નથી.</p>
         <div class="cookie-compliance">
           વેબસાઇટનો ઍક્સેસ ગુમાવ્યા વિના તમે વૈકલ્પિક વસ્તુઓ નકારી શકો છો. ફૂટરમાં આવેલી “ગોપનીયતા અને કૂકી પસંદગીઓ” બટનનો ઉપયોગ કરીને તમે તમારી પસંદગી કોઈપણ સમયે બદલી શકો છો અથવા પાછી ખેંચી શકો છો. ગોપનીયતા સંબંધિત પ્રશ્નો માટે Velora Apparelનો સંપર્ક કરો: <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -716,6 +786,10 @@
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
           <span><strong>પસંદગીઓ અને મીડિયા</strong> Unsplashના તૃતીય-પક્ષ ફેશન ચિત્રો અને jsDelivrની GSAP એનિમેશન લાઇબ્રેરીઓ લોડ કરે છે.</span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" data-cookie-analytics>
+          <span><strong>એનાલિટિક્સ</strong> Google Analytics 4 વડે મુલાકાતો અને પેજના ઉપયોગનું માપન (નામ વગરના આંકડા). જાહેરાત માટે ક્યારેય ઉપયોગ થતો નથી.</span>
         </label>
       </div>
       <div class="cookie-actions">
@@ -844,13 +918,6 @@
         });
       });
 
-      gsap.to(".hero-media", {
-        y: -18,
-        duration: 3.8,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true
-      });
     }
 
     function applyConsent(consent) {
@@ -865,18 +932,20 @@
       }
     }
 
-    function saveConsent(preferences) {
+    function saveConsent(preferences, analytics) {
       const consent = {
         necessary: true,
         preferences,
+        analytics,
         regionNotice: "EU GDPR / US privacy / India DPDP aligned notice",
         savedAt: new Date().toISOString(),
-        version: 1
+        version: 2
       };
 
       localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
       document.querySelector("[data-cookie-consent]").hidden = true;
       applyConsent(consent);
+      window.veloraAnalytics?.update(analytics);
     }
 
     function getConsent() {
@@ -893,6 +962,7 @@
       const existing = getConsent();
 
       preferences.checked = Boolean(existing && existing.preferences);
+      document.querySelector("[data-cookie-analytics]").checked = Boolean(existing && existing.analytics);
       panel.hidden = false;
       panel.querySelector("button")?.focus();
     }
@@ -905,10 +975,10 @@
       }
     });
 
-    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true));
-    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false));
+    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true, true));
+    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false, false));
     document.querySelector("[data-cookie-save]").addEventListener("click", () => {
-      saveConsent(document.querySelector("[data-cookie-preferences]").checked);
+      saveConsent(document.querySelector("[data-cookie-preferences]").checked, document.querySelector("[data-cookie-analytics]").checked);
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
@@ -1016,10 +1086,16 @@
 
     if (existingConsent) {
       applyConsent(existingConsent);
+      // Choices saved before the Analytics option existed (version 1): ask once more.
+      if (!(existingConsent.version >= 2)) openCookiePanel();
     } else {
       setFinalStats();
       openCookiePanel();
     }
   </script>
+  <script type="application/json" id="quote-config">{"lang": "gu", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "notes_max": 300, "date_max_days": 365, "quote_qty_max": 99999}, "types": {"oem": "OEM / પ્રાઇવેટ લેબલ", "jobwork": "જોબ વર્ક", "bulk": "જથ્થાબંધ નેપકિન અને કાપડ", "other": "અન્ય"}, "products": {"kurtis": "કુર્તી", "coords": "કો-ઓર્ડ સેટ", "tops": "ટોપ્સ", "office": "ઓફિસ વેર", "night": "નાઇટ વેર", "dresses": "ડ્રેસ", "napkins": "નેપકિન અને કાપડ", "other": "અન્ય"}, "ui": {"err_name_required": "કૃપા કરીને તમારું નામ લખો.", "err_name_invalid": "ફક્ત અક્ષરો, જગ્યા, બિંદુ, એપોસ્ટ્રોફી અથવા હાઇફન વાપરો (2–60 અક્ષર). આંકડા, લિંક અને ચિહ્નોની મંજૂરી નથી.", "err_city_required": "કૃપા કરીને તમારું શહેર અથવા પિન કોડ લખો.", "err_city_invalid": "ફક્ત અક્ષરો, આંકડા, જગ્યા, અલ્પવિરામ, બિંદુ, હાઇફન અથવા સ્લેશ વાપરો (2–80 અક્ષર). લિંક અને ફોન નંબરની મંજૂરી નથી.", "err_notes_invalid": "ફક્ત અક્ષરો, આંકડા અને સામાન્ય વિરામચિહ્નો વાપરો (વધુમાં વધુ 300 અક્ષર). લિંક અને ફોન નંબરની મંજૂરી નથી.", "err_date": "આજથી એક વર્ષ સુધીની તારીખ પસંદ કરો.", "err_fix": "કૃપા કરીને દર્શાવેલ ફીલ્ડ સુધારો.", "err_qty": "1 થી 99,999 વચ્ચેનો જથ્થો લખો.", "err_country": "માન્ય દેશનું નામ લખો (ફક્ત અક્ષરો).", "err_company": "ફક્ત અક્ષરો, આંકડા, જગ્યા અને . \u0026 ' - વાપરો (વધુમાં વધુ 80). લિંકની મંજૂરી નથી.", "yes": "હા", "no": "ના"}, "msg": {"greet": "નમસ્તે Velora Apparel,", "intro": "કૃપા કરીને ઉત્પાદન માટે ભાવ જણાવો:", "type": "પૂછપરછનો પ્રકાર", "product": "ઉત્પાદન", "qty": "અંદાજિત જથ્થો", "pcs": "નંગ", "sample": "સેમ્પલ જોઈએ", "date": "ક્યારે જોઈએ", "country": "દેશ", "city": "શહેર / પિન", "name": "નામ", "company": "કંપની / બ્રાન્ડ", "notes": "વિગતો", "close": "કૃપા કરીને કિંમત, MOQ, સેમ્પલિંગ અને ડિલિવરી સમય જણાવશો.", "thanks": "આભાર."}}</script>
+  <script src="/assets/js/validate.js" defer></script>
+  <script src="/assets/js/quote.js" defer></script>
+  <script src="/assets/js/hero-carousel.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>नैपकिन, सफ़ाई कपड़े और सिलाई | Velora Apparel</title>
   <meta name="description" content="Velora Apparel, गुजरात के किचन नैपकिन, माइक्रोफाइबर और सफ़ाई कपड़े, साथ ही लेडीज़, जेंट्स और किड्स के लिए सिलाई। WhatsApp पर ऑर्डर या पूछताछ करें।">
@@ -328,6 +328,9 @@
   ]
 }
   </script>
+  <script src="/assets/js/analytics.js" defer></script>
+  <script src="/assets/js/consent-tab.js" defer></script>
+  <script src="/assets/js/site-nav.js" defer></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/products.css">
   <link rel="stylesheet" href="/assets/css/product-swatches.css">
@@ -335,27 +338,49 @@
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 </head>
 <body class="pp-page">
-  <header class="pp-header">
-    <div class="container pp-header-inner">
-      <a class="pp-brand" href="/hi/"><picture><source srcset="/assets/images/logo-240.webp" type="image/webp"><img src="/assets/images/logo-240.png" alt="Velora Apparel logo" width="240" height="159" decoding="async"></picture><span>Velora Apparel</span></a>
-      <nav class="pp-nav" aria-label="Primary">
-        <a href="/hi/">होम</a>
-        <a href="/hi/#products">लेडीज़ वियर</a>
-        <a href="/hi/products/" aria-current="page">उत्पाद</a>
-        <a href="#tailoring">सिलाई</a>
-        <a href="/hi/#contact">संपर्क</a>
-      </nav>
-      <div class="pp-header-tools">
-        <label class="sr-only" for="pp-lang">Language</label>
-        <select id="pp-lang" class="pp-lang" data-lang-select><option value="/products/">English</option><option value="/gu/products/">ગુજરાતી</option><option value="/hi/products/" selected>हिन्दी</option><option value="/de/products/">Deutsch</option></select>
-        <a class="pp-cart-link" href="#cart">कार्ट <span class="pp-badge" data-cart-count>0</span></a>
+  <header class="site-header pp-site-header" data-site-header>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-title">महिलाओं के कपड़ों के निर्माता · गुजरात, भारत</span>
+        <span class="topbar-contact">
+          <a href="tel:+917990965209"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.2 9.2 2l2.1 5-2.2 1.6a15.7 15.7 0 0 0 6.3 6.3l1.6-2.2 5 2.1-1.2 2.6c-.6 1.4-2.1 2.1-3.6 1.7C10.9 17.6 6.4 13.1 4.9 6.8c-.3-1.5.4-3 1.7-3.6Z"/></svg><span>+91&nbsp;79909&nbsp;65209</span></a>
+          <span aria-hidden="true">|</span>
+          <a href="mailto:rajani.parmar.tailor@gmail.com?subject=Velora%20Apparel%20enquiry" title="rajani.parmar.tailor@gmail.com"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8v.3l7.2 5 7.2-5v-.3H4.8Zm14.4 9.4V9.8L12 14.7 4.8 9.8v6.9h14.4Z"/></svg><span>rajani.parmar.tailor@gmail.com</span></a>
+          <span aria-hidden="true">|</span>
+          <a href="https://wa.me/917990965209" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+        </span>
       </div>
     </div>
+    <nav class="navbar" aria-label="Primary">
+      <div class="container navbar-inner">
+        <a class="brand" href="/hi/"><picture><source srcset="/assets/images/logo-240.webp" type="image/webp"><img src="/assets/images/logo-240.png" alt="Velora Apparel logo" class="brand-logo" width="240" height="159" decoding="async"></picture><span class="brand-text">Velora Apparel</span></a>
+        <button class="navbar-toggle" type="button" data-nav-toggle aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+          <span class="navbar-toggle-bar"></span>
+        </button>
+        <label class="language-switcher">
+          <span class="sr-only">Language</span>
+          <select data-lang-select aria-label="Language"><option value="/products/">English</option><option value="/gu/products/">ગુજરાતી</option><option value="/hi/products/" selected>हिन्दी</option><option value="/de/products/">Deutsch</option></select>
+        </label>
+        <a class="pp-cart-link" href="#cart">कार्ट <span class="pp-badge" data-cart-count>0</span></a>
+        <div class="nav-panel" id="mainNav" data-nav-panel>
+          <ul class="nav-list">
+            <li><a class="nav-link" href="/hi/">होम</a></li>
+            <li><a class="nav-link" href="/hi/#products">लेडीज़ वियर</a></li>
+            <li><a class="nav-link is-active" href="/hi/products/" aria-current="page">उत्पाद</a></li>
+            <li><a class="nav-link" href="#tailoring">सिलाई</a></li>
+            <li><a class="nav-link" href="/hi/#contact">संपर्क</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
     <section class="pp-hero">
-      <div class="container">
+      <div class="container pp-hero-grid">
+        <figure class="pp-art pp-hero-art"><picture><source type="image/webp" srcset="/assets/images/products/hero-800.webp"><img src="/assets/images/products/hero-800.jpg" width="800" height="640" alt="" decoding="async"></picture></figure>
         <nav class="pp-breadcrumb" aria-label="Breadcrumb"><a href="/hi/">होम</a> › <span aria-current="page">उत्पाद</span></nav>
         <p class="eyebrow">Velora Apparel · गुजरात, भारत में निर्मित</p>
         <h1>नैपकिन, सफ़ाई के कपड़े और सिलाई</h1>
@@ -474,6 +499,7 @@
           <p class="pp-lead">Velora Apparel द्वारा आपके माप के अनुसार नए कपड़ों की सिलाई। जानकारी भरें और WhatsApp पर पूछताछ भेजें; हम सिलाई का शुल्क और डिलीवरी का समय बताएंगे।</p>
           <ul class="pp-trust"><li>आपके माप के अनुसार सिलाई</li><li>लेडीज़, जेंट्स और किड्स</li><li>एक पीस या थोक</li></ul>
           <div class="pp-tgroups"><div class="pp-tgroup"><h3>लेडीज़ वियर</h3><p>कुर्ती, सलवार सूट, ब्लाउज़, ड्रेस, को-ऑर्ड सेट, लहंगा / चनिया चोली</p></div><div class="pp-tgroup"><h3>जेंट्स वियर</h3><p>शर्ट, पैंट, कुर्ता, कुर्ता पायजामा</p></div><div class="pp-tgroup"><h3>किड्स वियर</h3><p>फ्रॉक, शर्ट, पैंट, कुर्ता, स्कूल यूनिफ़ॉर्म</p></div><div class="pp-tgroup"><h3>अन्य</h3><p>वर्क यूनिफ़ॉर्म, पर्दे, कुशन कवर</p></div></div>
+          <figure class="pp-art pp-tailor-art"><picture><source type="image/webp" srcset="/assets/images/products/tailoring-800.webp"><img src="/assets/images/products/tailoring-800.jpg" width="800" height="640" alt="" loading="lazy" decoding="async"></picture></figure>
         </div>
         <form class="pp-panel pp-form pp-tailor-form" data-tailor-form novalidate>
           <h2 class="pp-h2">सिलाई पूछताछ</h2>

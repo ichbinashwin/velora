@@ -316,6 +316,8 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <script src="/assets/js/analytics.js" defer></script>
+  <script src="/assets/js/consent-tab.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-site-header>
@@ -328,7 +330,7 @@
             <span>+91&nbsp;79909&nbsp;65209</span>
           </a>
           <span aria-hidden="true">|</span>
-          <a href="mailto:rajani.parmar.tailor@gmail.com">
+          <a href="mailto:rajani.parmar.tailor@gmail.com?subject=Velora%20Apparel%20enquiry" title="rajani.parmar.tailor@gmail.com">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8v.3l7.2 5 7.2-5v-.3H4.8Zm14.4 9.4V9.8L12 14.7 4.8 9.8v6.9h14.4Z"/></svg>
             <span>rajani.parmar.tailor@gmail.com</span>
           </a>
@@ -382,20 +384,43 @@
   </header>
 
   <main>
-    <section id="home" class="hero" data-nav-section data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-animate="fade-up">
-            <p class="eyebrow">Velora Apparel · Alindra, Gujarat, Indien</p>
-            <h1>Hersteller für Damenbekleidung aus Indien</h1>
-            <p class="lead">Velora Apparel ist ein Bekleidungshersteller in Alindra, Gujarat (Indien). Wir produzieren Kurtis, Co-Ord-Sets, Oberteile, Bürokleidung, Nachtwäsche und Kleider für Marken, Boutiquen, Wiederverkäufer und Eigenmarken – als OEM-, Private-Label-, Lohn- und Großproduktion.</p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn btn-main" href="#contact">Angebot anfordern</a>
-              <a class="btn btn-outline-dark" href="#products">Produkte ansehen</a>
+    <section id="home" class="hero hero-v3" data-nav-section aria-roledescription="carousel" aria-label="Highlights">
+      <div class="hb" data-hero-carousel data-label-pause="Diashow pausieren" data-label-play="Diashow abspielen">
+        <div class="hb-track" data-hb-track>
+          <div class="hb-slide hb-slide-manufacturing is-active" id="hb-slide-1" role="group" aria-roledescription="slide" aria-label="1 von 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/manufacturing-card-720.webp 720w, /assets/images/banner/manufacturing-card-1080.webp 801w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/manufacturing-card-1080.jpg" width="801" height="641" alt="" decoding="async" fetchpriority="high"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/manufacturing-sticker-400.webp"><img src="/assets/images/banner/manufacturing-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Velora Apparel · Alindra, Gujarat</p>
+              <h1 class="hb-title">Bekleidungsherstellung, Tücher &amp; Schneiderei aus Gujarat</h1>
+              <p class="hb-text">Damenmode für Marken und Boutiquen, eine eigene Linie an Küchen- und Reinigungstüchern und Schneiderei für die ganze Familie – von einem verlässlichen Hersteller.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="#contact">Angebot anfordern</a><a class="btn btn-outline-dark" href="/de/products/">Produkte entdecken</a></div>
             </div>
           </div>
-          <div class="col-lg-6" data-animate="zoom-in">
-            <div class="hero-media" role="img" aria-label="Produktion von Damenbekleidung in Gujarat, Indien" data-bg="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="hb-slide hb-slide-napkins" id="hb-slide-2" role="group" aria-roledescription="slide" aria-label="2 von 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/napkins-card-720.webp 720w, /assets/images/banner/napkins-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/napkins-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/napkins-sticker-400.webp"><img src="/assets/images/banner/napkins-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Neu · Küchen- und Reinigungstücher</p>
+              <h2 class="hb-title">Tücher für Küche, Auto &amp; Büro in jeder Farbe</h2>
+              <p class="hb-text">Tücher aus Baumwolle, Frottee, Waffelpiqué und Mikrofaser in vielen Größen und Packungen. Bestellung per WhatsApp, einzeln oder im Großhandel.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/de/products/#order">Tücher bestellen</a><a class="btn btn-outline-dark" href="/de/products/">Sortiment ansehen</a></div>
+            </div>
+          </div>
+          <div class="hb-slide hb-slide-tailoring" id="hb-slide-3" role="group" aria-roledescription="slide" aria-label="3 von 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/tailoring-card-720.webp 720w, /assets/images/banner/tailoring-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/tailoring-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/tailoring-sticker-400.webp"><img src="/assets/images/banner/tailoring-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Schneiderservice</p>
+              <h2 class="hb-title">Maßgeschneidert für Damen, Herren &amp; Kinder</h2>
+              <p class="hb-text">Neue Kleidung nach Ihren Maßen, vom Einzelstück bis zum Großauftrag. Senden Sie Ihre Anfrage per WhatsApp.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/de/products/#tailoring">Schneiderei anfragen</a><a class="btn btn-outline-dark" href="#contact">Kontakt</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="container hb-controls">
+          <div class="hb-tabs"><button type="button" class="hb-tab" data-hb-go="0" aria-controls="hb-slide-1" aria-current="true"><span class="hb-tab-num">01</span><span class="hb-tab-label">Herstellung</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="1" aria-controls="hb-slide-2"><span class="hb-tab-num">02</span><span class="hb-tab-label">Tücher</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="2" aria-controls="hb-slide-3"><span class="hb-tab-num">03</span><span class="hb-tab-label">Schneiderei</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button></div>
+          <div class="hb-buttons">
+            <button type="button" class="hb-btn" data-hb-prev aria-label="Vorherige Folie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-pause aria-label="Diashow pausieren"><svg class="hb-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg><svg class="hb-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-next aria-label="Nächste Folie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.6 18.6 1.4 1.4 8-8-8-8-1.4 1.4 6.6 6.6z"/></svg></button>
           </div>
         </div>
       </div>
@@ -658,6 +683,25 @@
       </div>
     </section>
 
+    <section id="how-we-work" class="section-pad how-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">So arbeiten wir</p>
+          <h2>So arbeitet Velora Apparel</h2>
+          <p class="section-copy">Klare Fakten vor Ihrer Bestellung – für Marken, Händler und Familien.</p>
+        </div>
+        <ul class="hw-list">
+            <li class="hw-item"><strong>Eigene Fertigung</strong><span>Zuschnitt, Nähen, Qualitätskontrolle und Verpackung erfolgen in unserer eigenen Werkstatt in Alindra, Gujarat.</span></li>
+            <li class="hw-item"><strong>Auf Bestellung gefertigt</strong><span>Wir produzieren nach bestätigten Aufträgen. Preis, Menge, Stoff, Termin und Lieferung werden vor Produktionsbeginn schriftlich per WhatsApp oder E-Mail vereinbart.</span></li>
+            <li class="hw-item"><strong>Muster vor der Serie</strong><span>Für neue Seriendesigns fertigen wir vor Produktionsbeginn ein Muster zu Ihrer Freigabe.</span></li>
+            <li class="hw-item"><strong>Keine Zahlung auf dieser Website</strong><span>Bestellungen und Anfragen laufen über WhatsApp oder E-Mail. Zahlungsbedingungen werden direkt mit Ihnen vereinbart. Wir fragen auf dieser Website nie nach Karten- oder Bankdaten.</span></li>
+            <li class="hw-item"><strong>Lieferung je Auftrag bestätigt</strong><span>Liefermöglichkeiten und Kosten hängen von Ihrer Stadt oder Ihrem Land ab und werden vor dem Versand bestätigt.</span></li>
+            <li class="hw-item"><strong>Symbolbilder</strong><span>Die Fotos auf dieser Website sind Symbolbilder von Stoffen und Maschinen, keine Fotos unserer fertigen Produkte. Fragen Sie uns nach echten Produktfotos oder Mustern.</span></li>
+            <li class="hw-item"><strong>Direkt mit dem Inhaber</strong><span>Ihre Anfrage geht direkt an den Inhaber, Rajanikant Dhirajlal Parmar, unter +91 79909 65209.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section-pad contact-section" data-nav-section data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
       <div class="container">
         <div class="row g-5 align-items-start">
@@ -665,6 +709,31 @@
             <p class="eyebrow">Kontakt</p>
             <h2>Angebot für die Produktion von Damenbekleidung anfordern</h2>
             <p class="section-copy">Senden Sie Produktkategorie, Zielmenge, Stoffwunsch, Größenbereich und Liefertermin. Velora Apparel meldet sich mit den nächsten Schritten.</p>
+            <form class="quote-card" data-quote-form novalidate>
+              <h3>Fertigungsangebot anfragen</h3>
+              <fieldset><legend>Art der Anfrage</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-type" value="oem" checked> OEM / Private Label</label><label class="qc-choice"><input type="radio" name="quote-type" value="jobwork"> Lohnfertigung</label><label class="qc-choice"><input type="radio" name="quote-type" value="bulk"> Tücher in großen Mengen</label><label class="qc-choice"><input type="radio" name="quote-type" value="other"> Sonstiges</label></div></fieldset>
+              <div class="qc-row">
+                <label>Produkt<select name="quote-product"><option value="kurtis">Kurtis</option><option value="coords">Co-Ord-Sets</option><option value="tops">Oberteile</option><option value="office">Bürokleidung</option><option value="night">Nachtwäsche</option><option value="dresses">Kleider</option><option value="napkins">Tücher</option><option value="other">Sonstiges</option></select></label>
+                <label>Geschätzte Menge (Stück)<input type="number" name="quote-qty" min="1" max="99999" step="1" value="100" inputmode="numeric" aria-describedby="err-quote-qty"><span class="qc-error" id="err-quote-qty" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <fieldset><legend>Muster benötigt?</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-sample" value="yes" checked> Ja</label><label class="qc-choice"><input type="radio" name="quote-sample" value="no"> Nein</label></div></fieldset>
+                <label>Benötigt bis (optional)<input type="date" name="quote-date" aria-describedby="err-quote-date"><span class="qc-error" id="err-quote-date" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Land<input type="text" name="quote-country" value="Indien" autocomplete="country-name" maxlength="56" aria-describedby="err-quote-country"><span class="qc-error" id="err-quote-country" hidden></span></label>
+                <label>Stadt / PLZ<input type="text" name="quote-city" autocomplete="address-level2" maxlength="80" spellcheck="false" aria-describedby="err-quote-city"><span class="qc-error" id="err-quote-city" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Ihr Name<input type="text" name="quote-name" autocomplete="name" maxlength="60" aria-describedby="err-quote-name"><span class="qc-error" id="err-quote-name" hidden></span></label>
+                <label>Firma / Marke (optional)<input type="text" name="quote-company" autocomplete="organization" maxlength="80" aria-describedby="err-quote-company"><span class="qc-error" id="err-quote-company" hidden></span></label>
+              </div>
+              <label>Details (optional)<textarea name="quote-notes" rows="2" maxlength="300" placeholder="Stoff, Größen, Design oder Branding …" aria-describedby="err-quote-notes"></textarea><span class="qc-error" id="err-quote-notes" hidden></span></label>
+              <details class="qc-preview"><summary>Nachricht ansehen</summary><pre data-quote-preview></pre></details>
+              <p class="qc-error qc-summary" data-quote-summary role="alert" hidden></p>
+              <button type="submit" class="btn btn-main w-100">Angebotsanfrage per WhatsApp senden</button>
+              <p class="qc-note">WhatsApp öffnet sich mit Ihrer Anfrage. Sie wird erst gesendet, wenn Sie in WhatsApp auf Senden tippen.</p>
+            </form>
           </div>
           <div class="col-lg-6" data-animate="fade-left">
             <div class="contact-panel">
@@ -687,7 +756,8 @@
       <p>Hersteller für Damenbekleidung in Alindra, Gujarat, Indien: OEM, Private Label, Lohnfertigung und Großproduktion von Kurtis, Co-Ord-Sets, Oberteilen, Bürokleidung, Nachtwäsche und Kleidern.</p>
       <p class="footer-nap">Velora Apparel · Dorf Alindra, Gujarat, Indien · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>KI-Transparenz:</strong> Einige Website-Texte, Designelemente und Bilder wurden mit Unterstützung von KI erstellt und von Velora Apparel geprüft. KI wird nicht eingesetzt, um Entscheidungen über Besucher zu treffen oder personenbezogene Daten zu verarbeiten.</p>
-      <p class="footer-privacy-note"><strong>Datenschutz und Cookies:</strong> Wir verwenden den notwendigen lokalen Speicher, um Ihre Cookie-Auswahl und Anzeigeeinstellungen zu speichern. Bei optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr geladen. Wir verwenden keine Analyse- oder Werbe-Cookies. Sie können optionale Elemente ablehnen oder Ihre Auswahl jederzeit ändern.</p>
+      <p class="footer-photos"><strong>Fotos:</strong> Banner- und Kategoriefotos sind Symbolbilder (Unsplash), keine Fotos von Produkten von Velora Apparel.</p>
+      <p class="footer-privacy-note"><strong>Datenschutz und Cookies:</strong> Wir verwenden den notwendigen lokalen Speicher, um Ihre Cookie-Auswahl und Anzeigeeinstellungen zu speichern. Bei optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr geladen. Mit Ihrer Zustimmung misst Google Analytics Besuche; Werbe-Cookies verwenden wir nicht. Sie können optionale Elemente ablehnen oder Ihre Auswahl jederzeit ändern.</p>
       <p class="footer-links"><a href="../privacy.html">Datenschutzerklärung</a> · <a href="../terms.html">Nutzungsbedingungen</a></p>
       <p class="footer-language-links"><strong>Sprachen:</strong> <a href="../">English</a> · <a href="../gu/">ગુજરાતી</a> · <a href="../hi/">हिन्दी</a> · <a href="./">Deutsch</a></p>
       <button class="footer-cookie-btn" type="button" data-cookie-open>Datenschutz- und Cookie-Einstellungen</button>
@@ -703,7 +773,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">Datenschutzeinstellungen</p>
         <h2 id="cookie-title">Datenschutz- und Cookie-Einstellungen</h2>
-        <p id="cookie-desc">This website uses necessary local storage to remember your choice and display preferences. Optional consent allows third-party images from Unsplash and animation files from jsDelivr/GSAP to load. We do not use analytics or advertising cookies.</p>
+        <p id="cookie-desc">Diese Website verwendet notwendigen lokalen Speicher, um Ihre Auswahl und Anzeigeeinstellungen zu speichern. Mit optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr/GSAP geladen und Besuche mit Google Analytics gemessen. Wir verwenden keine Werbe-Cookies.</p>
         <div class="cookie-compliance">
           Sie können optionale Elemente ablehnen, ohne den Zugriff auf die Website zu verlieren. Sie können Ihre Auswahl jederzeit über die Schaltfläche „Datenschutz- und Cookie-Einstellungen“ im Footer widerrufen oder ändern. Bei Fragen zum Datenschutz kontaktieren Sie Velora Apparel unter <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -716,6 +786,10 @@
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
           <span><strong>Präferenzen und Medien</strong> Lädt externe Modebilder von Unsplash und GSAP-Animationsbibliotheken von jsDelivr.</span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" data-cookie-analytics>
+          <span><strong>Statistik</strong> Misst Besuche und Seitennutzung mit Google Analytics 4 (pseudonyme Statistiken). Nie für Werbung verwendet.</span>
         </label>
       </div>
       <div class="cookie-actions">
@@ -844,13 +918,6 @@
         });
       });
 
-      gsap.to(".hero-media", {
-        y: -18,
-        duration: 3.8,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true
-      });
     }
 
     function applyConsent(consent) {
@@ -865,18 +932,20 @@
       }
     }
 
-    function saveConsent(preferences) {
+    function saveConsent(preferences, analytics) {
       const consent = {
         necessary: true,
         preferences,
+        analytics,
         regionNotice: "EU GDPR / US privacy / India DPDP aligned notice",
         savedAt: new Date().toISOString(),
-        version: 1
+        version: 2
       };
 
       localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
       document.querySelector("[data-cookie-consent]").hidden = true;
       applyConsent(consent);
+      window.veloraAnalytics?.update(analytics);
     }
 
     function getConsent() {
@@ -893,6 +962,7 @@
       const existing = getConsent();
 
       preferences.checked = Boolean(existing && existing.preferences);
+      document.querySelector("[data-cookie-analytics]").checked = Boolean(existing && existing.analytics);
       panel.hidden = false;
       panel.querySelector("button")?.focus();
     }
@@ -905,10 +975,10 @@
       }
     });
 
-    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true));
-    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false));
+    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true, true));
+    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false, false));
     document.querySelector("[data-cookie-save]").addEventListener("click", () => {
-      saveConsent(document.querySelector("[data-cookie-preferences]").checked);
+      saveConsent(document.querySelector("[data-cookie-preferences]").checked, document.querySelector("[data-cookie-analytics]").checked);
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
@@ -1016,10 +1086,16 @@
 
     if (existingConsent) {
       applyConsent(existingConsent);
+      // Choices saved before the Analytics option existed (version 1): ask once more.
+      if (!(existingConsent.version >= 2)) openCookiePanel();
     } else {
       setFinalStats();
       openCookiePanel();
     }
   </script>
+  <script type="application/json" id="quote-config">{"lang": "de", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "notes_max": 300, "date_max_days": 365, "quote_qty_max": 99999}, "types": {"oem": "OEM / Private Label", "jobwork": "Lohnfertigung", "bulk": "Tücher in großen Mengen", "other": "Sonstiges"}, "products": {"kurtis": "Kurtis", "coords": "Co-Ord-Sets", "tops": "Oberteile", "office": "Bürokleidung", "night": "Nachtwäsche", "dresses": "Kleider", "napkins": "Tücher", "other": "Sonstiges"}, "ui": {"err_name_required": "Bitte geben Sie Ihren Namen ein.", "err_name_invalid": "Nur Buchstaben, Leerzeichen, Punkt, Apostroph oder Bindestrich (2–60 Zeichen). Ziffern, Links und Sonderzeichen sind nicht erlaubt.", "err_city_required": "Bitte geben Sie Ihre Stadt oder Postleitzahl ein.", "err_city_invalid": "Nur Buchstaben, Ziffern, Leerzeichen, Komma, Punkt, Bindestrich oder Schrägstrich (2–80 Zeichen). Links und Telefonnummern sind nicht erlaubt.", "err_notes_invalid": "Nur Buchstaben, Ziffern und einfache Satzzeichen (max. 300 Zeichen). Links und Telefonnummern sind nicht erlaubt.", "err_date": "Wählen Sie ein Datum zwischen heute und in einem Jahr.", "err_fix": "Bitte korrigieren Sie die markierten Felder.", "err_qty": "Geben Sie eine Menge von 1 bis 99.999 ein.", "err_country": "Geben Sie einen gültigen Ländernamen ein (nur Buchstaben).", "err_company": "Nur Buchstaben, Ziffern, Leerzeichen und . \u0026 ' - (max. 80). Links sind nicht erlaubt.", "yes": "Ja", "no": "Nein"}, "msg": {"greet": "Guten Tag Velora Apparel,", "intro": "ich bitte um ein Fertigungsangebot:", "type": "Art der Anfrage", "product": "Produkt", "qty": "Geschätzte Menge", "pcs": "Stück", "sample": "Muster benötigt", "date": "Benötigt bis", "country": "Land", "city": "Stadt / PLZ", "name": "Name", "company": "Firma / Marke", "notes": "Details", "close": "Bitte nennen Sie mir Preis, Mindestmenge, Musterung und Liefertermin.", "thanks": "Vielen Dank."}}</script>
+  <script src="/assets/js/validate.js" defer></script>
+  <script src="/assets/js/quote.js" defer></script>
+  <script src="/assets/js/hero-carousel.js" defer></script>
 </body>
 </html>

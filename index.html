@@ -316,6 +316,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <script src="/assets/js/analytics.js" defer></script>
+  <script src="/assets/js/consent-tab.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-site-header>
@@ -328,7 +330,7 @@
             <span>+91&nbsp;79909&nbsp;65209</span>
           </a>
           <span aria-hidden="true">|</span>
-          <a href="mailto:rajani.parmar.tailor@gmail.com">
+          <a href="mailto:rajani.parmar.tailor@gmail.com?subject=Velora%20Apparel%20enquiry" title="rajani.parmar.tailor@gmail.com">
             <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3v-13Zm1.8 1.8v.3l7.2 5 7.2-5v-.3H4.8Zm14.4 9.4V9.8L12 14.7 4.8 9.8v6.9h14.4Z"/></svg>
             <span>rajani.parmar.tailor@gmail.com</span>
           </a>
@@ -382,20 +384,43 @@
   </header>
 
   <main>
-    <section id="home" class="hero" data-nav-section data-bg="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-animate="fade-up">
-            <p class="eyebrow">Velora Apparel · Alindra, Gujarat, India</p>
-            <h1>Ladies Wear Manufacturer in Gujarat, India</h1>
-            <p class="lead">Velora Apparel is a women's clothing manufacturer in Alindra, Gujarat. We make kurtis, co-ord sets, tops, office wear, night wear and dresses for brands, boutiques, resellers and private labels through OEM, private label, job work and bulk production.</p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn btn-main" href="#contact">Get a Quote</a>
-              <a class="btn btn-outline-dark" href="#products">View Products</a>
+    <section id="home" class="hero hero-v3" data-nav-section aria-roledescription="carousel" aria-label="Highlights">
+      <div class="hb" data-hero-carousel data-label-pause="Pause slideshow" data-label-play="Play slideshow">
+        <div class="hb-track" data-hb-track>
+          <div class="hb-slide hb-slide-manufacturing is-active" id="hb-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/manufacturing-card-720.webp 720w, /assets/images/banner/manufacturing-card-1080.webp 801w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/manufacturing-card-1080.jpg" width="801" height="641" alt="" decoding="async" fetchpriority="high"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/manufacturing-sticker-400.webp"><img src="/assets/images/banner/manufacturing-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Velora Apparel · Alindra, Gujarat</p>
+              <h1 class="hb-title">Garment Manufacturing, Napkins &amp; Tailoring in Gujarat</h1>
+              <p class="hb-text">Ladies wear for brands and boutiques, our own range of napkins and cleaning cloths, and tailoring for every family, from one trusted manufacturer.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="#contact">Get a Quote</a><a class="btn btn-outline-dark" href="/products/">Explore Products</a></div>
             </div>
           </div>
-          <div class="col-lg-6" data-animate="zoom-in">
-            <div class="hero-media" role="img" aria-label="Ladies wear manufacturing in Gujarat, India" data-bg="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="hb-slide hb-slide-napkins" id="hb-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/napkins-card-720.webp 720w, /assets/images/banner/napkins-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/napkins-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/napkins-sticker-400.webp"><img src="/assets/images/banner/napkins-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">New · Napkins &amp; cleaning cloths</p>
+              <h2 class="hb-title">Kitchen, Car &amp; Office Cloths in Every Colour</h2>
+              <p class="hb-text">Cotton, terry, waffle and microfiber napkins in many sizes and packs. Order on WhatsApp, retail or wholesale.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/products/#order">Shop Napkins</a><a class="btn btn-outline-dark" href="/products/">See the Range</a></div>
+            </div>
+          </div>
+          <div class="hb-slide hb-slide-tailoring" id="hb-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3" data-hb-slide>
+            <picture class="hb-media"><source type="image/webp" srcset="/assets/images/banner/tailoring-card-720.webp 720w, /assets/images/banner/tailoring-card-1080.webp 1080w" sizes="(min-width: 992px) 560px, 100vw"><img src="/assets/images/banner/tailoring-card-1080.jpg" width="1080" height="864" alt="" decoding="async" loading="lazy"></picture><picture class="hb-sticker" aria-hidden="true"><source type="image/webp" srcset="/assets/images/banner/tailoring-sticker-400.webp"><img src="/assets/images/banner/tailoring-sticker-400.jpg" width="400" height="400" alt="" loading="lazy" decoding="async"></picture>
+            <div class="container hb-content">
+              <p class="hb-kicker">Tailoring service</p>
+              <h2 class="hb-title">Tailored to Fit: Ladies, Gents &amp; Kids</h2>
+              <p class="hb-text">New clothes stitched to your measurements, from single pieces to bulk orders. Send your enquiry on WhatsApp.</p>
+              <div class="hb-actions"><a class="btn btn-main" href="/products/#tailoring">Book Tailoring</a><a class="btn btn-outline-dark" href="#contact">Contact Us</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="container hb-controls">
+          <div class="hb-tabs"><button type="button" class="hb-tab" data-hb-go="0" aria-controls="hb-slide-1" aria-current="true"><span class="hb-tab-num">01</span><span class="hb-tab-label">Manufacturing</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="1" aria-controls="hb-slide-2"><span class="hb-tab-num">02</span><span class="hb-tab-label">Napkins</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button><button type="button" class="hb-tab" data-hb-go="2" aria-controls="hb-slide-3"><span class="hb-tab-num">03</span><span class="hb-tab-label">Tailoring</span><span class="hb-tab-bar" aria-hidden="true"><i></i></span></button></div>
+          <div class="hb-buttons">
+            <button type="button" class="hb-btn" data-hb-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-pause aria-label="Pause slideshow"><svg class="hb-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg><svg class="hb-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <button type="button" class="hb-btn" data-hb-next aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.6 18.6 1.4 1.4 8-8-8-8-1.4 1.4 6.6 6.6z"/></svg></button>
           </div>
         </div>
       </div>
@@ -658,6 +683,25 @@
       </div>
     </section>
 
+    <section id="how-we-work" class="section-pad how-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How we work</p>
+          <h2>How Velora Apparel works</h2>
+          <p class="section-copy">Clear facts before you order, whether you are a brand, a shop or a family.</p>
+        </div>
+        <ul class="hw-list">
+            <li class="hw-item"><strong>In-house production</strong><span>Cutting, stitching, quality checks and packing are done at our own unit in Alindra, Gujarat.</span></li>
+            <li class="hw-item"><strong>Made to order</strong><span>We produce against confirmed orders. Price, quantity, fabric, timeline and delivery are agreed with you in writing on WhatsApp or email before production starts.</span></li>
+            <li class="hw-item"><strong>Sample before bulk</strong><span>For new bulk designs we make a sample for your approval before bulk production begins.</span></li>
+            <li class="hw-item"><strong>No payment on this website</strong><span>Orders and enquiries are sent on WhatsApp or email. Payment terms are confirmed directly with you. We never ask for card or bank details on this site.</span></li>
+            <li class="hw-item"><strong>Delivery confirmed per order</strong><span>Delivery options and charges depend on your city or country and are confirmed before dispatch.</span></li>
+            <li class="hw-item"><strong>Illustrative photos</strong><span>Photos on this website are illustrative stock images of fabrics and machinery, not photos of our finished products. Ask us for real product photos or samples.</span></li>
+            <li class="hw-item"><strong>Talk to the owner</strong><span>Your enquiry goes directly to the owner, Rajanikant Dhirajlal Parmar, on +91 79909 65209.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section-pad contact-section" data-nav-section data-bg="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=1600&q=80">
       <div class="container">
         <div class="row g-5 align-items-start">
@@ -665,6 +709,31 @@
             <p class="eyebrow">Contact</p>
             <h2>Get a quote for ladies wear manufacturing</h2>
             <p class="section-copy">Tell us your product category, target quantity, fabric preference, size range, and delivery timeline. We will respond with the next steps for sampling and production.</p>
+            <form class="quote-card" data-quote-form novalidate>
+              <h3>Request a manufacturing quote</h3>
+              <fieldset><legend>Enquiry type</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-type" value="oem" checked> OEM / private label</label><label class="qc-choice"><input type="radio" name="quote-type" value="jobwork"> Job work</label><label class="qc-choice"><input type="radio" name="quote-type" value="bulk"> Bulk napkins &amp; cloths</label><label class="qc-choice"><input type="radio" name="quote-type" value="other"> Other</label></div></fieldset>
+              <div class="qc-row">
+                <label>Product<select name="quote-product"><option value="kurtis">Kurtis</option><option value="coords">Co-ord sets</option><option value="tops">Tops</option><option value="office">Office wear</option><option value="night">Night wear</option><option value="dresses">Dresses</option><option value="napkins">Napkins &amp; cloths</option><option value="other">Other</option></select></label>
+                <label>Estimated quantity (pieces)<input type="number" name="quote-qty" min="1" max="99999" step="1" value="100" inputmode="numeric" aria-describedby="err-quote-qty"><span class="qc-error" id="err-quote-qty" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <fieldset><legend>Sample needed?</legend><div class="qc-choices"><label class="qc-choice"><input type="radio" name="quote-sample" value="yes" checked> Yes</label><label class="qc-choice"><input type="radio" name="quote-sample" value="no"> No</label></div></fieldset>
+                <label>Required by (optional)<input type="date" name="quote-date" aria-describedby="err-quote-date"><span class="qc-error" id="err-quote-date" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Country<input type="text" name="quote-country" value="India" autocomplete="country-name" maxlength="56" aria-describedby="err-quote-country"><span class="qc-error" id="err-quote-country" hidden></span></label>
+                <label>City / PIN code<input type="text" name="quote-city" autocomplete="address-level2" maxlength="80" spellcheck="false" aria-describedby="err-quote-city"><span class="qc-error" id="err-quote-city" hidden></span></label>
+              </div>
+              <div class="qc-row">
+                <label>Your name<input type="text" name="quote-name" autocomplete="name" maxlength="60" aria-describedby="err-quote-name"><span class="qc-error" id="err-quote-name" hidden></span></label>
+                <label>Company / brand (optional)<input type="text" name="quote-company" autocomplete="organization" maxlength="80" aria-describedby="err-quote-company"><span class="qc-error" id="err-quote-company" hidden></span></label>
+              </div>
+              <label>Details (optional)<textarea name="quote-notes" rows="2" maxlength="300" placeholder="Fabric, sizes, design or branding needs…" aria-describedby="err-quote-notes"></textarea><span class="qc-error" id="err-quote-notes" hidden></span></label>
+              <details class="qc-preview"><summary>Preview message</summary><pre data-quote-preview></pre></details>
+              <p class="qc-error qc-summary" data-quote-summary role="alert" hidden></p>
+              <button type="submit" class="btn btn-main w-100">Send quote request on WhatsApp</button>
+              <p class="qc-note">WhatsApp opens with your request ready. It is sent only when you press send in WhatsApp.</p>
+            </form>
           </div>
           <div class="col-lg-6" data-animate="fade-left">
             <div class="contact-panel">
@@ -687,7 +756,8 @@
       <p>Ladies wear manufacturer in Alindra, Gujarat, India: OEM, private label, job work and bulk production of kurtis, co-ord sets, tops, office wear, night wear and dresses.</p>
       <p class="footer-nap">Velora Apparel · Village Alindra, Gujarat, India · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>AI transparency:</strong> Some website text, design, and imagery were created with AI assistance and reviewed by Velora Apparel. AI is not used to make decisions about visitors or to process personal data on this website.</p>
-      <p class="footer-privacy-note"><strong>Privacy and cookies:</strong> We use necessary local storage to remember your cookie choice and display preferences. Optional consent loads third-party images from Unsplash and animation files from jsDelivr. We do not use analytics or advertising cookies. You can reject optional items or change your choice anytime.</p>
+      <p class="footer-photos"><strong>Photos:</strong> Banner and product-category photos are illustrative stock images (Unsplash), not photos of Velora Apparel products.</p>
+      <p class="footer-privacy-note"><strong>Privacy and cookies:</strong> We use necessary local storage to remember your cookie choice and display preferences. Optional consent loads third-party images from Unsplash and animation files from jsDelivr. With your consent, Google Analytics measures visits. We do not use advertising cookies. You can reject optional items or change your choice anytime.</p>
       <p class="footer-links"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
       <p class="footer-language-links"><strong>Languages:</strong> <a href="/">English</a> · <a href="gu/">ગુજરાતી</a> · <a href="hi/">हिन्दी</a> · <a href="de/">Deutsch</a></p>
       <p class="footer-attribution">Website content reviewed by Velora Apparel.</p>
@@ -704,7 +774,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">Privacy controls</p>
         <h2 id="cookie-title">Privacy and cookie preferences</h2>
-        <p id="cookie-desc">This website uses necessary local storage to remember your choice and display preferences. Optional consent allows third-party images from Unsplash and animation files from jsDelivr/GSAP to load. We do not use analytics or advertising cookies.</p>
+        <p id="cookie-desc">This website uses necessary local storage to remember your choice and display preferences. Optional consent allows third-party images from Unsplash and animation files from jsDelivr/GSAP to load. With your consent, Google Analytics measures visits. We do not use advertising cookies.</p>
         <div class="cookie-compliance">
           You can reject optional items without losing access to the website. You can also withdraw or change your choice at any time using the “Privacy and cookie preferences” button in the footer. For privacy questions, contact Velora Apparel at <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -717,6 +787,10 @@
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
           <span><strong>Preferences and media</strong> Loads third-party fashion images from Unsplash and GSAP animation libraries from jsDelivr.</span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" data-cookie-analytics>
+          <span><strong>Analytics</strong> Measures visits and page use with Google Analytics 4 (pseudonymous statistics). Never used for advertising.</span>
         </label>
       </div>
       <div class="cookie-actions">
@@ -845,13 +919,6 @@
         });
       });
 
-      gsap.to(".hero-media", {
-        y: -18,
-        duration: 3.8,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true
-      });
     }
 
     function applyConsent(consent) {
@@ -866,18 +933,20 @@
       }
     }
 
-    function saveConsent(preferences) {
+    function saveConsent(preferences, analytics) {
       const consent = {
         necessary: true,
         preferences,
+        analytics,
         regionNotice: "EU GDPR / US privacy / India DPDP aligned notice",
         savedAt: new Date().toISOString(),
-        version: 1
+        version: 2
       };
 
       localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
       document.querySelector("[data-cookie-consent]").hidden = true;
       applyConsent(consent);
+      window.veloraAnalytics?.update(analytics);
     }
 
     function getConsent() {
@@ -894,6 +963,7 @@
       const existing = getConsent();
 
       preferences.checked = Boolean(existing && existing.preferences);
+      document.querySelector("[data-cookie-analytics]").checked = Boolean(existing && existing.analytics);
       panel.hidden = false;
       panel.querySelector("button")?.focus();
     }
@@ -906,10 +976,10 @@
       }
     });
 
-    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true));
-    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false));
+    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true, true));
+    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false, false));
     document.querySelector("[data-cookie-save]").addEventListener("click", () => {
-      saveConsent(document.querySelector("[data-cookie-preferences]").checked);
+      saveConsent(document.querySelector("[data-cookie-preferences]").checked, document.querySelector("[data-cookie-analytics]").checked);
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
@@ -1022,10 +1092,16 @@
 
     if (existingConsent) {
       applyConsent(existingConsent);
+      // Choices saved before the Analytics option existed (version 1): ask once more.
+      if (!(existingConsent.version >= 2)) openCookiePanel();
     } else {
       setFinalStats();
       openCookiePanel();
     }
   </script>
+  <script type="application/json" id="quote-config">{"lang": "en", "whatsapp": "917990965209", "limits": {"name_max": 60, "city_max": 80, "notes_max": 300, "date_max_days": 365, "quote_qty_max": 99999}, "types": {"oem": "OEM / private label", "jobwork": "Job work", "bulk": "Bulk napkins \u0026 cloths", "other": "Other"}, "products": {"kurtis": "Kurtis", "coords": "Co-ord sets", "tops": "Tops", "office": "Office wear", "night": "Night wear", "dresses": "Dresses", "napkins": "Napkins \u0026 cloths", "other": "Other"}, "ui": {"err_name_required": "Please enter your name.", "err_name_invalid": "Use letters, spaces, dot, apostrophe or hyphen only (2–60 characters). Numbers, links and symbols are not allowed.", "err_city_required": "Please enter your city or PIN code.", "err_city_invalid": "Use letters, numbers, spaces, comma, dot, hyphen or slash only (2–80 characters). Links and phone numbers are not allowed.", "err_notes_invalid": "Use letters, numbers and simple punctuation only (max 300 characters). Links and phone numbers are not allowed.", "err_date": "Choose a date between today and one year from now.", "err_fix": "Please correct the highlighted fields.", "err_qty": "Enter a quantity from 1 to 99,999.", "err_country": "Enter a valid country name (letters only).", "err_company": "Use letters, numbers, spaces and . \u0026 ' - only (max 80). Links are not allowed.", "yes": "Yes", "no": "No"}, "msg": {"greet": "Hello Velora Apparel,", "intro": "I would like a manufacturing quote:", "type": "Enquiry type", "product": "Product", "qty": "Estimated quantity", "pcs": "pcs", "sample": "Sample needed", "date": "Required by", "country": "Country", "city": "City / PIN", "name": "Name", "company": "Company / brand", "notes": "Details", "close": "Kindly share the price, MOQ, sampling and delivery timeline.", "thanks": "Thank you."}}</script>
+  <script src="/assets/js/validate.js" defer></script>
+  <script src="/assets/js/quote.js" defer></script>
+  <script src="/assets/js/hero-carousel.js" defer></script>
 </body>
 </html>

@@ -2897,3 +2897,1262 @@ h3 {
 .vh-teaser-links .is-wide {
   grid-column: 1 / -1;
 }
+
+/* Slide-in animations start 46px off to the side; never let that create a
+   horizontal scrollbar ("clip" keeps sticky positioning working). */
+main {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/* Dark mode: let the dark header show through the navbar and keep primary
+   buttons readable. */
+[data-theme="dark"] .navbar {
+  background: transparent;
+}
+
+[data-theme="dark"] .btn-main,
+[data-theme="dark"] .btn-main:hover,
+[data-theme="dark"] .btn-main:focus {
+  color: #fff;
+}
+
+
+[data-theme="dark"] .brand-logo {
+  border-radius: 12px;
+}
+
+/* ===== Homepage banner (hero-v3): three full-width slides ===== */
+.hero.hero-v3 {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: #1b0b3d;
+}
+
+.hero.hero-v3::before,
+.hero.hero-v3::after {
+  display: none;
+}
+
+.hb {
+  position: relative;
+}
+
+.hb-track {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.hb-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hb-slide {
+  position: relative;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  min-height: clamp(560px, 80vh, 700px);
+  padding: 72px 0 148px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  isolation: isolate;
+}
+
+.hb-media,
+.hb-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hb-media {
+  z-index: -2;
+}
+
+.hb-media img {
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: transform 7s ease-out;
+}
+
+.hb-slide.is-active .hb-media img {
+  transform: scale(1);
+}
+
+/* Brand-coloured overlay keeps white text readable on every photo. */
+.hb-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(27, 11, 61, .95) 0%, rgba(76, 29, 149, .8) 42%, rgba(37, 99, 235, .2) 100%);
+}
+
+.hb-slide-napkins::before {
+  background: linear-gradient(90deg, rgba(15, 23, 72, .95) 0%, rgba(67, 56, 202, .78) 45%, rgba(124, 58, 237, .12) 100%);
+}
+
+.hb-slide-tailoring::before {
+  background: linear-gradient(90deg, rgba(27, 11, 61, .94) 0%, rgba(109, 74, 255, .62) 50%, rgba(236, 72, 153, .3) 100%);
+}
+
+.hb-content {
+  position: relative;
+}
+
+.hb-kicker {
+  display: inline-flex;
+  margin: 0 0 22px;
+  padding: 7px 16px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.hero.hero-v3 .hb-title {
+  max-width: 780px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(36px, 5.2vw, 70px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.hb-text {
+  max-width: 600px;
+  margin: 22px 0 32px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.hb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Gentle entrance for the active slide's text. */
+.hb.is-ready .hb-content > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.hb.is-ready .hb-slide.is-active .hb-content > * {
+  opacity: 1;
+  transform: none;
+}
+
+.hb.is-ready .hb-slide.is-active .hb-content > :nth-child(2) { transition-delay: .08s; }
+.hb.is-ready .hb-slide.is-active .hb-content > :nth-child(3) { transition-delay: .16s; }
+.hb.is-ready .hb-slide.is-active .hb-content > :nth-child(4) { transition-delay: .24s; }
+
+.hb-controls {
+  position: absolute;
+  right: 0;
+  bottom: 28px;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hb-tabs {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+}
+
+.hb-tab {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  min-width: 150px;
+  padding: 12px 14px 10px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .08);
+  color: rgba(255, 255, 255, .78);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.hb-tab:hover,
+.hb-tab:focus-visible,
+.hb-tab[aria-current="true"] {
+  border-color: rgba(255, 255, 255, .4);
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.hb-tab-num {
+  font-size: .78rem;
+  opacity: .8;
+}
+
+.hb-tab-label {
+  white-space: nowrap;
+}
+
+.hb-tab-bar {
+  grid-column: 1 / -1;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .22);
+}
+
+.hb-tab-bar i {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.hb-tab[aria-current="true"] .hb-tab-bar i {
+  width: 100%;
+}
+
+.hb.is-ticking .hb-tab[aria-current="true"] .hb-tab-bar i {
+  animation: hb-progress 6.5s linear forwards;
+}
+
+@keyframes hb-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.hb-buttons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.hb-btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.hb-btn:hover,
+.hb-btn:focus-visible {
+  background: #fff;
+  color: var(--v-purple-deep);
+}
+
+.hb-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.hb-icon-play,
+.hb.is-playing .hb-icon-pause {
+  display: block;
+}
+
+.hb-icon-pause,
+.hb.is-playing .hb-icon-play {
+  display: none;
+}
+
+.hb-tab:focus-visible,
+.hb-btn:focus-visible,
+.hb-actions .btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 991.98px) {
+  .hb-slide {
+    min-height: 600px;
+    padding: 56px 0 170px;
+  }
+
+  .hb-slide::before,
+  .hb-slide-napkins::before,
+  .hb-slide-tailoring::before {
+    background: linear-gradient(180deg, rgba(27, 11, 61, .55) 0%, rgba(27, 11, 61, .88) 45%, rgba(27, 11, 61, .95) 100%);
+  }
+
+  .hb-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hb-tabs {
+    width: 100%;
+  }
+
+  .hb-tab {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hb-buttons {
+    position: absolute;
+    top: -62px;
+    right: calc(var(--grid-gap, 24px) / 2 + 0px);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hb-slide {
+    min-height: 620px;
+    padding: 44px 0 150px;
+  }
+
+  .hb-text {
+    font-size: 16px;
+  }
+
+  .hb-actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .hb-tab {
+    padding: 10px 8px 8px;
+    column-gap: 6px;
+    font-size: .8rem;
+  }
+
+  .hb-tab-num {
+    display: none;
+  }
+
+  .hb-tab-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .hb-buttons {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-media img,
+  .hb.is-ready .hb-content > * {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ===== Phones & tablets: compact header + bottom-sheet banner =====
+   Goal: header, banner, buttons and slide switcher all visible on the first
+   screen (e.g. iPhone 16 Pro Max in Safari) without scrolling. */
+@media (max-width: 991.98px) {
+  /* Slim one-line contact strip */
+  .site-header .topbar {
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  .site-header .topbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-header .topbar-title,
+  .site-header .topbar-contact > span[aria-hidden="true"],
+  .site-header .theme-toggle [data-theme-label] {
+    display: none;
+  }
+
+  .site-header .topbar-contact {
+    flex-wrap: nowrap;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .site-header .topbar-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .14);
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  .site-header .theme-toggle {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  /* One navigation row: logo, language, menu */
+  .site-header .navbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    min-height: 60px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .site-header .brand {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-inline: 0;
+  }
+
+  .site-header .brand-logo {
+    height: 44px;
+  }
+
+  .site-header .brand-text {
+    overflow: hidden;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+  }
+
+  .site-header .language-switcher {
+    order: 1;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .site-header .language-switcher select {
+    width: auto;
+    min-height: 40px;
+    padding: 4px 30px 4px 12px;
+    border-width: 1px;
+    border-radius: 999px;
+    font-size: 16px; /* 16px stops iOS zooming when the menu opens */
+  }
+
+  .site-header .navbar-toggle {
+    position: static;
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  /* Banner: photo on top, frosted bottom sheet with text, buttons and tabs */
+  .hero.hero-v3 .hb-slide {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: max(520px, calc(100svh - var(--site-header-h, 104px)));
+    padding: 0;
+  }
+
+  .hero.hero-v3 .hb-slide::before,
+  .hero.hero-v3 .hb-slide-napkins::before,
+  .hero.hero-v3 .hb-slide-tailoring::before {
+    background: linear-gradient(180deg, rgba(27, 11, 61, .05) 0%, rgba(27, 11, 61, .2) 35%, rgba(27, 11, 61, .65) 100%);
+  }
+
+  .hero.hero-v3 .hb-media img {
+    object-position: center 35%;
+  }
+
+  .hero.hero-v3 .hb-content {
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 22px 20px 96px;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 28px 28px 0 0;
+    background: rgba(24, 10, 56, .72);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 -18px 40px rgba(10, 4, 30, .35);
+  }
+
+  /* Label floats on the photo, top-left */
+  .hero.hero-v3 .hb-kicker {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+    margin: 0;
+    padding: 6px 12px;
+    background: rgba(24, 10, 56, .55);
+    font-size: 11px;
+  }
+
+  .hero.hero-v3 .hb-title {
+    font-size: clamp(26px, 7.2vw, 36px);
+    line-height: 1.1;
+  }
+
+  .hero.hero-v3 .hb-text {
+    display: -webkit-box;
+    margin: 12px 0 18px;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .hero.hero-v3 .hb-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .hero.hero-v3 .hb-actions .btn {
+    min-height: 48px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* Segmented slide switcher pinned to the bottom of the sheet */
+  .hero.hero-v3 .hb-controls {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: auto;
+    margin: 0;
+    flex-direction: row;
+  }
+
+  .hero.hero-v3 .hb-buttons {
+    display: none;
+  }
+
+  .hero.hero-v3 .hb-tabs {
+    width: 100%;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .08);
+  }
+
+  .hero.hero-v3 .hb-tab {
+    flex: 1 1 0;
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    min-width: 0;
+    min-height: 52px;
+    padding: 9px 6px 7px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    font-size: 13px;
+    text-align: center;
+    backdrop-filter: none;
+  }
+
+  .hero.hero-v3 .hb-tab-num {
+    display: none;
+  }
+
+  .hero.hero-v3 .hb-tab-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] {
+    background: #fff;
+    color: var(--v-purple-deep);
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] .hb-tab-bar {
+    background: rgba(109, 74, 255, .2);
+  }
+
+  .hero.hero-v3 .hb-tab[aria-current="true"] .hb-tab-bar i {
+    background: var(--v-purple);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  /* Tablets: the sheet becomes a floating card */
+  .hero.hero-v3 .hb-content {
+    width: auto;
+    margin: 0 24px 24px;
+    padding: 28px 28px 100px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 28px;
+  }
+
+  .hero.hero-v3 .hb-controls {
+    right: 48px;
+    bottom: 44px;
+    left: 48px;
+  }
+
+  .hero.hero-v3 .hb-kicker {
+    top: 24px;
+    left: 24px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* The label sits at the top of the sheet (the sheet's blur would otherwise
+     re-anchor an absolutely positioned label onto the headline). */
+  .hero.hero-v3 .hb-kicker {
+    position: static;
+    margin: 0 0 12px;
+    background: rgba(255, 255, 255, .12);
+  }
+
+  .hero.hero-v3 .hb-media img {
+    object-position: center top;
+  }
+
+  /* Brand name wraps like a two-line logo lock-up instead of being cut off. */
+  .site-header .brand-text {
+    overflow: visible;
+    font-size: .98rem;
+    line-height: 1.1;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-header .brand-logo {
+    height: 38px;
+  }
+
+  .site-header .brand-text {
+    max-width: 5.5em;
+  }
+
+  .site-header .topbar-contact a {
+    padding: 5px 8px;
+  }
+}
+
+/* Short phone screens (e.g. iPhone SE in Safari): tighten the sheet so the
+   buttons and the slide switcher still fit on the first screen. */
+@media (max-width: 991.98px) and (max-height: 700px) {
+  .hero.hero-v3 .hb-slide {
+    min-height: max(420px, calc(100svh - var(--site-header-h, 104px)));
+  }
+
+  .hero.hero-v3 .hb-content {
+    padding: 16px 16px 80px;
+  }
+
+  .hero.hero-v3 .hb-kicker {
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .hero.hero-v3 .hb-title {
+    font-size: clamp(22px, 6.4vw, 28px);
+  }
+
+  .hero.hero-v3 .hb-text {
+    margin: 8px 0 12px;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+  }
+
+  .hero.hero-v3 .hb-actions .btn {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .hero.hero-v3 .hb-controls {
+    bottom: 12px;
+  }
+
+  .hero.hero-v3 .hb-tab {
+    min-height: 44px;
+    padding: 7px 6px 6px;
+    font-size: 12px;
+  }
+}
+
+/* ===== How Velora Apparel works (transparency) ===== */
+.how-section {
+  background: var(--surface-soft);
+}
+
+.hw-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hw-item {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 22px 22px 22px 58px;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  counter-increment: hw;
+}
+
+.hw-list {
+  counter-reset: hw;
+}
+
+.hw-item::before {
+  content: counter(hw);
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.hw-item strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.hw-item span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== Manufacturing quote form (Contact section) ===== */
+.quote-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 26px;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 24px 50px rgba(14, 6, 40, .35);
+  text-align: left;
+}
+
+.quote-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.3rem;
+}
+
+.quote-card label,
+.quote-card legend {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.quote-card legend {
+  margin-bottom: 8px;
+}
+
+.quote-card fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.quote-card input[type="text"],
+.quote-card input[type="number"],
+.quote-card input[type="date"],
+.quote-card select,
+.quote-card textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.quote-card textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.quote-card [aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+
+.qc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.qc-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quote-card .qc-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quote-card .qc-choice:has(input:checked) {
+  border-color: var(--primary);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.quote-card input[type="radio"] {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+.qc-error {
+  color: var(--red);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.qc-summary {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--red-soft);
+}
+
+.qc-preview summary {
+  color: var(--muted-strong);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qc-preview pre {
+  max-height: 220px;
+  margin: 8px 0 0;
+  padding: 12px;
+  overflow: auto;
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font: .82rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+}
+
+.qc-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: .82rem;
+  text-align: center;
+}
+
+.quote-card .btn-main {
+  color: #fff;
+}
+
+.quote-card button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.footer .footer-photos {
+  margin-top: 8px;
+  font-size: .85rem;
+}
+
+@media (max-width: 575.98px) {
+  .qc-row {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    padding: 20px;
+  }
+}
+
+/* Phones & tablets: the photo gets its own area above the sheet (instead of
+   filling the whole slide behind it), so the subject is fully visible. */
+@media (max-width: 991.98px) {
+  .hero.hero-v3 .hb-slide {
+    justify-content: flex-start;
+    background: #1b0b3d;
+  }
+
+  .hero.hero-v3 .hb-media {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 150px;
+  }
+
+  .hero.hero-v3 .hb-media img {
+    position: absolute;
+    inset: 0;
+    object-position: center;
+  }
+
+  .hero.hero-v3 .hb-slide::before,
+  .hero.hero-v3 .hb-slide-napkins::before,
+  .hero.hero-v3 .hb-slide-tailoring::before {
+    z-index: 1;
+    bottom: auto;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(27, 11, 61, .35) 0%, rgba(27, 11, 61, 0) 100%);
+    pointer-events: none;
+  }
+
+  .hero.hero-v3 .hb-content {
+    z-index: 2;
+    flex: 0 0 auto;
+    margin-top: -28px;
+    background: rgba(24, 10, 56, .92);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero.hero-v3 .hb-content {
+    margin-top: -56px;
+  }
+}
+
+/* The header's backdrop blur makes it the containing block for position:fixed
+   children, which trapped the full-screen mobile menu inside the header strip.
+   Drop the blur while the menu is open so the menu covers the whole screen. */
+.site-header:has(.nav-panel.is-open),
+body.menu-open .site-header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  z-index: 1300;
+}
+
+@media (max-width: 991.98px) {
+  .nav-panel.is-open {
+    padding-top: 96px;
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .site-header .nav-panel.is-open .nav-list {
+    width: min(100%, 520px);
+  }
+
+  .site-header .nav-panel.is-open .nav-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+  }
+
+  .site-header .nav-panel.is-open .nav-link {
+    min-height: 52px;
+    padding: 12px 8px;
+    color: rgba(255, 255, 255, .92);
+    font-size: clamp(19px, 5vw, 24px);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .site-header .nav-panel.is-open .nav-link:hover,
+  .site-header .nav-panel.is-open .nav-link:focus-visible,
+  .site-header .nav-panel.is-open .nav-link.is-active {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  .site-header .nav-panel.is-open .nav-link::after {
+    bottom: 6px;
+  }
+}
+
+/* ===== Privacy side tab (all pages) ===== */
+.consent-tab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 2001; /* above the consent overlay so it can close it */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  border: 0;
+  border-radius: 14px 0 0 14px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  box-shadow: -6px 10px 24px rgba(37, 46, 80, .28);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: padding .2s ease, box-shadow .2s ease;
+}
+
+.consent-tab svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.consent-tab-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.consent-tab:hover,
+.consent-tab:focus-visible,
+.consent-tab.is-open {
+  padding-right: 12px;
+  box-shadow: -8px 12px 28px rgba(37, 46, 80, .38);
+}
+
+.consent-tab:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -5px;
+}
+
+body.menu-open .consent-tab {
+  display: none;
+}
+
+@media (max-width: 575.98px) {
+  .consent-tab {
+    padding: 10px 6px;
+    font-size: 11px;
+  }
+
+  .consent-tab svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Phones: the privacy tab shows only its icon so it does not cover text. */
+@media (max-width: 575.98px) {
+  .consent-tab {
+    gap: 0;
+    padding: 10px 7px;
+  }
+
+  .consent-tab-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Phones/tablets: email as an envelope pill; the address stays available to
+   screen readers and is used by the mailto: link. */
+@media (max-width: 991.98px) {
+  .site-header .topbar-contact > a[href^="mailto:"] span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .site-header .topbar-contact > a[href^="mailto:"] {
+    padding: 5px 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header .topbar-contact a {
+    padding: 5px 8px;
+    font-size: 11.5px;
+  }
+}
+
+/* ===== Banner v4: brand-gradient stage + framed photo card + sticker ===== */
+.hb-sticker {
+  display: none;
+}
+
+@keyframes hb-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (min-width: 992px) {
+  .hero.hero-v3 .hb-slide {
+    --card-w: min(40vw, 540px);
+    --card-right: max(64px, calc((100vw - 1240px) / 2 + 24px));
+    background: linear-gradient(120deg, #1b0b3d, #4c1d95, #6d28d9, #2563eb, #1b0b3d);
+    background-size: 300% 300%;
+    animation: hb-gradient 18s ease infinite;
+  }
+
+  .hero.hero-v3 .hb-slide-napkins {
+    background-image: linear-gradient(120deg, #0f1748, #1e3a8a, #4338ca, #7c3aed, #0f1748);
+  }
+
+  .hero.hero-v3 .hb-slide-tailoring {
+    background-image: linear-gradient(120deg, #1b0b3d, #6d28d9, #db2777, #7c3aed, #1b0b3d);
+  }
+
+  /* Soft glows instead of a dark overlay */
+  .hero.hero-v3 .hb-slide::before,
+  .hero.hero-v3 .hb-slide-napkins::before,
+  .hero.hero-v3 .hb-slide-tailoring::before {
+    background:
+      radial-gradient(circle at 78% 30%, rgba(255, 79, 163, .28), transparent 40%),
+      radial-gradient(circle at 15% 85%, rgba(59, 130, 246, .25), transparent 45%);
+  }
+
+  .hero.hero-v3 .hb-title {
+    max-width: min(700px, 48vw);
+  }
+
+  .hero.hero-v3 .hb-text {
+    max-width: min(560px, 44vw);
+  }
+
+  /* Framed "focused" photo card */
+  .hero.hero-v3 .hb-media {
+    position: absolute;
+    top: 46%;
+    right: var(--card-right);
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    width: var(--card-w);
+    height: auto;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    border: 6px solid transparent;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff4fa3, #a78bfa, #60a5fa) border-box;
+    box-shadow: 0 40px 80px rgba(10, 4, 30, .5), 0 0 0 1px rgba(255, 255, 255, .15);
+    transform: translateY(-50%) rotate(-2.5deg);
+    transition: transform .6s ease;
+  }
+
+  .hero.hero-v3 .hb-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  .hero.hero-v3 .hb-slide.is-active .hb-media {
+    transform: translateY(-50%) rotate(-1deg);
+  }
+
+  .hero.hero-v3 .hb-slide:hover .hb-media {
+    transform: translateY(-50%) rotate(0deg) scale(1.02);
+  }
+
+  /* Small overlapping photo sticker */
+  .hero.hero-v3 .hb-sticker {
+    position: absolute;
+    right: calc(var(--card-right) + var(--card-w) - 120px);
+    top: calc(46% + var(--card-w) * .4 - 150px);
+    z-index: 2;
+    display: block;
+    width: clamp(130px, 13vw, 190px);
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 5px solid #fff;
+    border-radius: 22px;
+    box-shadow: 0 24px 50px rgba(10, 4, 30, .45);
+    transform: rotate(7deg);
+    animation: hb-float 6s ease-in-out infinite;
+  }
+
+  .hero.hero-v3 .hb-sticker img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes hb-float {
+    0%, 100% { transform: rotate(7deg) translateY(0); }
+    50% { transform: rotate(5deg) translateY(-10px); }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero.hero-v3 .hb-slide {
+    --card-w: min(38vw, 420px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.hero-v3 .hb-slide,
+  .hero.hero-v3 .hb-sticker {
+    animation: none;
+  }
+
+  .hero.hero-v3 .hb-media {
+    transition: none;
+  }
+}
