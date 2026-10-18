@@ -27,9 +27,11 @@ assert re.fullmatch(r"\d{10,15}", DATA["whatsapp"]), "catalog.json: whatsapp mus
 
 # Products page only loads its own files, so it can run under a strict policy.
 # (GitHub Pages cannot send headers; frame-ancestors is not supported in a meta CSP.)
-CSP = ("default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
-       "font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; "
-       "base-uri 'none'; object-src 'none'")
+# Google Analytics hosts are allowed so consent-gated GA4 (assets/js/analytics.js) can run.
+CSP = ("default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; "
+       "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; "
+       "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; "
+       "manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'")
 
 
 def safe_json(obj, **kwargs):
@@ -274,6 +276,7 @@ def build(lang):
   <script type="application/ld+json">
 {schema(lang)}
   </script>
+  <script src="/assets/js/analytics.js" defer></script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/products.css">
   <link rel="stylesheet" href="/assets/css/product-swatches.css">

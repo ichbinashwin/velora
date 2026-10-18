@@ -316,6 +316,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <script src="/assets/js/analytics.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-site-header>
@@ -755,7 +756,7 @@
       <p class="footer-nap">Velora Apparel · गाँव अलिंद्रा, गुजरात, भारत · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>AI पारदर्शिता:</strong> वेबसाइट के कुछ टेक्स्ट, डिज़ाइन और चित्र AI की सहायता से बनाए गए हैं और Velora Apparel द्वारा समीक्षा किए गए हैं। आगंतुकों के बारे में निर्णय लेने या व्यक्तिगत डेटा को प्रोसेस करने के लिए AI का उपयोग नहीं किया जाता है।</p>
       <p class="footer-photos"><strong>फ़ोटो:</strong> बैनर और उत्पाद श्रेणी की फ़ोटो उदाहरण के लिए स्टॉक फ़ोटो (Unsplash) हैं, Velora Apparel के उत्पादों की फ़ोटो नहीं।</p>
-      <p class="footer-privacy-note"><strong>गोपनीयता और कुकीज़:</strong> आपकी कुकी पसंद और डिस्प्ले प्राथमिकताओं को याद रखने के लिए आवश्यक लोकल स्टोरेज का उपयोग किया जाता है। वैकल्पिक सहमति से Unsplash की थर्ड-पार्टी इमेज और jsDelivr की एनीमेशन फाइलें लोड होती हैं। हम एनालिटिक्स या विज्ञापन कुकीज़ का उपयोग नहीं करते। आप वैकल्पिक आइटम अस्वीकार कर सकते हैं या अपनी पसंद कभी भी बदल सकते हैं।</p>
+      <p class="footer-privacy-note"><strong>गोपनीयता और कुकीज़:</strong> आपकी कुकी पसंद और डिस्प्ले प्राथमिकताओं को याद रखने के लिए आवश्यक लोकल स्टोरेज का उपयोग किया जाता है। वैकल्पिक सहमति से Unsplash की थर्ड-पार्टी इमेज और jsDelivr की एनीमेशन फाइलें लोड होती हैं। आपकी सहमति से Google Analytics विज़िट मापता है। हम विज्ञापन कुकीज़ का उपयोग नहीं करते। आप वैकल्पिक आइटम अस्वीकार कर सकते हैं या अपनी पसंद कभी भी बदल सकते हैं।</p>
       <p class="footer-links"><a href="../privacy.html">गोपनीयता नीति</a> · <a href="../terms.html">उपयोग की शर्तें</a></p>
       <p class="footer-language-links"><strong>भाषाएं:</strong> <a href="../">English</a> · <a href="../gu/">ગુજરાતી</a> · <a href="./">हिन्दी</a> · <a href="../de/">Deutsch</a></p>
       <button class="footer-cookie-btn" type="button" data-cookie-open>गोपनीयता और कुकी प्राथमिकताएं</button>
@@ -771,7 +772,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">गोपनीयता नियंत्रण</p>
         <h2 id="cookie-title">गोपनीयता और कुकी प्राथमिकताएं</h2>
-        <p id="cookie-desc">यह वेबसाइट आपकी पसंद और डिस्प्ले प्राथमिकताओं को याद रखने के लिए आवश्यक लोकल स्टोरेज का उपयोग करती है। वैकल्पिक सहमति से Unsplash की थर्ड-पार्टी इमेज और jsDelivr/GSAP की एनीमेशन फाइलें लोड होती हैं। हम एनालिटिक्स या विज्ञापन कुकीज़ का उपयोग नहीं करते।</p>
+        <p id="cookie-desc">यह वेबसाइट आपकी पसंद और डिस्प्ले प्राथमिकताओं को याद रखने के लिए आवश्यक लोकल स्टोरेज का उपयोग करती है। वैकल्पिक सहमति से Unsplash की थर्ड-पार्टी इमेज और jsDelivr/GSAP की एनीमेशन फाइलें लोड होती हैं। आपकी सहमति से Google Analytics विज़िट मापता है। हम विज्ञापन कुकीज़ का उपयोग नहीं करते।</p>
         <div class="cookie-compliance">
           आप वेबसाइट का एक्सेस खोए बिना वैकल्पिक आइटम अस्वीकार कर सकते हैं। फुटर में “गोपनीयता और कुकी प्राथमिकताएं” बटन का उपयोग करके आप कभी भी अपनी पसंद वापस ले या बदल सकते हैं। गोपनीयता संबंधी प्रश्नों के लिए Velora Apparel से संपर्क करें: <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -784,6 +785,10 @@
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
           <span><strong>प्राथमिकताएं और मीडिया</strong> Unsplash की थर्ड-पार्टी फैशन इमेज और jsDelivr की GSAP एनीमेशन लाइब्रेरी लोड करता है।</span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" data-cookie-analytics>
+          <span><strong>एनालिटिक्स</strong> Google Analytics 4 से विज़िट और पेज उपयोग का माप (नाम रहित आंकड़े)। विज्ञापन के लिए कभी उपयोग नहीं होता।</span>
         </label>
       </div>
       <div class="cookie-actions">
@@ -926,18 +931,20 @@
       }
     }
 
-    function saveConsent(preferences) {
+    function saveConsent(preferences, analytics) {
       const consent = {
         necessary: true,
         preferences,
+        analytics,
         regionNotice: "EU GDPR / US privacy / India DPDP aligned notice",
         savedAt: new Date().toISOString(),
-        version: 1
+        version: 2
       };
 
       localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
       document.querySelector("[data-cookie-consent]").hidden = true;
       applyConsent(consent);
+      window.veloraAnalytics?.update(analytics);
     }
 
     function getConsent() {
@@ -954,6 +961,7 @@
       const existing = getConsent();
 
       preferences.checked = Boolean(existing && existing.preferences);
+      document.querySelector("[data-cookie-analytics]").checked = Boolean(existing && existing.analytics);
       panel.hidden = false;
       panel.querySelector("button")?.focus();
     }
@@ -966,10 +974,10 @@
       }
     });
 
-    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true));
-    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false));
+    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true, true));
+    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false, false));
     document.querySelector("[data-cookie-save]").addEventListener("click", () => {
-      saveConsent(document.querySelector("[data-cookie-preferences]").checked);
+      saveConsent(document.querySelector("[data-cookie-preferences]").checked, document.querySelector("[data-cookie-analytics]").checked);
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
@@ -1077,6 +1085,8 @@
 
     if (existingConsent) {
       applyConsent(existingConsent);
+      // Choices saved before the Analytics option existed (version 1): ask once more.
+      if (!(existingConsent.version >= 2)) openCookiePanel();
     } else {
       setFinalStats();
       openCookiePanel();

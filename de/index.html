@@ -316,6 +316,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <script src="/assets/js/analytics.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-site-header>
@@ -755,7 +756,7 @@
       <p class="footer-nap">Velora Apparel · Dorf Alindra, Gujarat, Indien · +91 79909 65209 · rajani.parmar.tailor@gmail.com</p>
       <p class="footer-disclosure"><strong>KI-Transparenz:</strong> Einige Website-Texte, Designelemente und Bilder wurden mit Unterstützung von KI erstellt und von Velora Apparel geprüft. KI wird nicht eingesetzt, um Entscheidungen über Besucher zu treffen oder personenbezogene Daten zu verarbeiten.</p>
       <p class="footer-photos"><strong>Fotos:</strong> Banner- und Kategoriefotos sind Symbolbilder (Unsplash), keine Fotos von Produkten von Velora Apparel.</p>
-      <p class="footer-privacy-note"><strong>Datenschutz und Cookies:</strong> Wir verwenden den notwendigen lokalen Speicher, um Ihre Cookie-Auswahl und Anzeigeeinstellungen zu speichern. Bei optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr geladen. Wir verwenden keine Analyse- oder Werbe-Cookies. Sie können optionale Elemente ablehnen oder Ihre Auswahl jederzeit ändern.</p>
+      <p class="footer-privacy-note"><strong>Datenschutz und Cookies:</strong> Wir verwenden den notwendigen lokalen Speicher, um Ihre Cookie-Auswahl und Anzeigeeinstellungen zu speichern. Bei optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr geladen. Mit Ihrer Zustimmung misst Google Analytics Besuche; Werbe-Cookies verwenden wir nicht. Sie können optionale Elemente ablehnen oder Ihre Auswahl jederzeit ändern.</p>
       <p class="footer-links"><a href="../privacy.html">Datenschutzerklärung</a> · <a href="../terms.html">Nutzungsbedingungen</a></p>
       <p class="footer-language-links"><strong>Sprachen:</strong> <a href="../">English</a> · <a href="../gu/">ગુજરાતી</a> · <a href="../hi/">हिन्दी</a> · <a href="./">Deutsch</a></p>
       <button class="footer-cookie-btn" type="button" data-cookie-open>Datenschutz- und Cookie-Einstellungen</button>
@@ -771,7 +772,7 @@
       <div class="cookie-copy">
         <p class="eyebrow">Datenschutzeinstellungen</p>
         <h2 id="cookie-title">Datenschutz- und Cookie-Einstellungen</h2>
-        <p id="cookie-desc">This website uses necessary local storage to remember your choice and display preferences. Optional consent allows third-party images from Unsplash and animation files from jsDelivr/GSAP to load. We do not use analytics or advertising cookies.</p>
+        <p id="cookie-desc">Diese Website verwendet notwendigen lokalen Speicher, um Ihre Auswahl und Anzeigeeinstellungen zu speichern. Mit optionaler Zustimmung werden Bilder von Unsplash und Animationsdateien von jsDelivr/GSAP geladen und Besuche mit Google Analytics gemessen. Wir verwenden keine Werbe-Cookies.</p>
         <div class="cookie-compliance">
           Sie können optionale Elemente ablehnen, ohne den Zugriff auf die Website zu verlieren. Sie können Ihre Auswahl jederzeit über die Schaltfläche „Datenschutz- und Cookie-Einstellungen“ im Footer widerrufen oder ändern. Bei Fragen zum Datenschutz kontaktieren Sie Velora Apparel unter <a href="mailto:rajani.parmar.tailor@gmail.com">rajani.parmar.tailor@gmail.com</a>.
         </div>
@@ -784,6 +785,10 @@
         <label class="cookie-option">
           <input type="checkbox" data-cookie-preferences>
           <span><strong>Präferenzen und Medien</strong> Lädt externe Modebilder von Unsplash und GSAP-Animationsbibliotheken von jsDelivr.</span>
+        </label>
+        <label class="cookie-option">
+          <input type="checkbox" data-cookie-analytics>
+          <span><strong>Statistik</strong> Misst Besuche und Seitennutzung mit Google Analytics 4 (pseudonyme Statistiken). Nie für Werbung verwendet.</span>
         </label>
       </div>
       <div class="cookie-actions">
@@ -926,18 +931,20 @@
       }
     }
 
-    function saveConsent(preferences) {
+    function saveConsent(preferences, analytics) {
       const consent = {
         necessary: true,
         preferences,
+        analytics,
         regionNotice: "EU GDPR / US privacy / India DPDP aligned notice",
         savedAt: new Date().toISOString(),
-        version: 1
+        version: 2
       };
 
       localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
       document.querySelector("[data-cookie-consent]").hidden = true;
       applyConsent(consent);
+      window.veloraAnalytics?.update(analytics);
     }
 
     function getConsent() {
@@ -954,6 +961,7 @@
       const existing = getConsent();
 
       preferences.checked = Boolean(existing && existing.preferences);
+      document.querySelector("[data-cookie-analytics]").checked = Boolean(existing && existing.analytics);
       panel.hidden = false;
       panel.querySelector("button")?.focus();
     }
@@ -966,10 +974,10 @@
       }
     });
 
-    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true));
-    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false));
+    document.querySelector("[data-cookie-accept]").addEventListener("click", () => saveConsent(true, true));
+    document.querySelector("[data-cookie-reject]").addEventListener("click", () => saveConsent(false, false));
     document.querySelector("[data-cookie-save]").addEventListener("click", () => {
-      saveConsent(document.querySelector("[data-cookie-preferences]").checked);
+      saveConsent(document.querySelector("[data-cookie-preferences]").checked, document.querySelector("[data-cookie-analytics]").checked);
     });
     document.querySelector("[data-cookie-open]").addEventListener("click", openCookiePanel);
 
@@ -1077,6 +1085,8 @@
 
     if (existingConsent) {
       applyConsent(existingConsent);
+      // Choices saved before the Analytics option existed (version 1): ask once more.
+      if (!(existingConsent.version >= 2)) openCookiePanel();
     } else {
       setFinalStats();
       openCookiePanel();

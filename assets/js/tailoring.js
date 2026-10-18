@@ -144,6 +144,7 @@
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message(data))}`;
     window.open(url, "_blank", "noopener,noreferrer");
+    window.veloraAnalytics?.event("generate_lead", { lead_type: "tailoring", category: data.categoryId });
   });
 
   const initial = checked("tailor-category");
