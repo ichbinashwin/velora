@@ -17,3 +17,4 @@ without third-party requests. They show fabrics and machinery only (no people):
 - Fabric rolls by Bernd Dittrich: https://unsplash.com/photos/rEb9iHOF638
 - Folded cloth stacks: https://unsplash.com/photos/wl2TODALiAY
 - Sewing machine needle by J Williams: https://unsplash.com/photos/tabzu_kbVs0
+- Embroidery machine with thread cones by Declan Sun (phone banner, cropped to exclude branding): https://unsplash.com/photos/cQr2x2ALizA
