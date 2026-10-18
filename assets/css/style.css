@@ -1,8 +1,8 @@
 :root {
   /* Velora Premium Gradient System — light */
-  --ink: #a85fd9;
-  --muted: #e4b7ee;
-  --muted-strong: #85a3cd;
+  --ink: #8b3fc4;
+  --muted: #6b4e7d;
+  --muted-strong: #4a6491;
 
   --plum: #5b35d5;
   --primary: #6d4aff;
@@ -185,7 +185,7 @@ a:focus {
 }
 
 .g-5 {
-  --grid-gap: 64px;
+  --grid-gap: 48px; /* half of this must fit inside the 24px container gutter */
   row-gap: 64px;
 }
 
@@ -971,7 +971,7 @@ a:focus {
   position: relative;
 }
 
-.stats h3 {
+.stats .stat-value {
   margin-bottom: 8px;
   color: var(--highlight-on-dark);
   font-size: clamp(44px, 6vw, 68px);
@@ -1037,7 +1037,7 @@ a:focus {
   text-align: center;
 }
 
-.footer h2 {
+.footer .footer-brand {
   margin-bottom: 8px;
   font-size: 25px;
   font-weight: 800;
@@ -1966,7 +1966,7 @@ body {
   background: linear-gradient(120deg, transparent 0 42%, rgba(255, 255, 255, .14) 48%, transparent 56%), radial-gradient(circle at 82% 20%, rgba(36, 87, 230, .34), transparent 28%);
 }
 
-.stats h3 {
+.stats .stat-value {
   color: var(--v-white);
 }
 
@@ -2330,6 +2330,11 @@ a:focus {
   color: #bdeaff;
 }
 
+#products .section-head .section-copy,
+#products .section-head .section-copy a {
+  color: rgba(255, 255, 255, .9);
+}
+
 .feature {
   border: 1px solid var(--line);
   border-top: 3px solid var(--primary);
@@ -2615,3 +2620,168 @@ a:focus {
   border-radius: 6px;
 }
 
+.footer .footer-brand {
+  color: inherit;
+}
+
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 4px 20px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item summary h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.faq-item p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.service-card {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--primary);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px var(--shadow-soft);
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.why-section {
+  background: var(--surface-soft);
+}
+
+.why-list,
+.who-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.why-list {
+  display: grid;
+  gap: 14px;
+}
+
+.why-list li {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px 18px 52px;
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.why-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.why-list strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.why-list span {
+  color: var(--muted);
+}
+
+.who-panel {
+  padding: 28px;
+  border-radius: 18px;
+  background: var(--gradient-primary);
+  color: #fff;
+}
+
+.who-panel h3 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.who-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.who-list li {
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  font-weight: 700;
+}
+
+.footer .footer-nap {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.nav-link,
+.brand-text {
+  white-space: nowrap;
+}
